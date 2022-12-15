@@ -24,7 +24,7 @@ public class cls_TaoHocsinhtronglop
         insert.hocsinh_id = account_id;
         insert.lop_id = lop_id;
         //insert.monhoc_id = monhoc_id;
-        insert.hidden = false;
+        insert.hstl_tinhtrang = false;
         // thuc thi cau lenh insert
         db.tbHocSinhTrongLops.InsertOnSubmit(insert);
         //Khi thêm học sinh vào lớp thì lấy ngầy hôm đó cho ngày bắt đầu học

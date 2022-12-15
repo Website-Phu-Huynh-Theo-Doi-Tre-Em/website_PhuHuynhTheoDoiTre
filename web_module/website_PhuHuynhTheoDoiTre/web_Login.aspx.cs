@@ -28,23 +28,11 @@ public partial class web_module_website_VietNhatKids_web_Login : System.Web.UI.P
         var mk = md5.HashCode(txtMatKhau.Value.Trim());
 
         var check_User = from u in db.tbHocSinhs
-                         where u.hocsinh_pass == mk && u.hocsinh_taikhoan == sdt && u.hidden == null
+                         where u.hocsinh_pass == mk && u.hocsinh_taikhoan == sdt && u.hocsinh_tinhtrang == null
                          select u;
         if(check_User.Count() == 1)
         {
-            //if (checklogin.Checked)
-            //{
-            //    Response.Cookies["web_hocsinh_sdt"].Value = txtSDT.Value;
-            //    Response.Cookies["web_hocsinh_mk"].Value = txtMatKhau.Value;
-            //    Response.Cookies["web_hocsinh_sdt"].Expires = DateTime.Now.AddDays(-1);
-            //    Response.Cookies["web_hocsinh_mk"].Expires = DateTime.Now.AddDays(-1);
-            //}
-            //else
-            //{
-            //    Response.Cookies["web_hocsinh_sdt"].Expires = DateTime.Now.AddDays(-1);
-            //    Response.Cookies["web_hocsinh_mk"].Expires = DateTime.Now.AddDays(-1);
-
-            //}
+            
             HttpCookie taikhoan = new HttpCookie("web_hocsinh");
             taikhoan.Value = sdt;
             taikhoan.Expires= DateTime.Now.AddDays(365);

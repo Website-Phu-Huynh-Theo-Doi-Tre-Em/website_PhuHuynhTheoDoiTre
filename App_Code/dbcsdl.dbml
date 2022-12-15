@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hethongquanlitre" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=duanphuhuynhquanlytre.database.windows.net;Initial Catalog=hethongquanlitre;Persist Security Info=True;User ID=laibich" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hethongquanlitreConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.admin_GroupUser" Member="admin_GroupUsers">
     <Type Name="admin_GroupUser">
       <Column Name="groupuser_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -64,6 +65,14 @@
       <Column Name="ansang_tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ansang_ngayduyet" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ansang_trangthaiduyet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbGiaoVien" Member="tbGiaoViens">
+    <Type Name="tbGiaoVien">
+      <Column Name="giaovien_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="giaovien_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khoi_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbGiaoVienTrongLop" Member="tbGiaoVienTrongLops">

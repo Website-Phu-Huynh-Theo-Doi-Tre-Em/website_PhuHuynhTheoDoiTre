@@ -26,10 +26,7 @@ public class cls_AccountAdmin
         insert.username_email = email;
         insert.groupuser_id = 3;
         insert.username_active = true;
-        insert.bophan_id = 4;//giáo viên mầm non
-        insert.coso_id = coso_id;
         insert.username_diachi = diachi;
-        insert.chucvu_id = "Giáo viên";
         db.admin_Users.InsertOnSubmit(insert);
         try
         {
@@ -41,7 +38,7 @@ public class cls_AccountAdmin
             return false;
         }
     }
-    public bool Linq_Sua(int account_id, string username, string pass, string fullnanme, string phone, string email, int coso_id, string diachi)
+    public bool Linq_Sua(int account_id, string username, string pass, string fullnanme, string phone, string email, string diachi)
     {
         admin_User update = db.admin_Users.Where(x => x.username_id == account_id).FirstOrDefault();
         update.username_username = username;
@@ -50,7 +47,7 @@ public class cls_AccountAdmin
         update.username_phone = phone;
         update.username_email = email;
         update.username_active = true;
-        update.coso_id = coso_id;
+        
         update.username_diachi = diachi;
         try
         {
