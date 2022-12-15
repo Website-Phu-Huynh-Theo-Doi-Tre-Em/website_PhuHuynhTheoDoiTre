@@ -11,14 +11,7 @@ public partial class web_module_website_VietNhatKids_web_Login : System.Web.UI.P
     cls_Alert alert = new cls_Alert();
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (!IsPostBack)
-        //{
-        //    if (Request.Cookies["web_hocsinh_sdt"]!= null && Request.Cookies["web_hocsinh_mk"]!=null)
-        //    {
-        //        txtSDT.Value = Request.Cookies["web_hocsinh_sdt"].Value;
-        //        txtMatKhau.Attributes["Value"] = Request.Cookies["web_hocsinh_mk"].Value;
-        //    }
-        //}
+       
     }
 
     protected void btn_Gui_ServerClick(object sender, EventArgs e)
@@ -28,7 +21,7 @@ public partial class web_module_website_VietNhatKids_web_Login : System.Web.UI.P
         var mk = md5.HashCode(txtMatKhau.Value.Trim());
 
         var check_User = from u in db.tbHocSinhs
-                         where u.hocsinh_pass == mk && u.hocsinh_taikhoan == sdt && u.hidden == null
+                         where u.hocsinh_pass == mk && u.hocsinh_taikhoan == sdt && u.hocsinh_tinhtrang == null
                          select u;
         if(check_User.Count() == 1)
         {
