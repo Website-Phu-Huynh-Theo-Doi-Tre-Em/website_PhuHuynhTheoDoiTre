@@ -18,18 +18,17 @@ public class cls_ThongBaoLop
     }
     public bool Linq_Them(string news_title, string news_content, int idlop, int username_id, int namhoc_id)
     {
-        tbVietNhatKids_ThongBaoLop insert = new tbVietNhatKids_ThongBaoLop();
-        insert.thongbaoLop_title = news_title;
-        insert.thongbaoLop_content = news_content;
-        insert.thongbaoLop_datecreate = DateTime.Now;
-        insert.thongbaoLop_hidden = false;
-        insert.thongbaolop_ngayketthuc = DateTime.Now.AddDays(7);
+        tbThongBao insert = new tbThongBao();
+        insert.thongbao_title = news_title;
+        insert.thongbao_content = news_content;
+        insert.thongbao_datecreate = DateTime.Now;
+        insert.thongbao_hidden = false;
+        insert.thongbao_ngayketthuc = DateTime.Now.AddDays(7);
         insert.lop_id = idlop;
         insert.username_id = username_id;
         insert.namhoc_id = namhoc_id;
-        insert.thongbaolop_tinhtrang = 0;//chưa được duyệt
-        insert.thongbaolop_diemtichluy = 3;
-        db.tbVietNhatKids_ThongBaoLops.InsertOnSubmit(insert);
+        insert.thongbao_tinhtrang = 0;//chưa được duyệt
+        db.tbThongBaos.InsertOnSubmit(insert);
         try
         {
             db.SubmitChanges();
@@ -46,11 +45,11 @@ public class cls_ThongBaoLop
         //var seodata = (from gr in db.tbWebsite_NewsCates
         //               where gr.newscate_id == newscate_id
         //               select gr).Single();
-        tbVietNhatKids_ThongBaoLop update = db.tbVietNhatKids_ThongBaoLops.Where(x => x.thongbaoLop_id == news_id).FirstOrDefault();
-        update.thongbaoLop_title = news_title;
-        update.thongbaoLop_content = news_content;
-        update.thongbaolop_dateupdate = DateTime.Now;
-        update.thongbaoLop_hidden = false;
+        tbThongBao update = db.tbThongBaos.Where(x => x.thongbao_id == news_id).FirstOrDefault();
+        update.thongbao_title = news_title;
+        update.thongbao_content = news_content;
+        update.thongbao_dateupdate = DateTime.Now;
+        update.thongbao_hidden = false;
         //update.thongbaolop_ngayketthuc = DateTime.Now.AddDays(7);
         try
         {
@@ -62,45 +61,45 @@ public class cls_ThongBaoLop
             return false;
         }
     }
-    public bool Linq_DuyetHieuPho(int news_id, int coso_id,int user_id, string news_title)
-    {
+    //public bool Linq_DuyetHieuPho(int news_id, int coso_id,int user_id, string news_title)
+    //{
 
-        tbVietNhatKids_ThongBaoLop update = db.tbVietNhatKids_ThongBaoLops.Where(x => x.thongbaoLop_id == news_id).FirstOrDefault();
-        tbLichSuDuyet_BanGiamHieu insert = new tbLichSuDuyet_BanGiamHieu();
-        if (coso_id == 1)
-        {
-            update.thongbaolop_tinhtrang = 2; //hiệu phó duyệt
-            insert.lichsuduyet_diemtichluy = 1;
-            insert.username_id = user_id;
-            insert.lichsuduyet_ngayduyet = DateTime.Now;
-            insert.lichsuduyet_formname = news_title;
-            insert.namhoc_id = 11;
-            db.tbLichSuDuyet_BanGiamHieus.InsertOnSubmit(insert);
-        }
-        else
-        {
-            update.thongbaolop_tinhtrang = 1; //hiệu phó duyệt
-            insert.lichsuduyet_diemtichluy = 1;
-            insert.username_id = user_id;
-            insert.lichsuduyet_ngayduyet = DateTime.Now;
-            insert.lichsuduyet_formname = news_title;
-            insert.namhoc_id = 11;
-            db.tbLichSuDuyet_BanGiamHieus.InsertOnSubmit(insert);
-        }
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
-    }
+    //    tbThongBao update = db.tbThongBaos.Where(x => x.thongbaoLop_id == news_id).FirstOrDefault();
+    //    //tbLichSuDuyet_BanGiamHieu insert = new tbLichSuDuyet_BanGiamHieu();
+    //    //if (coso_id == 1)
+    //    //{
+    //    //    update.thongbaolop_tinhtrang = 2; //hiệu phó duyệt
+    //    //    insert.lichsuduyet_diemtichluy = 1;
+    //    //    insert.username_id = user_id;
+    //    //    insert.lichsuduyet_ngayduyet = DateTime.Now;
+    //    //    insert.lichsuduyet_formname = news_title;
+    //    //    insert.namhoc_id = 11;
+    //    //    db.tbLichSuDuyet_BanGiamHieus.InsertOnSubmit(insert);
+    //    //}
+    //    //else
+    //    //{
+    //    //    update.thongbaolop_tinhtrang = 1; //hiệu phó duyệt
+    //    //    insert.lichsuduyet_diemtichluy = 1;
+    //    //    insert.username_id = user_id;
+    //    //    insert.lichsuduyet_ngayduyet = DateTime.Now;
+    //    //    insert.lichsuduyet_formname = news_title;
+    //    //    insert.namhoc_id = 11;
+    //    //    db.tbLichSuDuyet_BanGiamHieus.InsertOnSubmit(insert);
+    //    //}
+    //    //try
+    //    //{
+    //    //    db.SubmitChanges();
+    //    //    return true;
+    //    //}
+    //    //catch
+    //    //{
+    //    //    return false;
+    //    //}
+    //}
     public bool Linq_DuyetHieuTruong(int news_id)
     {
-        tbVietNhatKids_ThongBaoLop update = db.tbVietNhatKids_ThongBaoLops.Where(x => x.thongbaoLop_id == news_id).FirstOrDefault();
-        update.thongbaolop_tinhtrang = 2; //hiệu trưởng duyệt
+        tbThongBao update = db.tbThongBaos.Where(x => x.thongbao_id == news_id).FirstOrDefault();
+        update.thongbao_tinhtrang = 2; //hiệu trưởng duyệt
         try
         {
             db.SubmitChanges();
@@ -113,8 +112,8 @@ public class cls_ThongBaoLop
     }
     public bool Linq_Xoa(int news_id)
     {
-        tbVietNhatKids_ThongBaoLop delete = db.tbVietNhatKids_ThongBaoLops.Where(x => x.thongbaoLop_id == news_id).FirstOrDefault();
-        db.tbVietNhatKids_ThongBaoLops.DeleteOnSubmit(delete);
+        tbThongBao delete = db.tbThongBaos.Where(x => x.thongbao_id == news_id).FirstOrDefault();
+        db.tbThongBaos.DeleteOnSubmit(delete);
         try
         {
             db.SubmitChanges();

@@ -20,7 +20,6 @@ public class cls_QuanLiHocSinh
     {
         tbHocSinh hs = new tbHocSinh();
         hs.hocsinh_code = txtMahocsinh;
-        hs.hocsinh_hohocsinh = txtHoHocSinh;
         hs.hocsinh_name = txtTenhocsinh;
         hs.hocsinh_ngaysinh = Convert.ToDateTime(dtDate);
         hs.hocsinh_noio = txtDiaChi;
@@ -35,22 +34,20 @@ public class cls_QuanLiHocSinh
 
         hs.hocsinh_tenba = txtTenBa;
         hs.hocsinh_sdtba = txtSDTBa;
-        hs.hocsinh_eamilba = txtEmailBa;
-        hs.hocsinh_nghenghiepba = txtNgheNghiepBa;
+        hs.hocsinh_emaillba = txtEmailBa;
+        
 
         hs.hocsinh_tenme = txtTenMe;
         hs.hocsinh_sdtme = txtSDTMe;
-        hs.hocsinh_eamilme = txtEmailMe;
-        hs.hocsinh_nghenghiepme = txtNgheNghiepMe;
+        hs.hocsinh_emailme = txtEmailMe;
         hs.hocsinh_image = news_image;
-        hs.coso_id = coso_id;
         if (txtEmailBa != "")
         {
-            hs.hocsinh_email = txtEmailBa;
+            hs.hocsinh_emaillba = txtEmailBa;
         }
         else
         {
-            hs.hocsinh_email = txtEmailMe;
+            hs.hocsinh_emailme = txtEmailMe;
         }
         hs.hocsinh_pass = "12378248145104161527610811213823414203124130";
         hs.hocsinh_taikhoan = taikhoan;
@@ -70,7 +67,6 @@ public class cls_QuanLiHocSinh
 
         tbHocSinh hs = db.tbHocSinhs.Where(x => x.hocsinh_id == hs_id).FirstOrDefault();
         hs.hocsinh_code = txtMahocsinh;
-        hs.hocsinh_hohocsinh = txtHoHocSinh;
         hs.hocsinh_name = txtTenhocsinh;
         hs.hocsinh_ngaysinh = Convert.ToDateTime(dtDate);
         hs.hocsinh_noio = txtDiaChi;
@@ -85,14 +81,11 @@ public class cls_QuanLiHocSinh
 
         hs.hocsinh_tenba = txtTenBa;
         hs.hocsinh_sdtba = txtSDTBa;
-        hs.hocsinh_eamilba = txtEmailBa;
-        hs.hocsinh_nghenghiepba = txtNgheNghiepBa;
+        hs.hocsinh_emaillba = txtEmailBa;
 
         hs.hocsinh_tenme = txtTenMe;
         hs.hocsinh_sdtme = txtSDTMe;
-        hs.hocsinh_eamilme = txtEmailMe;
-        hs.hocsinh_nghenghiepme = txtNgheNghiepMe;
-        hs.coso_id = coso_id;
+        hs.hocsinh_emailme = txtEmailMe;
         hs.hocsinh_image = news_image;
         hs.hocsinh_taikhoan = taikhoan;
         try
@@ -108,7 +101,7 @@ public class cls_QuanLiHocSinh
     public bool Linq_Xoa(int news_id)
     {
         tbHocSinh delete = db.tbHocSinhs.Where(x => x.hocsinh_id == news_id).FirstOrDefault();
-        delete.hidden = true;
+        delete.hocsinh_tinhtrang = true;
         try
         {
             db.SubmitChanges();

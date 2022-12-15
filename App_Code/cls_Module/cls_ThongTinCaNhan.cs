@@ -18,8 +18,8 @@ public class cls_ThongTinCaNhan
 	}
     public bool Linq_Xoa( int newscate_id)
     {
-        tbQuanLyNhanSu_ThongTinCaNhan delete = db.tbQuanLyNhanSu_ThongTinCaNhans.Where(x => x.thongtincanhan_id == newscate_id).FirstOrDefault();
-        db.tbQuanLyNhanSu_ThongTinCaNhans.DeleteOnSubmit(delete);
+        admin_User delete = db.admin_Users.Where(x => x.username_id == newscate_id).FirstOrDefault();
+        db.admin_Users.DeleteOnSubmit(delete);
         try
         {
             db.SubmitChanges();

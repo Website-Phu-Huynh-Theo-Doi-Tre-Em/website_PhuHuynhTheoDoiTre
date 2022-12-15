@@ -16,16 +16,15 @@ public class cls_NgoaiKhoa
         // TODO: Add constructor logic here
         //
     }
-    public bool Linq_Them(string news_title, string des, string news_content, int coso, DateTime create_date, int khoi_id)
+    public bool Linq_Them(string news_title, string des, string news_content, DateTime create_date, int khoi_id)
     {
-        tbVietNhatKids_NgoaiKhoa insert = new tbVietNhatKids_NgoaiKhoa();
-        insert.ngoaikhoa_name = news_title;
-        insert.ngoaikhoa_description = des;
-        insert.ngoaikhoa_content = news_content;
-        insert.ngoaikhoa_coso = coso;
-        insert.ngoaikhoa_createdate = create_date;
+        tbNgoaiKhoa insert = new tbNgoaiKhoa();
+        insert.ngoaikhoa_ten = news_title;
+        insert.ngoaikhoa_mota = des;
+        insert.ngoaikhoa_noidung = news_content;
+        insert.ngoaikhoa_ngaytao = create_date;
         insert.khoi_id = khoi_id;
-        db.tbVietNhatKids_NgoaiKhoas.InsertOnSubmit(insert);
+        db.tbNgoaiKhoas.InsertOnSubmit(insert);
         try
         {
             db.SubmitChanges();
@@ -36,14 +35,12 @@ public class cls_NgoaiKhoa
             return false;
         }
     }
-    public bool Linq_Sua(int news_id, string news_title, string des, string news_content, int coso, DateTime create_date)
+    public bool Linq_Sua(int news_id, string news_title, string des, string news_content, DateTime create_date)
     {
-        tbVietNhatKids_NgoaiKhoa update = db.tbVietNhatKids_NgoaiKhoas.Where(x => x.ngoaikhoa_id == news_id).FirstOrDefault();
-        update.ngoaikhoa_name = news_title;
-        update.ngoaikhoa_description = des;
-        update.ngoaikhoa_content = news_content;
-        update.ngoaikhoa_coso = coso;
-        update.ngoaikhoa_dateupdate = create_date;
+        tbNgoaiKhoa update = db.tbNgoaiKhoas.Where(x => x.ngoaikhoa_id == news_id).FirstOrDefault();
+        update.ngoaikhoa_ten = news_title;
+        update.ngoaikhoa_mota = des;
+        update.ngoaikhoa_noidung = news_content;
         try
         {
             db.SubmitChanges();
@@ -56,8 +53,8 @@ public class cls_NgoaiKhoa
     }
     public bool Linq_Xoa(int news_id)
     {
-        tbVietNhatKids_NgoaiKhoa delete = db.tbVietNhatKids_NgoaiKhoas.Where(x => x.ngoaikhoa_id == news_id).FirstOrDefault();
-        db.tbVietNhatKids_NgoaiKhoas.DeleteOnSubmit(delete);
+        tbNgoaiKhoa delete = db.tbNgoaiKhoas.Where(x => x.ngoaikhoa_id == news_id).FirstOrDefault();
+        db.tbNgoaiKhoas.DeleteOnSubmit(delete);
         try
         {
             db.SubmitChanges();

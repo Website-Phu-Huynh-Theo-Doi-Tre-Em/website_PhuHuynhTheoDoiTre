@@ -22,8 +22,6 @@ public class cls_KhoiLop
 
         tbKhoi insert = new tbKhoi();
         insert.khoi_name = khoi_name;
-        insert.coso_id = coso_id;
-        insert.hidden = false;
         db.tbKhois.InsertOnSubmit(insert);
         try
         {
@@ -49,18 +47,18 @@ public class cls_KhoiLop
             return false;
         }
     }
-    public bool Linq_Xoa(int khoi_id)
-    {
-        tbKhoi delete = db.tbKhois.Where(x => x.khoi_id == khoi_id).FirstOrDefault();
-        delete.hidden = true;
-        try
-        {
-            db.SubmitChanges();
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
-    }
+    //public bool Linq_Xoa(int khoi_id)
+    //{
+    //    tbKhoi delete = db.tbKhois.Where(x => x.khoi_id == khoi_id).FirstOrDefault();
+    //    //delete.hidden = true;
+    //    //try
+    //    //{
+    //    //    db.SubmitChanges();
+    //    //    return true;
+    //    //}
+    //    //catch
+    //    //{
+    //    //    return false;
+    //    //}
+    //}
 }
