@@ -9,7 +9,7 @@ using System.Web.UI;
 /// </summary>
 public class cls_HocSinh
 {
-    dbcsdlDataContext db = new ();
+    dbcsdlDataContext db = new dbcsdlDataContext ();
     public cls_HocSinh()
     {
         //
