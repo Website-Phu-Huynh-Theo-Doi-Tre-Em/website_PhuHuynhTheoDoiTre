@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage_MamNon.master" AutoEventWireup="true" CodeFile="web_TrangChu.aspx.cs" Inherits="web_module_module_website_web_TrangChu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage.master" AutoEventWireup="true" CodeFile="web_TrangChu.aspx.cs" Inherits="web_module_module_website_web_TrangChu" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" />

@@ -169,7 +169,7 @@ public class webui
         list.Add("webvietnhatkidsthongtinsuckhoe|website-vietnhatkids-thong-tin-suc-khoe|~/web_module/website_VietNhatKids/web_ThongTinSucKhoe.aspx");
         list.Add("webvietnhatkidsxinnghi|website-vietnhatkids-xin-nghi|~/web_module/website_VietNhatKids/web_XinNghi.aspx");
         list.Add("webvietnhatkidsdanhgiagiaovien|website-vietnhatkids-danh-gia-giao-vien|~/web_module/website_VietNhatKids/web_DanhGiaGiaoVien.aspx");
-        list.Add("webvietnhatkidsForgetPassword|website-vietnhatkids-ForgetPassword|~/web_module/website_VietNhatKids/web_QuenMatKhau.aspx");
+        list.Add("webvietnhatkidsForgetPassword|website-ForgetPassword|~/web_module/website_VietNhatKids/web_QuenMatKhau.aspx");
         list.Add("webvietnhatkidsHocPhi|website-vietnhatkids-hoc-phi|~/web_module/website_VietNhatKids/web_HocPhi.aspx");
         list.Add("webvietnhatkidsDoDungHocTap|website-vietnhatkids-do-dung-hoc-tap|~/web_module/website_VietNhatKids/web_DangKyDoDung.aspx");
         list.Add("webvietnhatkidsDangKyNangKhieu|website-vietnhatkids-nang-khieu|~/web_module/website_VietNhatKids/web_DangKyNangKhieu.aspx");
