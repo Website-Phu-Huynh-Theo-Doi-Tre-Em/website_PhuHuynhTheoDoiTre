@@ -33,7 +33,7 @@
  */
         body, html { 
             height: 100%;
-            background-image: url('/admin_images/Background.png');
+            background-image: url('/image_PhuHuynhTheoDoiTre/Login/Background.png');
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -79,7 +79,7 @@
         }
 
         .profile-img-card {
-            width: 221px;
+           width: 150px;
             height: 134px;
             margin: 0 auto 10px;
             display: block;
@@ -218,7 +218,8 @@
                 <h6 style="text-align: center; font-size: 21px;">Đồng hành cùng phụ huynh ươm mầm tương lai</h6>
             </div>
             <div class="card card-container">
-                <img id="profile-img" class="profile-img-card" src="../../admin_images/logo.png" />
+                <%--<img   src="../../admin_images/logo.png" />--%>
+                <img id="profile-img" class="profile-img-card" src="../../image_PhuHuynhTheoDoiTre/Login/logo_mamnon.png" />
                 <div class="form-signin">
                     <span id="reauth-email" class="reauth-email"></span>
                     <input runat="server" type="Text" id="txtSDT" class="form-control" placeholder="Nhập số điện thoại" />
