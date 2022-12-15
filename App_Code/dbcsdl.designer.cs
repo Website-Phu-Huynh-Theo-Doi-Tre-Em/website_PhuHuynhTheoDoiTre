@@ -102,8 +102,12 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 	{
 		OnCreated();
 	}
-	
-	public System.Data.Linq.Table<admin_GroupUser> admin_GroupUsers
+
+    public dbcsdlDataContext()
+    {
+    }
+
+    public System.Data.Linq.Table<admin_GroupUser> admin_GroupUsers
 	{
 		get
 		{
