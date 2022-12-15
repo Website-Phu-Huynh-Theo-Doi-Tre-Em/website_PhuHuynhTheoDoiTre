@@ -1,0 +1,60 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+/*start website master*/
+/*navabar website master*/
+.navabar {
+    position: fixed;
+    width: 100%;
+    height: 37px;
+    left: 0px;
+    top: 0px;
+    background: #B51A1A;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index:99;
+}
+
+    .navabar span {
+        font-weight: 700;
+        font-style: normal;
+        /*font-weight: bold;*/
+        font-size: 20px;
+        color: #ffffff;
+    }
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+}
+/*end website master*/
+/*css footer*/
+/*footer {
+    margin-top: -21%;
+}*/
+
+.footer_kids {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: #ffff;
+    text-align: center;
+    bottom:0;
+}
+
+    .footer_kids img {
+        width: 72%;
+        margin: 0 2%;
+    }
+
+.footer_kids_menu {
+    display: flex;
+    flex-direction: column;
+    width: 27%;
+    font-size: 11px;
+    align-items: center;
+    padding-top: 10px;
+}

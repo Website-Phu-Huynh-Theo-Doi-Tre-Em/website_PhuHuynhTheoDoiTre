@@ -1,0 +1,303 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --color_main: #d74545;
+    --color_sub: #f6dc8e;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 18px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    scroll-behavior: smooth;
+
+}
+h1{
+    font-size: 2.5rem;
+}
+a{
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    min-width: 100%;
+    object-fit: cover;
+}
+.text-title{
+    font-family: 'Pacifico';
+}
+.text-red{
+    color: #8e191b;
+}
+.text-good{
+    color: #ffc107;
+}
+.text-blue{
+    color: #3e7ad3;
+}
+header {
+    width: 100%;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #f7f29f 0%, #e0cc7b 8%, #fbe396 30%, #ffe2a0 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #e2cd7f 8%, #D1B464 25%, #f0d99c 62.5%, #785c1d 100%);
+}
+.clogo{
+    width: 250px !important;
+    display: block;
+    margin: auto;
+}
+
+/* Slider */
+.swiper{
+    width: 100%;
+    height: fit-content;
+    cursor: grab;
+}
+.swiper:active{
+    cursor: grabbing;
+}
+.swiper-slide img{
+    width: 100%;
+}
+.swiper .swiper-button-prev,.swiper .swiper-button-next{
+    color: #fff;
+    font-size: 16px;
+}
+/* -----end----- */
+.background-wave{
+    background-image: url(/assets/img/blue-wave.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 540px;
+    padding-top: 55px;
+}
+.container-1{
+    width: 100%;
+    margin: 5% 0;
+    position: relative;
+}
+.container-1 .img-backgourd{
+    position: absolute;
+}
+.container-1 .content-1{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+.container-1 .content-1 .ct-img-1, .container-1 .content-1 .ct-text-1{
+    float: left;
+    width: 45%;
+}
+.content-1  .ct-img-1 img{
+    border-radius: 50px ;
+}
+.content-1 .ct-text-1 h4{
+    font-size: 0.9rem;
+}
+.content-1 .ct-text-1 p{
+    font-size: 0.8rem;
+}
+.content-1 {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+    .content-1 .box-1 {
+        width: 30%;
+        background-color: aqua;
+        border-radius: 25px;
+        box-shadow: 7px 7px 20px #4c4c4c45;
+    }
+.date-image img{
+    height: 17rem;
+}
+.content-1 .box-1 img {
+    max-height: 85%;
+    min-height: 85%;
+    object-fit: cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.content-1 .box-1 h4{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-2{
+    width: 80%;
+    margin: auto;
+}
+.content-sub{
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+
+}
+
+.content-sub .cts-img , .content-sub .cts-text{
+    width: 48%;
+}
+    .content-sub .cts-img img {
+        min-height: 100%;
+        max-height: 100%;
+        border-radius: 30px;
+        object-fit: cover;
+        box-shadow: 7px 7px 20px #4c4c4c45;
+    }
+.content-sub .cts-text h1{
+    font-size: 1.5rem ;
+}
+.content-sub .cts-text{
+}
+.content-sub .text-good{
+    font-size: 2.5rem ;
+}
+footer{
+    background-color:var(--color_sub) ;
+}
+footer .f-img{
+    width: 250px;
+    margin: auto;
+}
+footer .fcontent{
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 ;
+}
+footer .copyRight{
+    background-color: black;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: center;
+    
+}
+.box-tintuc{
+    width:250px;
+    height:350px;
+    float:left;
+    margin:10px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+    background-color:#fff;
+}
+.slick-arrow{
+    display:none!important;
+}
+.box-tintuc .box-img img {
+    max-height: 100%;
+    min-height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.box-tintuc .box-img {
+    width: 100%;
+    height: 200px;
+}
+.box-tintuc .box-text{
+    text-align:left;
+    padding:10px;
+}
+.box-tintuc .box-text h3{
+    font-size:0.8rem;
+}
+    .box-tintuc .box-text p {
+        font-size: 0.6rem;
+        color:black;
+    }
+.container-box{
+    width:80%;
+    margin:auto;
+}
+.slider-camnhan::before {
+    content: '';
+    position:absolute;
+    left:0;
+    display: block;
+    height: 100%;
+    width: 20vw;
+    background: linear-gradient(90deg,#fff 0%,rgba(255,255,255,0) 100%);
+    z-index:2;
+}
+
+.slider-camnhan::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top:0;
+    display: block;
+    height: 100%;
+    width: 20vw;
+    background: linear-gradient(90deg,rgba(255,255,255,0) 0%,#fff 100%);
+    z-index: 2;
+}
+.box-camnhan {
+    position: relative;
+    height: 289px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 20px 20px 0 #b8cdf27a;
+    margin: 60px 30px;
+    background-image: url("../../assets/img/bg-testimonial.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+
+    .box-camnhan:hover {
+        cursor: grab;
+    }
+    .box-camnhan:active{
+        cursor:grabbing;
+    }
+    .box-camnhan > div {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #ababab;
+    }
+    .box-camnhan .box-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -50px;
+        box-shadow: 0 0 10px #939393;
+    }
+        .box-camnhan .box-img img {
+            max-height: 100%;
+            min-height: 100%;
+        }
+    .box-camnhan .box-text {
+        position: absolute;
+        text-align: left;
+        margin: 75px 40px 0;
+        
+    }
+        .box-camnhan .box-text h3 {
+            text-align: center;
+            margin-bottom: 1%;
+        }
+        .box-camnhan .box-text p q {
+            quotes: '\201F' '\201D';
+        }
+
+/*đội ngũ giáo viên*/
+.container-doingu .container-img{
+    display:flex;
+    width:100%;
+}
+    .container-doingu .container-img .box-img {
+        clip-path: polygon(33.33% 0%, 66.66% 0%, 100% 33.33%, 100% 66.66%, 66.66% 100%, 33.33% 100%, 0 66.66%, 0 33.33%);
+        width: 30%;
+        background-color: #ccc;
+    }

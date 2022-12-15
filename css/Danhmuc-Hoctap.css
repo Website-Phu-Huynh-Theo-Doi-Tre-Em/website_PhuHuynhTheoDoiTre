@@ -1,0 +1,671 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+.frame-game {
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.mute-music {
+    position: fixed;
+    top: 88.5%;
+    width: 6%;
+    z-index: 2;
+}
+
+.btn-mute-music {
+    width: 100%;
+}
+
+.icon-ngoinha-1 {
+    width: 55%;
+}
+
+    .icon-ngoinha-1.nhanbiet {
+        width: 45%;
+    }
+
+    .icon-ngoinha-1.tracnghiem {
+        width: 35%;
+    }
+
+.icon-nha a img:hover {
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.floating {
+    animation-name: floating;
+}
+
+.floating1 {
+    animation-name: floating1;
+}
+
+.floating, .floating1 {
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+@keyframes floating1 {
+    0% {
+        transform: translate(0, 40px);
+    }
+
+    50% {
+        transform: translate(0, -0px);
+    }
+
+    100% {
+        transform: translate(0, 40px);
+    }
+}
+
+.btnHomes, .btnNext, .btnPrev {
+    width: 5%;
+    position: absolute;
+    top: 0.5%;
+    left: 0.5%;
+    z-index: 3;
+}
+
+.btnHomes {
+    /*sơn sửa*/
+    width: 6%;
+    top: 2%;
+    left: 1%;
+}
+
+.btnNext, .btnPrev {
+    top: 43%;
+}
+
+.btnNext {
+    left: 94.5%;
+}
+
+.btn-exit {
+    /*width: 100%;*/
+    /*sơn sửa*/
+    width: 92%
+}
+
+.owl-next,
+.owl-prev {
+    position: fixed;
+    height: 7.9%;
+    width: 5%;
+    border-radius: 100%;
+    border: none;
+    top: 45%;
+}
+
+.owl-nav.disabled {
+    position: absolute;
+    top: 0%;
+}
+
+.owl-next {
+    /*background-image: url(/images/images_button/btn-32.png);*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    right: 0.5%;
+}
+
+.owl-prev {
+    left: 0.5%;
+    /*background-image: url('/images/images_button/btn-29.png');*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+    .owl-next span,
+    .owl-prev span {
+        /*display: none !important;*/
+    }
+
+.error_MediaLess768 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center
+}
+
+    .error_MediaLess768 img {
+        width: 30%
+    }
+
+.owl-dots {
+    display: none;
+}
+
+.owl-carousel .owl-stage-outer {
+    height: 100vh;
+    display: inline-flex;
+    align-items: center;
+    text-align: -webkit-center;
+}
+
+.owl-carousel {
+    top: 0%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.nhan_biet {
+    height: 101vh !important;
+    background-image: url(/images/images_ChuDe/img_ChuDe2/galaxy.gif) !important;
+}
+
+.planet1, .planet2, .planet4, .planet8, .planet10, .platnet12, .platnet13, .platnet14, .vetinh, .ufo, .thienthach {
+    position: absolute;
+}
+
+.planet1 {
+    width: 15%;
+    left: 5%;
+    top: 47%;
+}
+
+.planet2 {
+    width: 4%;
+    left: 12%;
+    top: 17%;
+}
+
+.planet4 {
+    width: 10%;
+    top: 7%;
+    right: 22%;
+}
+
+.planet8 {
+    width: 9%;
+    left: 20%;
+    top: 32%;
+}
+
+.planet10 {
+    width: 11%;
+    left: 78%;
+    top: 26%;
+}
+
+.planet12 {
+    width: 5%;
+    left: 37%;
+    top: 4%;
+}
+
+.planet13 {
+    width: 5%;
+    left: 87%;
+    top: 44%;
+}
+
+.planet14 {
+    width: 4%;
+    left: 77%;
+    top: 17%;
+}
+
+.vetinh {
+    width: 19%;
+    left: 75%;
+    top: 60%;
+    transform: rotate(78deg);
+}
+
+    .planet1 img, .planet2 img, .planet4 img, .planet8 img, .planet10 img,
+    .planet12 img, .planet13 img, .planet14 img, .ufo img, .vetinh img {
+        width: 100%;
+    }
+
+.ufo {
+    width: 6%;
+    right: 0;
+    font-family: Arial;
+    animation: ufo 200s infinite;
+    top: 9%;
+}
+
+@keyframes ufo {
+    49% {
+        right: calc(100% - 20em);
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+/*.thienthach {
+            width: 100%;
+            left: 0;
+            top: 0;
+            background: url(../images/images_ChuDe/img_ChuDe2/thienthach.gif) 0 no-repeat;
+            background-size: 17.5%;
+            animation: thienthach 70s linear infinite;
+            height: 100vh;
+        }*/
+
+@keyframes thienthach {
+    0% {
+        background-position-x: 0px;
+        background-position-y: -250px;
+    }
+
+    100% {
+        background-position-x: 2000px;
+        background-position-y: 1000px;
+    }
+}
+
+</style >
+<%--Kéo Thả--% >
+<style >
+.keo_tha {
+    background-image: url(/images/images_ChuDe/img_ChuDe/bien.png);
+}
+
+.fish, .fish2, .so, .rua, .binh {
+    position: absolute;
+}
+
+.fish {
+    width: 10%;
+    left: 0;
+    font-family: Arial;
+    animation: fish 100s infinite;
+    top: 0%;
+}
+
+
+    .fish img {
+        transform: scaleX(-1);
+    }
+
+@keyframes fish {
+    49% {
+        left: calc(100% - 20em);
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+.fish2 {
+    width: 12%;
+    right: 0;
+    top: 45%;
+    font-family: Arial;
+    animation: fish2 100s infinite;
+}
+
+@keyframes fish2 {
+    49% {
+        right: calc(100% - 20em);
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+.fish2 img {
+    transform: scaleX(1);
+}
+
+.so {
+    top: 73%;
+    left: 15%;
+    width: 19%;
+}
+
+    .so img, .binh img, .fish img, .fish2 img, .airbubble1 img,
+    .airbubble2 img, .airbubble3 img, .airbubble4 img {
+        width: 100%;
+    }
+
+.binh {
+    width: 26%;
+    top: 64%;
+    right: 15%;
+}
+
+.rua {
+    width: 100%;
+    left: 0;
+    background: url(../images/images_ChuDe/img_ChuDe/3-unscreen.gif) 0 no-repeat;
+    background-size: 17.5%;
+    animation: rua 70s linear infinite;
+    height: 100vh;
+    transform: rotateY(-180deg);
+}
+
+@keyframes rua {
+    0% {
+        background-position-x: 2000px;
+        background-position-y: 1000px;
+    }
+
+    100% {
+        background-position-x: 0px;
+        background-position-y: -250px;
+    }
+}
+
+.airbubble1, .airbubble2, .airbubble3, .airbubble4 {
+    width: 30%;
+    position: absolute;
+}
+
+.airbubble1 {
+    left: 9%;
+    top: 34%;
+}
+
+.airbubble2 {
+    right: 12%;
+    top: 34%;
+}
+
+.airbubble3 {
+    left: 4.5%;
+    top: 0%;
+}
+
+.airbubble4 {
+    right: 4.5%;
+    top: 0%;
+}
+
+</style >
+<%--Trúc Xanh--% >
+<style >
+.truc_xanh {
+    background-image: url(/images/images_ChuDe/img_TrucXanh/rung2.png);
+}
+
+.alice {
+    top: 49%;
+    left: 17%;
+    width: 22%;
+    z-index: 2;
+}
+
+    .alice img, .butterfly2 img, .butterfly3 img, .buom2 img {
+        width: 66%;
+    }
+
+.tien {
+    top: 16%;
+    right: 21%;
+    transform: rotateY(180deg);
+    z-index: 2;
+}
+
+
+.rabbit {
+    top: 53%;
+    width: 16%;
+    right: 20%;
+    transform: rotateY(180deg);
+}
+
+.rabbit, .tien, .alice, .butterfly2, .butterfly3, .buom2 {
+    position: absolute;
+}
+
+.butterfly2, .butterfly3, .buom2 {
+    width: 30%;
+}
+
+.butterfly2 {
+    right: 25%;
+    top: 6%;
+}
+
+.butterfly3 {
+    left: 20.5%;
+    top: 6%;
+}
+
+.buom2 {
+    right: 65.5%;
+    top: 12%;
+}
+
+</style >
+<%--Ghép hình--% >
+<style >
+.ghep_hinh {
+    background-image: url(/images/images_ChuDe/img_ChuDe5/background_1.gif);
+}
+
+.dragon, .dragon2, .dragon3, .dragon4 {
+    position: absolute;
+}
+
+    .dragon img, .dragon2 img, .dragon3 img, .dragon4 img {
+        width: 100%;
+    }
+
+.dragon {
+    width: 10%;
+    right: 0;
+    top: 57%;
+    font-family: Arial;
+    animation: dragon 200s infinite;
+}
+
+@keyframes dragon {
+    49% {
+        right: calc(100% - 20em);
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+.dragon img {
+    transform: scaleX(1);
+}
+
+.dragon2 {
+    width: 15%;
+    right: 12%;
+    top: 26%;
+}
+
+.dragon3 {
+    width: 100%;
+    left: 0;
+    background: url(../images/images_ChuDe/img_ChuDe5/3.gif) 0 no-repeat;
+    background-size: 17.5%;
+    animation: dragon3 30s linear infinite;
+    height: 100vh;
+    transform: rotateY(-180deg);
+}
+
+@keyframes dragon3 {
+    0% {
+        background-position-x: 2000px;
+        background-position-y: 1000px;
+    }
+
+    100% {
+        background-position-x: 0px;
+        background-position-y: -250px;
+    }
+}
+
+.dragon4 {
+    width: 12%;
+    left: 0;
+    top: 73%;
+    font-family: Arial;
+    animation: dragon4 200s infinite;
+}
+
+@keyframes dragon4 {
+    49% {
+        left: calc(100% - 20em);
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+.dragon4 img {
+    transform: scaleX(-1);
+}
+
+@media (max-width:1910px) {
+    .dragon2 {
+        display: none;
+    }
+}
+
+</style >
+<%--Nối--% >
+<style >
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+
+.noi {
+    background-image: url(/images/images_ChuDe/img_ChuDe6/background1.gif);
+}
+
+.lacda, .airplane {
+    position: absolute;
+}
+
+.lacda {
+    width: 12%;
+    left: 42%;
+    top: 31%;
+}
+
+    .airplane img,
+    .lacda img {
+        width: 100%;
+    }
+
+.airplane {
+    width: 6%;
+    font-family: Arial;
+    animation: airplane 30s infinite;
+    top: -1%;
+}
+
+@keyframes airplane {
+    0% {
+        right: 0%;
+    }
+
+    100% {
+        right: 140%;
+    }
+}
+/*Di Chuyển Chậm slide*/
+/*.owl-stage {*/
+transition: all 4s ease 0s !important;
+}
+
+</style >
+<%-- /*trắc nghiệm*/ --% >
+<style >
+.trac_nghiem {
+    background-image: url(/images/images_ChuDe/tracnghiem/background.gif);
+}
+
+.tracnghiem-custom {
+    width: 100% !important;
+    margin-top: -18% !important;
+}
+
+.video-wrapper {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+video {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    min-height: 100%;
+}
+
+video {
+    display: inline-block;
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+    background: none;
+    -webkit-appearance: button;
+    font-size: 13rem;
+    color: brown;
+    margin-top: -9%;
+}

@@ -1,0 +1,303 @@
+.nav-main {
+    background-color: var(--color_main);
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index:100;
+}
+#bc1, .btn{
+    display: none;
+}
+.nav-main label {
+}
+.nav-main > ul{
+    text-align: center;
+}
+.nav-main > ul > li{
+    display:  inline-block;
+    list-style: none;
+    position: relative;
+}
+.nav-main > ul > li >a{
+    color: #fff;
+    line-height: 60px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none; 
+    padding: 0 15px;
+
+}
+
+.nav-main .ul_sub {
+    clear: both;
+    list-style-type: none;
+    position: absolute;
+    left: 10%;
+    top: 100%;
+    width: max-content;
+    box-shadow: 0 0 10px #0000004a;
+    display: none;
+    text-align: left;
+}
+.ul_sub a{
+    color: #000;
+    font-size: 0.9rem;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+#bc2{
+    display: none;
+}
+
+.clogo_sub{
+    width: 150px;
+    margin: auto;
+    text-align: center;
+    display: none;
+}
+
+.sub{
+    font-size: 14px;
+    padding: 0 13px;
+    border: 0;
+    background-color: var(--color_main);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.sub:hover{
+    opacity: 0.5;
+}
+#bc2:checked ~ .search-box{
+    top: 62px;
+    display: block;
+}
+@media(min-width:1053px){
+    .nav-main li:hover .ul_sub{
+        display: block;
+        background: #fff;
+        z-index: 10;
+    }
+    .nav-main > ul li:hover {
+        background-color: #ff3e3e;
+    }
+    .ul_sub  li:hover a{
+        color: #fff;
+    }
+}
+@media(max-width:1052px){
+    .clogo_sub{
+        display: block;
+    }
+    header{
+        display: none;
+    }
+    
+    .nav-main{
+        background: #fff;
+        border-bottom: 2px solid #8e191b;
+        height: 85px;
+    }
+    .nav-main > ul{
+        position: fixed;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--color_main) ;
+        text-align: center;
+        transition: all .5s;
+        left:-1000px ;
+        text-align: left;
+        z-index: 10;
+        overflow-y: auto;
+    }
+    .nav-main > ul > li{
+        display: block;
+        padding: 5px 0;
+        position: relative;
+    }
+    .nav-main > ul > li:hover{
+        background: none;
+    }
+    
+    .nav-main li:hover .ul_sub{
+        position: static;
+        display: block;
+        background-color: aliceblue;
+        width: 100%;
+    }
+    .nav-main .ul_sub{
+        
+    }
+    
+     .nav-main .btn{
+        position: absolute;
+        display: block;
+        width: 85px;
+        height: 85px;
+        line-height: 85px;
+        font-size: 40px;
+        color: #8e191b;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+    #bc1:checked ~ul{
+            left: 0;
+            top: 0;
+    }
+   
+
+}
+#btnScrollTop {
+    display: none;
+    position: fixed;
+    bottom: 5%;
+    height: 50px;
+    width: 50px;
+    right: 2%;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 50%;
+  }
+
+  #btnScrollTop:hover {
+    transform: scale(1.2);
+  }
+.btn-dangnhap {
+    color: #fff;
+    line-height: 60px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0 15px;
+    text-align: right;
+}
+
+    .btn-dangnhap:hover {
+        cursor: pointer;
+    }
+
+.form-popup {
+    position: fixed;
+    z-index: 102;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+    border-radius: 20px;
+    box-shadow: 0 0 10px #7f7f7f;
+    padding: 20px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 385px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    line-height: 1.6;
+}
+
+.abcc {
+    display: none;
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover, .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+/* Set a style for the submit/login button */
+.form-container .btn-login {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    display: unset;
+    border-radius: 7px;
+}
+/* Add some hover effects to buttons */
+    .form-container .btn-login:hover, .open-button:hover {
+        opacity: 1;
+        border-radius: 7px;
+    }
+ .btnavt {
+    left: auto !important;
+    right: 0;
+    min-width: 200px;
+    line-height: 1.9;
+    border-radius: 6px;
+}
+.iconuser {
+    font-size: 35px;
+}
+.divider {
+    height: 1px;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.tenuser {
+    position: fixed;
+    top: -50%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+    white-space: nowrap;
+    transform: translateX(-50px);   
+}
+.icon-user {
+    transform: translateX(36px);
+    padding: 12px 10px 13px 10px;
+    color:white;
+}

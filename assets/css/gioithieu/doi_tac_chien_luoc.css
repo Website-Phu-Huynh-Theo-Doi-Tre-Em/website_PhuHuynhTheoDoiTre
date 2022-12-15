@@ -1,0 +1,30 @@
+﻿body {
+}
+.container {
+    padding: 5% 10%;
+}
+
+.content_h3 {
+    color: #B51A1A;
+    margin: 5px 0px 0px;
+    font-size: 24.5px;
+    border-bottom: 2px solid #B51A1A;
+}
+p {
+    margin: 0px 0px 13px;
+    /*padding: 10px 0px 0px;*/
+   
+}
+
+span{
+    font-family: Arial;
+    font-size: 18px;
+    
+}
+
+.main_content {
+    display: flex;
+    /* justify-content: space-evenly;*/
+    text-align: justify;
+    flex-direction: column;
+}

@@ -1,0 +1,960 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.floating1 {
+    animation-name: floating1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes floating1 {
+    0% {
+        transform: translate(0, 30px);
+    }
+
+    50% {
+        transform: translate(0, -0px);
+    }
+
+    100% {
+        transform: translate(0, 30px);
+    }
+}
+
+.floating {
+    animation-name: floating;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 30px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+
+.nha-1 img, .nha-2 img, .nha-3 img, .nha-4 img, .nha-5 img, .nha-6 img, .nha-7 img, .nha-8 img, .nha-9 img, .nha-10 img, .nha-11 img, .nha-12 img, .nha-13 img, .nha-14 img {
+    position: absolute;
+}
+
+.gif-con-cho {
+    top: 35% !important;
+    left: 22% !important;
+    width: 3% !important;
+}
+
+.gif-hao-quang {
+    z-index: -5;
+    animation: xoayvong 8s linear 0s infinite;
+    -webkit-animation: xoayvong 8s linear 0s infinite;
+    -moz-animation: xoayvong 8s linear 0s infinite;
+    -o-animation: xoayvong 8s linear 0s infinite;
+}
+
+.gif-cham-hoi {
+    top: 33% !important;
+    width: 3% !important;
+    left: 92% !important;
+}
+
+.gif-blink {
+    top: 8% !important;
+    width: 31% !important;
+    left: 63% !important;
+    z-index: -27;
+}
+
+.gif-not-nhac {
+    top: 11% !important;
+    z-index: 100 !important;
+    left: 56% !important;
+    width: 4% !important;
+}
+
+.gif-den {
+    top: 61.3% !important;
+    left: 52.3% !important;
+    width: 1% !important;
+}
+
+.nha-1 img {
+    top: 6%;
+    left: 8%;
+    width: 14%;
+}
+
+.nha-1 .nha-1-gif {
+    top: 9%;
+    left: 13%;
+    width: 6%;
+}
+
+.nha-1 .nha-1-text {
+    top: 0%;
+    left: 6.5%;
+    width: 17%;
+}
+
+.nha-2 img {
+    top: 2%;
+    left: 25%;
+    width: 13%;
+}
+
+.nha-2 .nha-2-gif {
+    top: 13%;
+    left: 34.1%;
+    width: 8%;
+}
+
+.nha-2 .nha-2-text {
+    top: 2%;
+    left: 26%;
+    width: 11%;
+}
+
+
+.nha-3 img {
+    top: 30%;
+    left: 14.5%;
+    width: 13%;
+}
+
+.nha-3 .nha-3-gif {
+    top: 34%;
+    left: 26%;
+    width: 3%;
+}
+
+.nha-3 .nha-3-text {
+    top: 27%;
+    left: 16%;
+    width: 10%;
+}
+
+.nha-4 img {
+    top: 30%;
+    left: 1.2%;
+    width: 12%;
+}
+
+.nha-4 .nha-4-gif {
+    top: 33%;
+    left: 7%;
+    width: 3%;
+}
+
+.nha-4 .nha-4-text {
+    top: 25%;
+    left: 2%;
+    width: 11%;
+}
+
+.nha-5 img {
+    top: 46%;
+    left: 7.2%;
+    width: 13.5%;
+}
+
+.nha-5 .nha-5-gif {
+    top: 64.8%;
+    left: 6.5%;
+    width: 6%;
+}
+
+.nha-5 .nha-5-text {
+    top: 44%;
+    left: 7.4%;
+    width: 11.9%;
+}
+
+.nha-6 img {
+    top: 58%;
+    left: 28%;
+    width: 14%;
+}
+
+.nha-6 .nha-6-gif {
+    top: 65%;
+    left: 33%;
+    width: 9%;
+}
+
+.nha-6 .nha-6-text {
+    top: 58%;
+    left: 29%;
+    width: 11%;
+}
+
+.nha-7 img {
+    top: 58%;
+    left: 47%;
+    width: 12.5%;
+}
+
+.nha-7 .nha-7-gif {
+    top: 65%;
+    left: 61%;
+    width: 5%;
+}
+
+.nha-7 .nha-7-text {
+    top: 57%;
+    left: 47%;
+    width: 11%;
+}
+
+.nha-8 img {
+    top: 28%;
+    left: 39%;
+    width: 15.5%;
+}
+
+.nha-8 .nha-8-gif {
+    top: 22%;
+    left: 64%;
+    width: 7%;
+}
+
+.nha-8 .nha-8-text {
+    top: 26%;
+    left: 41%;
+    width: 10%;
+}
+
+.gif-mua {
+    top: 28% !important;
+    left: 42% !important;
+    width: 8% !important;
+}
+
+.nha-9 img {
+    top: 8%;
+    z-index: 100;
+    left: 51%;
+    width: 12%;
+}
+
+.nha-9 .nha-9-gif {
+    top: 45%;
+    left: 51%;
+    width: 4%;
+}
+
+.nha-9 .nha-9-text {
+    top: 7%;
+    left: 51.5%;
+    width: 11%;
+}
+
+.nha-10 img {
+    top: 33%;
+    width: 12%;
+    left: 71%;
+}
+
+.nha-10 .nha-10-gif {
+    left: 88%;
+    width: 11%;
+    top: 39%;
+}
+
+.nha-10 .nha-10-text {
+    top: 32%;
+    width: 9%;
+    left: 72%;
+}
+
+.nha-11 img {
+    top: 17%;
+    width: 12%;
+    left: 81%;
+}
+
+.nha-11 .nha-11-gif {
+    left: 75.2%;
+    width: 11%;
+    top: 17.2%;
+}
+
+.nha-11 .nha-11-text {
+    top: 15%;
+    width: 11%;
+    left: 81%;
+}
+
+.nha-12 img {
+    top: 9%;
+    width: 11.6%;
+    left: 68%;
+}
+
+.nha-12 .nha-11-gif {
+    left: 75.2%;
+    width: 11%;
+    top: 17.2%;
+}
+
+.nha-12 .nha-12-text {
+    top: 6%;
+    width: 12%;
+    left: 67%;
+}
+
+.nha-13 img {
+    top: 36%;
+    width: 13%;
+    left: 85%;
+}
+
+/*.nha-13 .nha-11-gif {
+    left: 75.2%;
+    width: 11%;
+    top: 17.2%;
+}*/
+
+.nha-13 .nha-13-text {
+    top: 35%;
+    width: 6%;
+    left: 88%;
+}
+
+.nha-14 img {
+    top: 57%;
+    width: 13%;
+    left: 78%;
+}
+
+.nha-14 .nha-14-text {
+    top: 56%;
+    width: 11%;
+    left: 79%;
+}
+
+@-webkit-keyframes xoayvong {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+/* Standard syntax */
+@keyframes xoayvong {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+
+.nha-10 .nha-10-gif {
+    animation: xoayvong 7s linear 0s infinite;
+    -webkit-animation: xoayvong 7s linear 0s infinite;
+    -moz-animation: xoayvong 7s linear 0s infinite;
+    -o-animation: xoayvong 7s linear 0s infinite;
+}
+
+.cloudy img {
+    z-index: 1000000;
+    position: absolute;
+}
+
+.may-1 {
+    animation: left 3s forwards;
+    transition: 1.5s;
+    top: 16%;
+    left: 27%;
+    width: 114%;
+}
+
+.may-2 {
+    animation: left 5s forwards;
+    transition: 2.5s;
+    top: -16%;
+    left: 27%;
+    width: 109%;
+}
+
+.may-3 {
+    animation: left 4s forwards;
+    transition: 0.5s;
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+    top: 10%;
+    left: -34%;
+    width: 127%;
+}
+
+.may-4 {
+    animation: right 3s forwards;
+    transition: 3.5s;
+    top: 16%;
+    left: -31%;
+    width: 50%;
+}
+
+.may-5 {
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+    animation: right 4s forwards;
+    transition: 1.5s;
+    top: 2%;
+    left: -9%;
+    width: 59%;
+}
+
+.may-6 {
+    animation: right 4s forwards;
+    transition: 1.5s;
+    top: 11%;
+    left: -26%;
+    width: 69%;
+}
+
+.may-7 {
+    animation: right 5s forwards;
+    transition: 0.5s;
+    top: 12%;
+    left: 17%;
+    width: 78%;
+}
+
+.may-8 {
+    animation: right 6s forwards;
+    transition: 0.5s;
+    animation: left 4s forwards;
+    transition: 0.5s;
+    top: -12%;
+    left: 4%;
+    width: 78%;
+}
+
+@keyframes left {
+    0% {
+        transform: translateX(-200px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes right {
+    0% {
+        transform: translateX(200px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+/* Skew Forward */
+.skew-forward img {
+    display: inline-block;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transform-origin: 0 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.skew-forward:hover img {
+    transform: skew(-10deg);
+}
+
+/* Wobble Vertical */
+@keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(8px);
+    }
+
+    33.3% {
+        transform: translateY(-6px);
+    }
+
+    49.95% {
+        transform: translateY(4px);
+    }
+
+    66.6% {
+        transform: translateY(-2px);
+    }
+
+    83.25% {
+        transform: translateY(1px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.wobble-vertical img {
+    display: inline-block;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.wobble-vertical:hover img {
+    animation-name: wobble-vertical;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.card:hover:after {
+    /*transform: translateY(-50%);*/
+    background-image: url('images/nha/anhdong/mam-non.webp');
+}
+/* Wobble Top */
+@keyframes wobble-top {
+    16.65% {
+        transform: skew(-12deg);
+    }
+
+    33.3% {
+        transform: skew(10deg);
+    }
+
+    49.95% {
+        transform: skew(-6deg);
+    }
+
+    66.6% {
+        transform: skew(4deg);
+    }
+
+    83.25% {
+        transform: skew(-2deg);
+    }
+
+    100% {
+        transform: skew(0);
+    }
+}
+
+.wobble-top img {
+    transform-origin: 0 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform: translateZ(0);
+}
+
+.wobble-top:hover img {
+    animation-name: wobble-top;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.accordion {
+    display: inline-block;
+}
+
+    .accordion:hover .accordion-content {
+        max-height: 300px;
+    }
+
+.accordion-content {
+    -webkit-transition: max-height 1s;
+    -moz-transition: max-height 1s;
+    -ms-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    transition: max-height 1s;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.accordion-toggle {
+    -webkit-transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    -ms-transition: background 0.1s linear;
+    -o-transition: background 0.1s linear;
+    transition: background 0.1s linear;
+}
+
+/*.accordion-toggle:hover {
+                    background: #00727d;
+                }*/
+/*fix man hinh*/
+/*@media (max-width: 1400px){
+    .gif-con-cho {
+        top: 35% !important;
+        left: 22% !important;
+        width: 3% !important;
+    }
+
+    .gif-hao-quang {
+        z-index: -5;
+        animation: xoayvong 8s linear 0s infinite;
+        -webkit-animation: xoayvong 8s linear 0s infinite;
+        -moz-animation: xoayvong 8s linear 0s infinite;
+        -o-animation: xoayvong 8s linear 0s infinite;
+    }
+
+    .gif-cham-hoi {
+        top: 37% !important;
+        width: 3% !important;
+        left: 95% !important;
+    }
+
+    .gif-blink {
+        top: 8% !important;
+        width: 31% !important;
+        left: 63% !important;
+        z-index: -27;
+    }
+
+    .gif-not-nhac {
+        top: 11% !important;
+        z-index: 100 !important;
+        left: 56% !important;
+        width: 4% !important;
+    }
+
+    .gif-den {
+        top: 55.3% !important;
+        left: 40.3% !important;
+        width: 1% !important;
+    }
+
+    .nha-1 img {
+        top: 6%;
+        left: 8%;
+        width: 14%;
+    }
+
+    .nha-1 .nha-1-gif {
+        top: 9%;
+        left: 13%;
+        width: 6%;
+    }
+
+    .nha-1 .nha-1-text {
+        top: 0%;
+        left: 6.5%;
+        width: 17%;
+    }
+
+    .nha-2 img {
+        top: 8%;
+        left: 21%;
+        width: 13%;
+    }
+
+    .nha-2 .nha-2-gif {
+        top: 13%;
+        left: 34.1%;
+        width: 8%;
+    }
+
+    .nha-2 .nha-2-text {
+        top: 7%;
+        left: 22%;
+        width: 11%;
+    }
+
+
+    .nha-3 img {
+        top: 30%;
+        left: 0.5%;
+        width: 13%;
+    }
+
+    .nha-3 .nha-3-gif {
+        top: 34%;
+        left: 26%;
+        width: 3%;
+    }
+
+    .nha-3 .nha-3-text {
+        top: 27%;
+        left: 2%;
+        width: 10%;
+    }
+
+    .nha-4 img {
+        top: 56%;
+        left: 1.2%;
+        width: 12%;
+    }
+
+    .nha-4 .nha-4-gif {
+        top: 33%;
+        left: 7%;
+        width: 3%;
+    }
+
+    .nha-4 .nha-4-text {
+        top: 51%;
+        left: 1%;
+        width: 11%;
+    }
+
+    .nha-5 img {
+        top: 64%;
+        left: 20.2%;
+        width: 13.5%;
+    }
+
+    .nha-5 .nha-5-gif {
+        top: 64.8%;
+        left: 6.5%;
+        width: 6%;
+    }
+
+    .nha-5 .nha-5-text {
+        top: 62%;
+        left: 20.4%;
+        width: 11.9%;
+    }
+
+    .nha-6 img {
+        top: 66%;
+        left: 47%;
+        width: 14%;
+    }
+
+    .nha-6 .nha-6-gif {
+        top: 65%;
+        left: 33%;
+        width: 9%;
+    }
+
+    .nha-6 .nha-6-text {
+        top: 63%;
+        left: 48%;
+        width: 11%;
+    }
+
+    .nha-7 img {
+        top: 53%;
+        left: 35%;
+        width: 12.5%;
+    }
+
+    .nha-7 .nha-7-gif {
+        top: 65%;
+        left: 61%;
+        width: 5%;
+    }
+
+    .nha-7 .nha-7-text {
+        top: 53%;
+        left: 35%;
+        width: 11%;
+    }
+
+    .nha-8 img {
+        top: 35%;
+        left: 36%;
+        width: 15.5%;
+    }
+
+    .nha-8 .nha-8-gif {
+        top: 22%;
+        left: 64%;
+        width: 7%;
+    }
+
+    .nha-8 .nha-8-text {
+        top: 33%;
+        left: 39%;
+        width: 10%;
+    }
+
+    .gif-mua {
+        top: 35% !important;
+        left: 39% !important;
+        width: 8% !important;
+    }
+
+    .nha-9 img {
+        top: 22%;
+        z-index: 100;
+        left: 50%;
+        width: 14%;
+    }
+
+    .nha-9 .nha-9-gif {
+        top: 45%;
+        left: 51%;
+        width: 4%;
+    }
+
+    .nha-9 .nha-9-text {
+        top: 21%;
+        left: 51.5%;
+        width: 11%;
+    }
+
+    .nha-10 img {
+        top: 36%;
+        width: 12%;
+        left: 77%;
+    }
+
+    .nha-10 .nha-10-gif {
+        left: 88%;
+        width: 11%;
+        top: 39%;
+    }
+
+    .nha-10 .nha-10-text {
+        top: 36%;
+        width: 9%;
+        left: 78%;
+    }
+
+    .nha-11 img {
+        top: 17%;
+        width: 12%;
+        left: 89%;
+    }
+
+    .nha-11 .nha-11-gif {
+        left: 75.2%;
+        width: 11%;
+        top: 17.2%;
+    }
+
+    .nha-11 .nha-11-text {
+        top: 15%;
+        width: 11%;
+        left: 89%;
+    }
+
+    .nha-12 img {
+        top: 20%;
+        width: 11.6%;
+        left: 76%;
+    }
+
+    .nha-12 .nha-11-gif {
+        left: 75.2%;
+        width: 11%;
+        top: 17.2%;
+    }
+
+    .nha-12 .nha-12-text {
+        top: 18%;
+        width: 12%;
+        left: 76%;
+    }
+
+    .nha-13 img {
+        top: 39%;
+        width: 13%;
+        left: 88%;
+    }*/
+
+    /*.nha-13 .nha-11-gif {
+    left: 75.2%;
+    width: 11%;
+    top: 17.2%;
+}*/
+
+    /*.nha-13 .nha-13-text {
+        top: 39%;
+        width: 6%;
+        left: 92%;
+    }
+
+    .nha-14 img {
+        top: 57%;
+        width: 13%;
+        left: 88%;
+    }
+
+    .nha-14 .nha-14-text {
+        top: 56%;
+        width: 11%;
+        left: 89%;
+    }
+}*/

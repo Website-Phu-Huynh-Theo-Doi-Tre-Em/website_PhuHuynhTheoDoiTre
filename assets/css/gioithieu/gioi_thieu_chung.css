@@ -1,0 +1,68 @@
+﻿.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../../../image/gioi_thieu/gioi_thieu_chung/background.jpg);
+    background-size: contain;
+    padding-bottom: 20px;
+}
+
+.image_and_video {
+    display: flex;
+    margin-top: 20px;
+    margin-right: 20px;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.images_video_content {
+    width: 63%;
+}
+.section_images_1 {
+    width: 50%;
+}
+.section_images_2 {
+    width: 50%;
+    margin-right: 20px;
+}
+
+.section_images_3 {
+    width: 45%;
+    height: 389px;
+    margin-left: 20px;
+}
+.contain_video {
+    width: 148%;
+    height: 413px;
+}
+.main_content
+{
+    width:50%;
+}
+.images_1 {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 35px;
+    margin-right: 20px;
+}
+.images_2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.noi_dung p {
+    color: black;
+    font-size: 16px;
+    padding-top: 46px;
+    padding-left: 36px;
+    width: 92%;
+    text-align: justify;
+    line-height: 30px;
+}
+.title_gioithieu h3 {
+    color: #b51a1a;
+    font-size: 76px;
+    padding-left: 30px;
+}

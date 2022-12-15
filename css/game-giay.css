@@ -1,0 +1,151 @@
+﻿.Danh-muc {
+    background: antiquewhite;
+    margin: 3% 1% 1% 1%;
+    padding: 1%;
+    box-shadow: 1px;
+    align-items: center;
+    box-shadow: 1px 2px 12px 2px #27261d0d;
+}
+video{
+    background: #ffffff;
+}
+.item img {
+    border: 5px solid #007aee;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 6px 8px 17px -10px grey;
+}
+
+.owl-dots {
+    display: none;
+}
+
+.owl-prev {
+    position: absolute;
+    margin-top: -12% !important;
+    margin-left: -2.5% !important;
+}
+
+.owl-next {
+    margin-top: -12% !important;
+    margin-left: 99% !important;
+    position: absolute;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: #a73d3d;
+    font-size: 116px;
+    margin: 5px;
+    border: none;
+    padding: 4px 7px;
+    background: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+    .owl-theme .owl-nav [class*=owl-]:hover {
+        background: none;
+        outline: none;
+        color: #f00;
+        border: none;
+        text-decoration: none;
+    }
+
+    .owl-theme .owl-nav [class*=owl-]:focus {
+        background: none;
+        outline: none;
+        color: #f00;
+        border: none;
+        text-decoration: none;
+    }
+
+.owl-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    overflow: hidden;
+    background-position: center;
+    background-image: url(/images/images_background/ten-lua.png);
+    background-size: cover;
+}
+
+.block-chinh {
+    padding-bottom: 20%;
+    height: 43rem;
+    margin: 1%;
+    border-radius: 12px;
+    border: 5px solid #30dcea;
+    background-color: #f3fcfde6;
+    box-shadow: 1px 2px 12px 2px #27261d0d;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ten {
+    width: 100%;
+    margin-bottom: -68px;
+    display: flex;
+    justify-content: center;
+}
+
+    .ten img {
+        z-index: 1000;
+        width: 30%;
+    }
+
+.block-giay {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.div_content {
+    width: 100%;
+}
+
+.block-video {
+    margin: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .block-video video {
+        box-shadow: 2px 4px 13px 5px #021e1e47;
+        /*box-shadow: 1px 2px 12px 2px #27261d0d;*/
+        border-radius: 10px;
+    }
+
+.block-hinh img {
+    z-index: 1000;
+}
+
+.block-ten span {
+    position: fixed;
+    font-family: inherit;
+    margin-left: 14%;
+    font-size: 23px;
+    width: 9%;
+    font-weight: 600;
+    margin-top: 17%;
+    z-index: 100000;
+}
+/*.block-ten{
+            background-position: center;
+            background-image: url(images/images_background/nhan.png);
+            background-size: cover;
+        }*/
+.item a img:hover {
+    transition-duration: 0.5s;
+    transform: scale(1.1);
+}
+
+.owl-stage {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+}

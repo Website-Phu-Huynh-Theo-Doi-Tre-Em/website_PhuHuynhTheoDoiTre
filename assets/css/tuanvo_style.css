@@ -1,0 +1,35 @@
+﻿/*Comom*/
+.border-left {
+    border-left: 2px solid #ccc;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/*-----------*/
+
+.breadcrumb {
+    width: 80%;
+    height: 40px;
+    background-color: #eee;
+    margin: auto;
+    margin-bottom: 20px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+    .breadcrumb p {
+        font-weight: 300;
+        font-size: 0.8rem;
+    }
+.box-tt-baiviet .text-tt {
+    font-weight: 300;
+    font-style: oblique;
+}
+.box-content-baiviet .baiviet-img {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}

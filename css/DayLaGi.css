@@ -1,0 +1,65 @@
+﻿*{
+    margin:0;
+    padding:0;
+}
+body {
+    /*background-image: url('../web_module/vietnhatkids_Game/game_DayLaGi/image/background.png') !important;*/
+    /*background-image: url('../images/images_background/br-lan-4.png');*/
+    background-image: url('../web_module/vietnhatkids_Game/game_DayLaGi/image/bg2.png');
+    /*background-image: url('../web_module/vietnhatkids_Game/game_DayLaGi/image/bg3.jpg');*/
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.text_daylagi{
+    width: 25%;
+    margin-left:37%;
+    display:flex;
+    justify-content:center;
+}
+.cuc_gach{
+    width:20%;
+}
+.landscape {
+    /*đọc lại*/
+    /*đọc thêm phần position*/
+    display: flex;
+    justify-content: center;
+    margin-top:2%;
+}
+.speaker{
+    transition: transform 0.3s;
+    width:20%;
+}
+.speaker:hover {
+    transform: scale(1.2);
+}
+.loa{
+    width:157%;
+    display:flex;
+    justify-content:center;
+}
+.chuc-nang img{
+    transition: transform 0.1s;
+    width:20%;
+}
+.chuc-nang img:hover{
+    transform: scale(1.1);
+}
+.chuc-nang{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5%;
+    left: 85%;
+    width: 50%;
+}
+.Backbutton {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    width: 6%;
+}

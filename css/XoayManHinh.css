@@ -1,0 +1,43 @@
+﻿/*Xoay Màn HÌnh*/
+@media screen and (orientation: portrait) {
+    html {
+        /* Rotate the content container */
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        /* Set content width to viewport height */
+        width: 100vh;
+        /* Set content height to viewport width */
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    form#div_game {
+        height: 100vw !important;
+        display: block;
+    }
+    .frame-game {
+        height: 100vw !important;
+    }
+
+    .owl-stage-outer {
+        height: 100vw !important;
+    }
+
+    @keyframes floating-right {
+        49% {
+            right: calc(100% - 20em);
+            transform: scaleX(1);
+        }
+
+        50% {
+            transform: scaleX(-1);
+        }
+
+        100% {
+            transform: scaleX(-1);
+        }
+    }
+}

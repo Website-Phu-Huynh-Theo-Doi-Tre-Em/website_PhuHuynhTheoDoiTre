@@ -1,0 +1,27 @@
+﻿body {
+}
+.container {
+    padding: 5% 10%;
+}
+
+.content_h3 {
+    color: #B51A1A;
+    margin: 5px 0px 0px;
+    font-size: 24.5px;
+    border-bottom: 2px solid #B51A1A;
+}
+span {
+    font-family: Times New Roman;
+    font-weight: bolder;
+    font-size: 26px;
+}
+p{
+    padding-top:15px;
+}
+.main_header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}

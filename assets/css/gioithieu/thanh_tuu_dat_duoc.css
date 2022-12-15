@@ -1,0 +1,53 @@
+﻿
+.container {
+    padding: 5% 10%;
+}
+
+.content_h3 {
+    color: #B51A1A;
+    margin: 5px 0px 0px;
+    font-size: 24.5px;
+    border-bottom: 2px solid #B51A1A;
+}
+
+.container_video {
+    width: fit-content;
+    border-radius: 60%;
+}
+
+    .container_video iframe {
+        border-radius: 1.3rem;
+        box-shadow: 0 0 14px rgb(0 0 0 / 60%);
+        width: 100%;
+        height: 590px;
+    }
+
+.container_content span p {
+    padding-top: 17%;
+    padding-right: 15%;
+    /* padding-bottom: 29px; */
+    padding-left: 13%;
+    text-align: justify;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin-top: 29px;
+}
+
+.container_content {
+    background-image: url(../../../image/gioi_thieu/khung_csvc.png);
+    background-repeat: no-repeat;
+    width: 468px;
+    height: 600px;
+    background-size: contain;
+    background-clip: border-box;
+    color: white;
+}
+
+.container_video {
+    width: 57%;
+}

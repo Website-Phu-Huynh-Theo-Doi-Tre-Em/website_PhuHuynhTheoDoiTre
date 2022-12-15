@@ -1,0 +1,46 @@
+﻿/*.fixed__congvan {
+    position: relative;
+}
+
+    .fixed__congvan object {
+        position: relative;
+    }
+.fixed__congvan--title{
+    position:absolute;
+    top:20%;
+    left:0;
+    z-index:1;
+}
+.darkHeader{
+    display:none;
+}*/
+
+/*.fixed__congvan--title {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    transform: rotate(-45deg);
+    z-index:1;
+}
+
+.newClass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin: 0;
+    padding: 0px 150px;
+    animation: 1s mymove ease;
+}*/
+/*.fixed__congvan:before{
+    content:"";
+    position:absolute;
+    top:-23%;
+    left:0;
+    width:100%;
+    height:30%;
+    display:block;
+    background-color:transparent;
+    z-index:2;
+}*/
+/**/

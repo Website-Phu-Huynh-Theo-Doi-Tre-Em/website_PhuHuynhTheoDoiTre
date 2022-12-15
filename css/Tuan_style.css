@@ -1,0 +1,177 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.TrangChu_Chinh {
+    width: 1450px;
+    height: 5350px;
+    background-size: 100% 100%;
+    margin: auto;
+}
+/*Phần trang trí trang chủ*/
+.kv_trangChu {
+    position: absolute;
+    width: 1450px;
+    height: 850px;
+    top: 4528px;
+}
+
+.img_quaCauTB {
+    width: 150px;
+    position: absolute;
+    top: 0px;
+    left: 850px;
+}
+
+.img_nhanVat {
+    width: 80px;
+    position: absolute;
+    top: 537px;
+    left: 978px;
+}
+
+.img_loGo {
+    width: 115px;
+    position: absolute;
+    top: 545px;
+    left: 527px;
+}
+/*Phần danh sách game*/
+.img_game {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.img:hover {
+    transform: scale(1.1);
+}
+
+.img_so_t {
+    top: 2610px;
+    left: 710px;
+}
+
+.img_hoctap_t {
+    top: 2225px;
+    left: 710px;
+}
+
+.img_dongvat_t {
+    top: 2380px;
+    left: 710px;
+}
+
+.img_giaothong_t {
+    top: 2480px;
+    left: 710px;
+}
+
+.img_ngoinha_t {
+    top: 2720px;
+    left: 710px;
+}
+
+@keyframes imgbutton {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    ...
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    ...
+}
+/*------------------------------------------*/
+.btnHome {
+    width: 7%;
+    position: fixed;
+    top: 1%;
+    z-index: 10;
+}
+
+    .btnHome:hover {
+        -ms-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+
+
+/*------------------------------------------*/
+#set-sky-time {
+    background-image: linear-gradient(#65d4ff, #83d0f1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+}
+
+#set-cloud-time {
+    background: url('web_module/vietnhatkids_Game/game_SoHoc/image_SoHoc/cloud-morning.png');
+    animation: set-cloud 150s linear infinite;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    position: fixed;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+}
+
+#set-cloud-time-1 {
+    background: url('web_module/vietnhatkids_Game/game_SoHoc/image_SoHoc/cloud-morning-1.png');
+    animation: set-cloud 100s linear infinite;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    position: fixed;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.list-game {
+    background-image: url('web_module/vietnhatkids_Game/game_SoHoc/image_SoHoc/game-list_3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+}
+
+@-webkit-keyframes set-cloud {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 0;
+    }
+
+    ;
+}

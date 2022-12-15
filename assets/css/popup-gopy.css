@@ -1,0 +1,92 @@
+﻿#from-popup {
+    position: fixed;
+    width: 500px;
+    z-index: 101;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    box-shadow: 0 0 10px #7f7f7f;
+    padding:20px;
+    display:none;
+}
+    #from-popup .btn-close {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #8e0100;
+        color: #fff;
+        font-size: 30px;
+        line-height: 50px;
+        border: none;
+        font-weight: 800;
+    }
+        #from-popup .btn-close:hover ,#from-popup .submit {
+            cursor: pointer;
+            background-color: #ccc;
+        }
+#from-popup h1{
+    font-size:1.5rem;
+    text-align:center;
+    width:100%;
+    display:block;
+    position:relative;
+}
+    #from-popup h1::after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        height: 25%;
+        left: 0;
+        bottom: -45%;
+        background-color: #8e0100;
+        border-radius: 10px;
+    }
+    #from-popup table {
+        width: 100%;
+        position: relative;
+        margin-top: 5%;
+        border-spacing: 20px;
+    }
+        #from-popup table input{
+            height:30px;
+        }
+        #from-popup td {
+            margin: 1%;
+        }
+    #from-popup h6 {
+        color: #807e7e;
+    }
+    #from-popup input{
+        width:100%;
+        border:none;
+        border-bottom:1px solid #ccc;
+        padding-left:2%;
+        background:none;
+    }
+    #from-popup textarea {
+        display: block;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+        padding: 20px 0;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #CEDDE0;
+        resize: none;
+    }
+    #from-popup .submit {
+        width: 70px;
+        margin: auto;
+        text-align: center;
+        background: #8e0100;
+        color: #fff;
+        font-size: 1rem;
+        border: none;
+        padding: 2%;
+        border-radius: 10px;
+    }

@@ -1,0 +1,53 @@
+﻿body {
+    background-color: #F1F1F1;
+}
+.usercv{
+    display: flex;
+}
+.usercv {
+    width: 65%;
+    background-color: white;
+}
+.usercv-left {
+    width: 25%;
+    background-color: white;
+}
+.usercv-right{
+    width:50%;
+    background-color:white;
+    margin-left:25px;
+    box-shadow:
+}
+.user-avatar {
+    position: relative;
+    margin-bottom: 40px;
+}
+.level-avatar {
+    width: 130%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-40.5%);
+}
+.user-cv.container #user-profile #img-user {
+    height: 136.2px;
+    width: 136.2px;
+    border-radius: 50%;
+}
+.content-user {
+    height: 394px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.break-line {
+    height: 2px;
+    background-color: #d8d8d8;
+    margin: 10px 0 10px 15px;
+    clear: both;
+    float: left;
+    width: 90%;
+}
