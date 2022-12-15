@@ -24,7 +24,11 @@ using System.Reflection;
 [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="hethongquanlitre")]
 public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 {
-	
+	public dbcsdlDataContext() :
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["hethongquanlitreConnectionString"].ConnectionString, mappingSource)
+	{
+		OnCreated();
+	}
 	private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 	
   #region Extensibility Method Definitions
@@ -103,9 +107,7 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		OnCreated();
 	}
 
-    public dbcsdlDataContext()
-    {
-    }
+    
 
     public System.Data.Linq.Table<admin_GroupUser> admin_GroupUsers
 	{
