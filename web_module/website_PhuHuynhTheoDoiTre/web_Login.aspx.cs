@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class web_module_website_VietNhatKids_web_Login : System.Web.UI.Page
+public partial class web_module_website_web_Login : System.Web.UI.Page
 {
     dbcsdlDataContext db = new dbcsdlDataContext();
     cls_Alert alert = new cls_Alert();

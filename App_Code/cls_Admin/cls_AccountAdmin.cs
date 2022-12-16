@@ -26,10 +26,7 @@ public class cls_AccountAdmin
         insert.username_email = email;
         insert.groupuser_id = 3;
         insert.username_active = true;
-        insert.bophan_id = 4;//giáo viên mầm non
-        insert.coso_id = coso_id;
         insert.username_diachi = diachi;
-        insert.chucvu_id = "Giáo viên";
         db.admin_Users.InsertOnSubmit(insert);
         try
         {
@@ -50,7 +47,6 @@ public class cls_AccountAdmin
         update.username_phone = phone;
         update.username_email = email;
         update.username_active = true;
-        update.coso_id = coso_id;
         update.username_diachi = diachi;
         try
         {

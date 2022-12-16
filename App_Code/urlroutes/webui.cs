@@ -158,7 +158,7 @@ public class webui
 
         //Trang chủ- website
         list.Add("webvietnhatkidstrangchu|website-trang-chu|~/web_module/module_website/web_trangchu.aspx");
-        list.Add("webvietnhatkidsthongbao|website-vietnhatkids-thong-bao|~/web_module/website_VietNhatKids/Web_ThongBao_Navtab.aspx");
+        list.Add("webvietnhatkidsthongbao|website-thong-bao|~/web_module/website_VietNhatKids/Web_ThongBao_Navtab.aspx");
         list.Add("webvietnhatkidssukienhangtuan|website-vietnhatkids-su-kien-hang-tuan|~/web_module/website_VietNhatKids/web_SuKienHangTuan.aspx");
         list.Add("webvietnhatkidsablumAnh|website-vietnhatkids-ablum-anh|~/web_module/website_VietNhatKids/web_AblumAnh-Copy.aspx");
         list.Add("webvietnhatkidsansanguongsua|website-vietnhatkids-an-sang-uong-sua|~/web_module/website_VietNhatKids/Web_DangKyAnSang.aspx");

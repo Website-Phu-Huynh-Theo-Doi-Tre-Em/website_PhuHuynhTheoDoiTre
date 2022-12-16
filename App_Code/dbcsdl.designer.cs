@@ -24,11 +24,7 @@ using System.Reflection;
 [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="hethongquanlitre")]
 public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 {
-	public dbcsdlDataContext() :
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["hethongquanlitreConnectionString"].ConnectionString, mappingSource)
-	{
-		OnCreated();
-	}
+	
 	private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 	
   #region Extensibility Method Definitions
@@ -48,6 +44,9 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void InserttbDangKiAnhSang(tbDangKiAnhSang instance);
   partial void UpdatetbDangKiAnhSang(tbDangKiAnhSang instance);
   partial void DeletetbDangKiAnhSang(tbDangKiAnhSang instance);
+  partial void InserttbGiaoVien(tbGiaoVien instance);
+  partial void UpdatetbGiaoVien(tbGiaoVien instance);
+  partial void DeletetbGiaoVien(tbGiaoVien instance);
   partial void InserttbGiaoVienTrongLop(tbGiaoVienTrongLop instance);
   partial void UpdatetbGiaoVienTrongLop(tbGiaoVienTrongLop instance);
   partial void DeletetbGiaoVienTrongLop(tbGiaoVienTrongLop instance);
@@ -81,9 +80,15 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void InserttbThongBao(tbThongBao instance);
   partial void UpdatetbThongBao(tbThongBao instance);
   partial void DeletetbThongBao(tbThongBao instance);
-  #endregion
-	
-	public dbcsdlDataContext(string connection) : 
+    #endregion
+
+    public dbcsdlDataContext() :
+            base(global::System.Configuration.ConfigurationManager.ConnectionStrings["hethongquanlitreConnectionString"].ConnectionString, mappingSource)
+    {
+        OnCreated();
+    }
+
+    public dbcsdlDataContext(string connection) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
@@ -106,10 +111,8 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 	{
 		OnCreated();
 	}
-
-    
-
-    public System.Data.Linq.Table<admin_GroupUser> admin_GroupUsers
+	
+	public System.Data.Linq.Table<admin_GroupUser> admin_GroupUsers
 	{
 		get
 		{
@@ -146,6 +149,14 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tbDangKiAnhSang>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbGiaoVien> tbGiaoViens
+	{
+		get
+		{
+			return this.GetTable<tbGiaoVien>();
 		}
 	}
 	
@@ -1552,6 +1563,140 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 				this._ansang_trangthaiduyet = value;
 				this.SendPropertyChanged("ansang_trangthaiduyet");
 				this.Onansang_trangthaiduyetChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGiaoVien")]
+public partial class tbGiaoVien : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _giaovien_id;
+	
+	private string _giaovien_name;
+	
+	private System.Nullable<int> _khoi_id;
+	
+	private System.Nullable<int> _username_id;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ongiaovien_idChanging(int value);
+    partial void Ongiaovien_idChanged();
+    partial void Ongiaovien_nameChanging(string value);
+    partial void Ongiaovien_nameChanged();
+    partial void Onkhoi_idChanging(System.Nullable<int> value);
+    partial void Onkhoi_idChanged();
+    partial void Onusername_idChanging(System.Nullable<int> value);
+    partial void Onusername_idChanged();
+    #endregion
+	
+	public tbGiaoVien()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giaovien_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int giaovien_id
+	{
+		get
+		{
+			return this._giaovien_id;
+		}
+		set
+		{
+			if ((this._giaovien_id != value))
+			{
+				this.Ongiaovien_idChanging(value);
+				this.SendPropertyChanging();
+				this._giaovien_id = value;
+				this.SendPropertyChanged("giaovien_id");
+				this.Ongiaovien_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giaovien_name", DbType="NVarChar(MAX)")]
+	public string giaovien_name
+	{
+		get
+		{
+			return this._giaovien_name;
+		}
+		set
+		{
+			if ((this._giaovien_name != value))
+			{
+				this.Ongiaovien_nameChanging(value);
+				this.SendPropertyChanging();
+				this._giaovien_name = value;
+				this.SendPropertyChanged("giaovien_name");
+				this.Ongiaovien_nameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoi_id", DbType="Int")]
+	public System.Nullable<int> khoi_id
+	{
+		get
+		{
+			return this._khoi_id;
+		}
+		set
+		{
+			if ((this._khoi_id != value))
+			{
+				this.Onkhoi_idChanging(value);
+				this.SendPropertyChanging();
+				this._khoi_id = value;
+				this.SendPropertyChanged("khoi_id");
+				this.Onkhoi_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username_id", DbType="Int")]
+	public System.Nullable<int> username_id
+	{
+		get
+		{
+			return this._username_id;
+		}
+		set
+		{
+			if ((this._username_id != value))
+			{
+				this.Onusername_idChanging(value);
+				this.SendPropertyChanging();
+				this._username_id = value;
+				this.SendPropertyChanged("username_id");
+				this.Onusername_idChanged();
 			}
 		}
 	}
