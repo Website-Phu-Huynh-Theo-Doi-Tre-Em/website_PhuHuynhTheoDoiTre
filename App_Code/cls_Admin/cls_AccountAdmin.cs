@@ -16,7 +16,7 @@ public class cls_AccountAdmin
         // TODO: Add constructor logic here
         //
     }
-    public bool Linq_Them(string username, string pass, string fullnanme, string phone, string email, int coso_id, string diachi)
+    public bool Linq_Them(string username, string pass, string fullnanme, string phone, string email, string diachi)
     {
         admin_User insert = new admin_User();
         insert.username_username = username;
@@ -24,8 +24,6 @@ public class cls_AccountAdmin
         insert.username_fullname = fullnanme;
         insert.username_phone = phone;
         insert.username_email = email;
-        insert.groupuser_id = 3;
-        insert.username_active = true;
         insert.username_diachi = diachi;
         db.admin_Users.InsertOnSubmit(insert);
         try

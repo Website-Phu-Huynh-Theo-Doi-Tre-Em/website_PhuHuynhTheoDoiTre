@@ -20,11 +20,11 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
     {
         if (Request.Cookies["web_hocsinh"] != null)
         {
-           
+
             _sdtHocSinh = Request.Cookies["web_hocsinh"].Value;
             var getIDHS = (from u in db.tbHocSinhs
                            where u.hocsinh_taikhoan == _sdtHocSinh
-                           && u.hidden == null
+                           && u.hocsinh_tinhtrang == null
                            orderby u.hocsinh_id descending
                            select u).First();
             id_HocSinh = getIDHS.hocsinh_id;
@@ -43,19 +43,19 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
             //}
             var getListXinNghi = from hs in db.tbHocSinhs
                                  join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id //thong qua hstl để join phxn
-                                 join phxn in db.tbVietNhatKids_PhuHuynhXinNghis on hstl.hstl_id equals phxn.hstl_id
+                                 join phxn in db.tbPhuHuynhXinNghis on hstl.hstl_id equals phxn.hstl_id
                                  join nh in db.tbHoctap_NamHocs on phxn.namhoc_id equals nh.namhoc_id
                                  where hs.hocsinh_taikhoan == _sdtHocSinh && nh.namhoc_id == _idNamHoc
                                  orderby phxn.phuhuynhxinnghi_id descending
                                  select new
                                  {
-                                     phxn.phuhuynhxinnghi_content,
-                                     phxn.phuhuynhxinnghi_dateend,
-                                     phxn.phuhuynhxinnghi_datestart,
+                                     phxn.phuhuynhxinnghi_lydo,
+                                     phxn.phuhuynhxinnghi_ngayketthuc,
+                                     phxn.phuhuynhxinnghi_ngaybatdau,
                                      phxn.phuhuynhxinnghi_id,
                                      phxn.phuhuynhxinnghi_ngaydangki,
                                      hs.hocsinh_id,
-                                     tinhtrang = phxn.phuhuynhxinnghi_xacnhan == true? " <i title=\"Đã xác nhận\" class='fas fa-check-circle'></i>" : "<i title=\"Chờ xác nhận\" style=\"color:#ffc107\" class='fas fa-hourglass'></i>"
+                                     tinhtrang = phxn.phuhuynhxinnghi_xacnhan == true ? " <i title=\"Đã xác nhận\" class='fas fa-check-circle'></i>" : "<i title=\"Chờ xác nhận\" style=\"color:#ffc107\" class='fas fa-hourglass'></i>"
 
                                  };
 
@@ -65,20 +65,20 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
             rpChiTietXinNghi.DataBind();
             var getDate = (from hs in db.tbHocSinhs
                            join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id
-                           join xn in db.tbVietNhatKids_PhuHuynhXinNghis on hstl.hstl_id equals xn.hstl_id
+                           join xn in db.tbPhuHuynhXinNghis on hstl.hstl_id equals xn.hstl_id
                            where hs.hocsinh_id == id_HocSinh
-                           && hstl.namhoc_id == _idNamHoc && hstl.hidden == false
+                           && hstl.namhoc_id == _idNamHoc && hstl.hstl_tinhtrang == false
                            && xn.phuhuynhxinnghi_xacnhan == true
                            orderby xn.phuhuynhxinnghi_id descending
                            select new
                            {
-                               xn.phuhuynhxinnghi_datestart,
-                               xn.phuhuynhxinnghi_dateend,
+                               xn.phuhuynhxinnghi_ngaybatdau,
+                               xn.phuhuynhxinnghi_ngayketthuc,
                            });
             if (getDate.Count() > 0)
             {
-                txtNgayBatDau.Value = string.Join(";", getDate.Select(x => x.phuhuynhxinnghi_datestart.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)));
-                txtNgayKetThuc.Value = string.Join(";", getDate.Select(x => x.phuhuynhxinnghi_dateend.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)));
+                txtNgayBatDau.Value = string.Join(";", getDate.Select(x => x.phuhuynhxinnghi_ngaybatdau.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)));
+                txtNgayKetThuc.Value = string.Join(";", getDate.Select(x => x.phuhuynhxinnghi_ngayketthuc.Value.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)));
             }
 
         }
@@ -88,7 +88,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
         }
     }
 
-    
+
     protected void setNull()
     {
 
@@ -98,6 +98,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
     }
     protected void btnGui_Click(object sender, EventArgs e)
     {
+
         if (Request.Cookies["web_hocsinh"] != null)
         {
             db.Connection.Open();
@@ -108,31 +109,33 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
                 {
                     //if (dteDenNgay.Value != "" && dteTuNgay.Value != "" && txtDanDo.Value != "")
                     //{
-                        var getData = (from hs in db.tbHocSinhs
-                                       join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id //thong qua hstl để join phxn
-                                       join phxn in db.tbVietNhatKids_PhuHuynhXinNghis on hstl.hstl_id equals phxn.hstl_id
-                                       join nh in db.tbHoctap_NamHocs on phxn.namhoc_id equals nh.namhoc_id
-                                       where hs.hocsinh_taikhoan == _sdtHocSinh && nh.namhoc_id == _idNamHoc && hstl.hidden == false
-                                       select new
-                                       {
-                                           hstl.hocsinh_id,
-                                           hstl.lop_id,
-                                           hstl.namhoc_id,
-                                           nh.namhoc_hocky,
-                                           phxn.hstl_id,
-                                           hs.hocsinh_name
-                                       }).FirstOrDefault();
-                        
-                        tbVietNhatKids_PhuHuynhXinNghi insert = new tbVietNhatKids_PhuHuynhXinNghi();
-                        insert.phuhuynhxinnghi_ngaydangki = Convert.ToDateTime(DateTime.Now);
-                        insert.phuhuynhxinnghi_datestart = Convert.ToDateTime  (dteTuNgay.Value);
-                        insert.phuhuynhxinnghi_dateend = Convert.ToDateTime(dteDenNgay.Value);
-                        insert.phuhuynhxinnghi_content = txtDanDo.Value;
-                        insert.hstl_id = getData.hstl_id;
-                        insert.lop_id = getData.lop_id;
-                        insert.namhoc_id = getData.namhoc_id;
-                        insert.phuhuynhxinnghi_xacnhan = false;
-                        db.tbVietNhatKids_PhuHuynhXinNghis.InsertOnSubmit(insert);
+                    var getData = (from hs in db.tbHocSinhs
+                                   join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id //thong qua hstl để join phxn
+                                   join phxn in db.tbPhuHuynhXinNghis on hstl.hstl_id equals phxn.hstl_id
+                                   join nh in db.tbHoctap_NamHocs on phxn.namhoc_id equals nh.namhoc_id
+                                   where hs.hocsinh_taikhoan == _sdtHocSinh && nh.namhoc_id == _idNamHoc && hstl.hstl_tinhtrang == null
+                                   select new
+                                   {
+                                       hstl.hocsinh_id,
+                                       hstl.lop_id,
+                                       hstl.namhoc_id,
+                                       nh.namhoc_hocky,
+                                       phxn.hstl_id,
+                                       hs.hocsinh_name
+                                   }).FirstOrDefault();
+
+                    tbPhuHuynhXinNghi insert = new tbPhuHuynhXinNghi();
+                    insert.phuhuynhxinnghi_ngaydangki = Convert.ToDateTime(DateTime.Now);
+                    insert.phuhuynhxinnghi_ngaybatdau = Convert.ToDateTime(dteTuNgay.Value);
+                    insert.phuhuynhxinnghi_ngayketthuc = Convert.ToDateTime(dteDenNgay.Value);
+                    insert.phuhuynhxinnghi_lydo = txtDanDo.Value;
+                    insert.hstl_id = getData.hstl_id;
+                    insert.lop_id = getData.lop_id;
+                    insert.namhoc_id = getData.namhoc_id;
+                    insert.phuhuynhxinnghi_xacnhan = false;
+                    db.tbPhuHuynhXinNghis.InsertOnSubmit(insert);
+                    try
+                    {
                         db.SubmitChanges();
                         setNull();
                         // alert.alert_Success(Page, "Gửi đơn thành công", "");
@@ -145,22 +148,17 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
                                        select u;
                         string listEmail = string.Join(",", getEmail.Select(x => x.username_email).ToArray());
                         string message = "Bạn có thông báo mới xin nghỉ từ phụ huynh bé " + getData.hocsinh_name + ". Xem chi tiết <a href='http://quantrimamnon.vietnhatschool.edu.vn/admin-phu-huynh-xin-nghi'>tại đây.</a>";
-                        //SendMail("ducpn@vjis.edu.vn, quyetlv@vjis.edu.vn", message);
-                        //SendMail(listEmail + ", ducpn@vjis.edu.vn, quyetlv@vjis.edu.vn", message);
+                        SendMail("dangbichlai21@gmail.com", message);
                         transaction.Commit();
-                    //}
-                    //else if (dteTuNgay.Value == "")
-                    //{
-                    //    alert.alert_Error(Page, "Vui lòng nhập ngày bắt đầu xin nghỉ!", " ");
-                    //}
-                    //else if (dteDenNgay.Value == "")
-                    //{
-                    //    alert.alert_Error(Page, "Vui lòng nhập ngày kết thúc  xin nghỉ!", " ");
-                    //}
-                    //else if (txtDanDo.Value == "")
-                    //{
-                    //    alert.alert_Error(Page, "Vui lòng nhập lý do xin nghỉ!", " ");
-                    //}
+                    }
+                    catch
+                    {
+                        ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Gửi đơn xin nghỉ không thành công!','','success').then(function(){})", true);
+
+                    }
+
+
+
 
                 }
                 catch

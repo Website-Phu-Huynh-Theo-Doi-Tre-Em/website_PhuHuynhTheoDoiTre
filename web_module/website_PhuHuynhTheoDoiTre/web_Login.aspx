@@ -234,7 +234,7 @@
                     <a href="#" runat="server" id="btn_Gui" onclick="return checkNull()" onserverclick="btn_Gui_ServerClick" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Đăng nhập </a>
                 </div>
                 <!-- /form -->
-                <a href="/website-vietnhatkids-ForgetPassword" class="forgot-password">Quên mật khẩu?
+                <a href="/website-quen-mat-khau" class="forgot-password">Quên mật khẩu?
             </a>
             </div>
            

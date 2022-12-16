@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage_MamNon.master" AutoEventWireup="true" CodeFile="web_XinNghi.aspx.cs" Inherits="web_module_module_website_website_VietNhatKis_web_XinNghi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage.master" AutoEventWireup="true" CodeFile="web_XinNghi.aspx.cs" Inherits="web_module_module_website_website_VietNhatKis_web_XinNghi" %>
 
 <%@ Register Src="~/web_usercontrol/Web_ThongTinCaNhan.ascx" TagPrefix="uc1" TagName="Web_ThongTinCaNhan" %>
-<%@ Register Src="~/web_usercontrol/Web_VietNhatKids.ascx" TagPrefix="uc1" TagName="Web_VietNhatKids" %>
+<%@ Register Src="~/web_usercontrol/Web_ThanhChucnang.ascx" TagPrefix="uc1" TagName="Web_ThanhChucnang" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -250,7 +251,8 @@
         <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                <uc1:Web_VietNhatKids runat="server" ID="Web_VietNhatKids" />
+                                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
+
             </div>
             <div class="loading" id="img-loading-icon" style="display: none">
                 <div class="loading">Loading&#8230;</div>
@@ -355,8 +357,8 @@
                                                 <tr>
                                                     <td scope="row"><%= STT++ %></td>
                                                     <td><%#Eval("phuhuynhxinnghi_ngaydangki","{0:dd/MM/yyyy}") %></td>
-                                                    <td><%#Eval("phuhuynhxinnghi_datestart","{0:dd/MM/yyyy}")%></td>
-                                                    <td><%#Eval("phuhuynhxinnghi_dateend","{0:dd/MM/yyyy}") %></td>
+                                                    <td><%#Eval("phuhuynhxinnghi_ngaybatdau","{0:dd/MM/yyyy}")%></td>
+                                                    <td><%#Eval("phuhuynhxinnghi_ngayketthuc","{0:dd/MM/yyyy}") %></td>
 
                                                     <td><%#Eval("tinhtrang") %></td>
                                                     <td>
@@ -394,16 +396,16 @@
                                                         </div>
                                                         <div class="flex-between position-relative" style="margin-bottom: 20px;">
                                                             <h6 style="margin-bottom: 0; text-align: left;">Từ ngày:</h6>
-                                                            <input type="date" readonly="readonly" id="txtTuNgay_<%#Eval("phuhuynhxinnghi_id") %>" value="<%# Eval("phuhuynhxinnghi_datestart", "{0:yyyy-MM-dd}")%>" class="inputBlock">
+                                                            <input type="date" readonly="readonly" id="txtTuNgay_<%#Eval("phuhuynhxinnghi_id") %>" value="<%# Eval("phuhuynhxinnghi_ngaybatdau", "{0:yyyy-MM-dd}")%>" class="inputBlock">
                                                         </div>
                                                         <div class="flex-between position-relative" style="margin-bottom: 20px;">
                                                             <h6 style="margin-bottom: 0; text-align: left;">Đến ngày:</h6>
-                                                            <input type="date" readonly="readonly" id="txtDenNgay_<%#Eval("phuhuynhxinnghi_id") %>" value="<%#Eval("phuhuynhxinnghi_dateend", "{0:yyyy-MM-dd}") %>" class="inputBlock">
+                                                            <input type="date" readonly="readonly" id="txtDenNgay_<%#Eval("phuhuynhxinnghi_id") %>" value="<%#Eval("phuhuynhxinnghi_ngayketthuc", "{0:yyyy-MM-dd}") %>" class="inputBlock">
                                                         </div>
 
                                                         <div class="flex-between" style="margin-bottom: 20px;">
                                                             <textarea readonly="readonly" class="inputBlock" id="txtNoiDungDanDo_<%#Eval("phuhuynhxinnghi_id") %>" style="height: 100%; width: 100%; padding: 2%; }"
-                                                                placeholder="Dặn dò..." rows="4"><%#Eval("phuhuynhxinnghi_content") %></textarea>
+                                                                placeholder="Dặn dò..." rows="4"><%#Eval("phuhuynhxinnghi_lydo") %></textarea>
                                                         </div>
                                                     </div>
                                                     <%--<div class="modal-footer">

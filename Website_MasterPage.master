@@ -1,20 +1,1392 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Website_MasterPage.master.cs" Inherits="Website_MasterPage" %>
 
+
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <title>Trường Mầm non Việt Nhật</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/navbar.css" rel="stylesheet" />
+    <link href="assets/css/base.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="icon" type="image/x-icon" href="/admin_images/logo_mamnon.png" />
+    <link href="assets/css/popup-gopy.css" rel="stylesheet" />
+    <link href="assets/css/footer.css" rel="stylesheet" />
+    <link href="css/fontsface.css" rel="stylesheet" />
+    <link href="fonts/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet" />
+    <link href="fonts/fontawesome-free-5.13.0-web/css/fontawesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="../admin_js/sweetalert.min.js"></script>
+    <link href="/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/css/owl.theme.default.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../../admin_js/sweetalert.min.js"></script>
+    <link href="admin_css/css_index/Loading.css" rel="stylesheet" />
+    <style>
+        @media(max-width:1200px) {
+            .clogo_sub {
+                display: block;
+            }
+
+            header {
+                display: none;
+            }
+
+            .nav-main {
+                background: #fff;
+                border-bottom: 2px solid #8e191b;
+                height: 85px;
+            }
+
+                .nav-main > ul {
+                    position: fixed;
+                    width: 300px;
+                    height: 100vh;
+                    background-color: var(--color_main);
+                    text-align: center;
+                    transition: all .5s;
+                    left: -1000px;
+                    text-align: left;
+                    z-index: 10;
+                    overflow-y: auto;
+                }
+
+                    .nav-main > ul > li {
+                        display: block;
+                        padding: 5px 0;
+                        position: relative;
+                    }
+
+                        .nav-main > ul > li:hover {
+                            background: none;
+                        }
+
+                .nav-main li:hover .ul_sub {
+                    position: static;
+                    display: block;
+                    background-color: aliceblue;
+                    width: 100%;
+                }
+
+                .nav-main .ul_sub {
+                }
+
+                .nav-main .btn {
+                    position: absolute;
+                    display: block;
+                    width: 85px;
+                    height: 85px;
+                    line-height: 85px;
+                    font-size: 40px;
+                    color: #8e191b;
+                    font-weight: 600;
+                    text-align: center;
+                    cursor: pointer;
+                    z-index: 10;
+                }
+
+            #bc1:checked ~ ul {
+                left: 0;
+                top: 0;
+            }
+
+            #listUl {
+                top: 85px !important;
+            }
+        }
+
+        #btnScrollTop {
+            display: none;
+            position: fixed;
+            bottom: 5%;
+            height: 50px;
+            width: 50px;
+            right: 2%;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            font-size: 2rem;
+            border-radius: 50%;
+        }
+
+            #btnScrollTop:hover {
+                transform: scale(1.2);
+            }
+
+        .btn-dangnhap {
+            color: #fff;
+            line-height: 60px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0 15px;
+            text-align: right;
+        }
+
+            .btn-dangnhap:hover {
+                cursor: pointer;
+            }
+
+        .form-popup {
+            position: fixed;
+            z-index: 102;
+            background-color: #fff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-70%);
+            border-radius: 20px;
+            box-shadow: 0 0 10px #7f7f7f;
+            padding: 20px;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 385px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 15px;
+            line-height: 1.6;
+        }
+
+        .abcc {
+            display: none;
+            position: fixed;
+            z-index: 101;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover, .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        /* Full-width input fields */
+        .form-container input[type=text], .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+            /* When the inputs get focus, do something */
+            .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn-login {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            display: unset;
+            border-radius: 7px;
+        }
+            /* Add some hover effects to buttons */
+            .form-container .btn-login:hover, .open-button:hover {
+                opacity: 1;
+                border-radius: 7px;
+            }
+
+        .btnavt {
+            left: auto !important;
+            right: 0;
+            min-width: 200px;
+            line-height: 1.9;
+            border-radius: 6px;
+        }
+
+        .iconuser {
+            font-size: 35px;
+        }
+
+        .divider {
+            height: 1px;
+            overflow: hidden;
+            background-color: #e5e5e5;
+        }
+
+        .tenuser {
+            position: fixed;
+            top: -50%;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: capitalize;
+            white-space: nowrap;
+            transform: translateX(-50px);
+        }
+
+        .icon-user {
+            transform: translateX(36px);
+            padding: 12px 10px 13px 10px;
+            color: white;
+        }
+
+        .form-container input[type=text], .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border-radius: 5px;
+            border: none;
+            background: #f1f1f1;
+        }
+
+
+        /**/
+        .user-menu {
+            z-index: 1000;
+            width: 250px;
+            background: #f9f9f9;
+            position: absolute;
+            right: 40%;
+            border: 1px solid #f2f2f2;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+            .user-menu .menu-nav li {
+                padding: 15px 10px;
+                line-height: normal;
+                color: #7d7f83;
+                border-bottom: 1px solid #f2f2f2;
+                cursor: pointer;
+            }
+
+                .user-menu .menu-nav li:hover {
+                    background: #f2f2f2;
+                    color: #7dcfc6;
+                }
+
+                .user-menu .menu-nav li span {
+                    width: 20px;
+                    margin-right: 10px;
+                    text-align: center;
+                }
+
+            .user-menu .user-info h3 {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0;
+                color: #03a9f4;
+                font-weight: normal;
+                line-height: normal;
+                font-size: 15px;
+                padding-left: 9px;
+                font-weight: bold;
+            }
+
+            .user-menu .user-info .profile-img {
+                width: 45px;
+                height: 45px;
+                display: inline-block;
+                vertical-align: middle;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                background-size: cover;
+            }
+
+                .user-menu .user-info .profile-img img:hover {
+                    opacity: 0.6;
+                }
+
+        .camera:hover {
+            -webkit-transform: rotate(360deg);
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+
+        .user-menu::after {
+            display: block;
+            right: 12%;
+            content: " ";
+            height: 0;
+            top: -10px;
+            width: 0;
+            position: absolute;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #f9f9f9;
+        }
+
+        @media (min-width: 500px) and (max-width:1050px) {
+            .row {
+                margin: 0% 0% 1% 0 !important;
+            }
+
+            .colrp {
+                padding-left: 0 !important;
+            }
+
+            #listUl {
+                top: 85px !important;
+            }
+
+            .btn-dangnhap {
+                position: relative
+            }
+
+            .user-menu {
+                position: absolute;
+                left: 4%;
+            }
+
+            .form-popup {
+                top: 57% !important;
+                left: 64%;
+                width: 500px !important;
+                /*min-width:500px!important;*/
+            }
+
+            .form-container {
+                max-width: 500px !important;
+            }
+        }
+
+        .clogo {
+            width: 150px !important;
+            display: block;
+            margin: auto;
+            padding: 1%;
+            /* margin-top: 2%; */
+            /* margin: 2% 0; */
+        }
+    </style>
+    <%-- popup edit profile --%>
+
+    <style>
+        .navtab_header {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+        }
+
+        .img_content {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 2.5em;
+            -moz-border-radius-topleft: 8px;
+            -webkit-border-top-left-radius: 8px;
+            border-top-left-radius: 8px;
+            -moz-border-radius-topright: 8px;
+            -webkit-border-top-right-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .desc {
+            position: absolute;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 171px;
+            padding: 1.2em 1em 0 1em;
+            color: white;
+            text-align: center;
+            opacity: 0;
+        }
+
+        .avatarcontainer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+
+        .avatar {
+            width: 100%;
+            border: 4px solid #5cc0ff;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bg {
+            border-bottom: 4px solid #5cc0ff;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .friend-profile__detail__header {
+            line-height: normal;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: normal;
+        }
+
+        .zl-label {
+            line-height: normal;
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: normal;
+            color: var(--primary-text);
+        }
+
+        .profile-update .datePicker__group {
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .z--btn.-lg {
+            height: 40px;
+            min-width: 40px;
+            padding: 0 16px;
+            line-height: normal;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: normal;
+            line-height: 38px;
+        }
+
+        .z--btn--fill--primary {
+            color: #ffffff;
+            background: #0068ff;
+        }
+
+        .z--btn.-lg {
+            height: 40px;
+            /* min-width: 40px; */
+            padding: 0 16px;
+            line-height: normal;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: normal;
+            line-height: 38px;
+        }
+
+        .z--btn--fill--tertiary {
+            color: black;
+            background: #e1e4ea;
+        }
+
+        .profile_inf {
+            /* border-width: 1px;
+            border-style: solid;
+            border-image: linear-gradient(to right, #3FB6A8, rgba(126, 211, 134, 0.5)) 1 0%;
+            border-top: 0;*/
+            width: 80%;
+            font-family: "Montserrat", sans-serif;
+            font-size: 0.7em;
+            color: #070707;
+            padding-bottom: 0;
+        }
+
+        .profile_h2 {
+            color: #777777;
+            /* font-family: "Roboto", sans-serif; */
+            width: 80%;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 1px;
+            margin-left: 4px;
+            margin-bottom: 0 !important;
+        }
+
+        .format_ipput {
+            text-align: center;
+            background: none !important;
+        }
+
+        .form-container {
+            max-width: 400px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 15px;
+            line-height: 1.6;
+        }
+
+        .camera_edit {
+            position: absolute;
+            left: 14px;
+            top: 69% !important;
+            font-size: 1.85rem !important;
+            z-index: 100;
+            margin-left: 58%;
+            color: #7d7f83
+        }
+
+        .truncate i {
+            font-size: 71%;
+            display: flex;
+            align-items: center;
+        }
+
+        .input_inf i {
+            float: right;
+        }
+
+        .z--btn--fill--primary {
+            color: #ffffff;
+            background: #b41d1d;
+        }
+
+            .z--btn--fill--primary:hover {
+                color: #ffffff;
+                background: #9a2525;
+            }
+
+        .form-container input[type=text], .form-container input[type=password] {
+            background: none;
+            width: 100%;
+            /* padding: 15px; */
+            /* margin: 5px 0 22px 0; */
+            border-radius: 5px;
+            border: none;
+            border: 1px solid #3FB6A8;
+            margin: 5px 0 10px 0;
+            /* background: #f1f1f1; */
+            /* border-image: linear-gradient(to right, #3FB6A8, rgba(126, 211, 134, 0.5)) 1 0%; */
+        }
+
+        .zl-modal__footer__button-action a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        img {
+            /*max-width:100% !important;*/
+        }
+
+        .profile-img-card {
+            /*width: 221px;*/
+            /*height: 134px;*/
+            width: 70%;
+            max-width: 100%;
+            margin: 0 auto 10px;
+            display: block;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 34%;
+        }
+
+        .menu-nav a {
+            color: #7d7f83;
+            text-decoration: none;
+        }
+
+        .menu-nav li a:hover {
+            background: #f2f2f2;
+            color: #7dcfc6;
+        }
+
+        .z--btn--fill--tertiary {
+            color: black;
+            background: #4a4c52;
+        }
+
+            .z--btn--fill--tertiary:hover {
+                color: black;
+                background: #a6a9b0;
+            }
+
+        .form-container input[type=text], .form-container input[type=password] {
+            background: none;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            border: 1px solid #3FB6A8;
+            /*  margin: 14px 0 0px 0;*/
+        }
+
+        .lberrorr {
+            font-size: 15px;
+            padding-left: 16px;
+            color: red;
+        }
+
+        .z--btn--fill--primary:hover {
+            color: #ffffff;
+            background: #8f2424;
+        }
+
+        .z--btn--fill--primary .dis {
+            pointer-events: none;
+        }
+
+        .checkErr b {
+            font-size: 11px;
+            font-weight: 300;
+            color: red;
+        }
+
+        .nav-main > ul > li > a {
+            color: #fff;
+            line-height: 60px;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 22px 8px;
+        }
+
+
+        .form-container .btn-login {
+            background-color: #8e191b;
+            opacity: unset;
+            border-radius: 5px;
+        }
+
+            .form-container .btn-login:hover {
+                background-color: #c62828;
+            }
+
+        .form-container input[type=text], .form-container input[type=password] {
+            border: 1px solid #ced4da;
+        }
+
+        .form-popup {
+            border-radius: 10px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.14), 0 3px 4px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+        }
+
+        .d-none {
+            display: none
+        }
+
+        .fa.fa-pen:hover {
+            color: #bd3232;
+            cursor: pointer;
+        }
+
+        .zl-modal__footer__button {
+            background-color: #8e191b;
+        }
+
+            .zl-modal__footer__button:hover {
+                background-color: #c62828;
+            }
+
+        .zl-modal__footer__button--cancel {
+            color: black;
+            background: #4a4c52;
+        }
+
+        .user-info {
+            padding: 2%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .frf {
+            display: flex;
+        }
+
+        .card {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function searchKeyPress(e) {
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                document.getElementById('btnGui').click();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <%--<div>
+        <input type="type" name="name" id="txtMenu" value="" />
+    </div>--%>
+    <div class="loading" id="img-loading-icon" style="display: none">
+        <div class="loading">Loading&#8230;</div>
     </div>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" />
+        <header>
+            <div class="clogo">
+                <img src="image_PHTDT/image_web/logo_mamnon.png" />
+            </div>
+        </header>
+        <nav class="nav-main">
+            <input type="checkbox" name="" id="bc1">
+            <label for="bc1" class="btn">
+                <i class='bx bx-menu-alt-left'></i>
+            </label>
+            <!-- <label class="logo"><img src="/assets/img/logo.png"  alt="" id="logo_sub"></label> -->
+            <div class="clogo_sub">
+                <img src="/assets/img/logo.png" alt="" id="logo_sub">
+            </div>
+            <ul id="listUl">
+                <li><a href="/website-trang-chu">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a>
+                    <ul class="ul_sub">
+                        <li><a href="/mam-non-doi-ngu-giao-vien">Đội ngũ giáo viên</a></li>
+                        <li><a href="/mam-non-co-cau-to-chuc">Cơ cấu tổ chức</a></li>
+                        <li><a href="/mam-non-doi-tac-chien-luoc">Đối tác chiến lược</a></li>
+                        <li><a href="/mam-non-thanh-tuu-viet-nhat">Thành tựu Việt Nhật</a></li>
+                        <li><a href="/mam-non-co-so-vat-chat">Cơ sở vật chất</a></li>
+                        <li><a href="/mam-non-gioi-thieu-chung">Giới thiệu chung</a></li>
+                        <li><a href="/mam-non-tam-nhin-su-menh">Tầm nhìn & sứ mệnh</a></li>
+                        <li><a href="/mam-non-thu-ngo">Thư ngỏ</a></li>
+                        <%--<asp:Repeater ID="rpGioiThieu" runat="server">
+                            <ItemTemplate>
+                                <li><a href="#" id="myMenu" runat="server"><%#Eval("websitesubmenu_title") %> </a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>--%>
+                    </ul>
+                </li>
+                <li><a href="/mam-non-bac-dao-tao">Bậc đào tạo mầm non</a>
+                </li>
+                <li><a href="#">Tuyển sinh</a>
+                    <ul class="ul_sub">
+                        <li><a href="/mam-non-tuyen-sinh-mam-non">Tuyển sinh mầm non</a></li>
+                        <li><a href="/mam-non-quy-trinh-tuyen-sinh-mam-non">Qui trình tuyển sinh</a></li>
+                        <li><a href="/mam-non-hoc-phi-chinh-sach-uu-dai">Học phí chính sách ưu đãi</a></li>
+                        <%--<li><a href="#">Câu hỏi thường gặp</a></li>--%>
+                    </ul>
+                </li>
+                <%--  <li><a href="#">Tin Tức</a>
+                    <ul class="ul_sub">
+                        <asp:Repeater ID="rpTinTuc" runat="server">
+                            <ItemTemplate>
+                                <li><a href="#"><%#Eval("newscate_title")%></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </ul>
+                </li>--%>
+                <li><a href="/danh-muc-hoc-tap">Học tập</a></li>
+                <li>
+                    <a class="register__link" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeq26VkY_2cvj_u9vlbSekIvuA-zU5WW4UFDqHcLUQSA55QDA/viewform">Đăng ký tuyển sinh</a>
+                </li>
+                <%--<li onclick="popup_hopthu()"><a href="#">Hộp thư góp ý</a></li>--%>
+                <li><a href="#" id="liSoLienLacDienTu" runat="server" onserverclick="liSoLienLacDienTu_ServerClick">Sổ liên lạc điện tử</a></li>
+                <li><a href="/mam-non-thuc-don">Thực đơn</a></li>
+                <li onclick="openForm()" id="liDangNhap" runat="server"><a href="#">Đăng nhập</a>
+
+                </li>
+                <%-- <li onclick="openForm()" id="liDangNhap" runat="server"><a href="#">Đăng nhập</a>
+                </li>--%>
+
+                <li id="liUser" onclick="showprofile()" style="display: none" class="simple-arrow user-menu-toggle" runat="server">
+                    <p style="margin-bottom: 0; color: #ffeb3b;" class="btn-dangnhap" href="#">
+                        <i class="fa fa-user" style="margin-right: 10px;"></i>
+                        <asp:Label Style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; font-weight: 700;" runat="server" ID="lblAcount"></asp:Label>
+                    </p>
+                    <div runat="server" id="profile" class="user-menu" style="display: none; right: 1%; padding: 3px;">
+                        <div class="user-info" style="padding: 2%;">
+                            <asp:Repeater runat="server" ID="rpAnh">
+                                <ItemTemplate>
+                                    <div class="profile-img">
+                                        <img style="border-radius: 50%; height: 48px;"
+                                            src="<%#Eval("avartar_path") %>" />
+                                        <a href="#" runat="server" onclick="showEditprofile()"><i style="position: absolute; left: -100px; top: 19%; font-size: 1rem; z-index: 100; margin-left: 58%; color: #7d7f83" class="camera fa fa-camera" aria-hidden="true"></i></a>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            <h3 class="name"><span>
+                                <asp:Label Text="" ID="lblHoTen" runat="server" Style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px;" /></span></h3>
+                            <div class="ui btn normal"></div>
+
+                        </div>
+                        <div class="menu-nav">
+                            <ul style="list-style-type: none;">
+                                <li class="frf" runat="server" onclick="showEditprofile()"><span class="fa fa-cogs"></span>Chỉnh sửa hồ sơ</li>
+                                <li class="frf" runat="server" onclick="showEditPassword()"><span class="fa fa-key"></span>Thay đổi mật khẩu </li>
+                                <li class="frf">
+                                    <a href="#" id="btnDangXuat" runat="server" style="display: flex; width: 100%; text-decoration: none; /* float: left; */" onclick="DisplayLoadingIcon()" onserverclick="btnDangXuat_ServerClick"><span class="fa fa-power-off"></span>Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <%-- <li id="liUser" onclick="showprofile()" style="display: none" class="simple-arrow user-menu-toggle" runat="server">
+                    <p style="margin-bottom: 0;" class="btn-dangnhap" href="#">
+                        <i class="fa fa-user" style="margin-right: 10px;"></i>
+                        <asp:Label runat="server" ID="lblAcount"></asp:Label>
+                    </p>
+
+                </li>--%>
+                <%--  --%>
+
+                <%--  --%>
+                <%--<li id="afterlogin" style="display: none">
+                   <p class="tenuser">
+                        <asp:Label runat="server" ID="lblUser"></asp:Label></p>
+                    <ul class="ul_sub btnavt">
+                        <li><a href="#">Thông tin tài khoản</a></li>
+                        <li class="divider"></li>
+                        <li><a href="vietnhatkids_ThongKe.aspx  ">Hồ sơ tài khoản</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Đăng xuất</a></li>
+                    </ul>
+                </li>--%>
+            </ul>
+        </nav>
+        <%--popup đăng nhập--%>
+        <div class="abcc" id="myForm">
+            <div class="form-popup">
+                <div action="/action_page.php" class="form-container">
+                    <span class="close" onclick="closeForm()">&times;</span>
+                    <h1 style="text-align: center; color: #8e191b;">Đăng nhập</h1>
+                    <label for="email"><b>Số điện thoại</b></label>
+                    <input type="text" onkeypress="return isNumberKey(event)" placeholder="Nhập số điện thoại" name="email" id="txtSDT" runat="server" required />
+                    <label for="email" class="checkErr" id="CheckSDT" style="display: none"><b>Vui lòng  nhập số điện thoại</b></label>
+                    <label for="psw"><b>Mật khẩu</b></label>
+                    <input style="margin-bottom: 5px" type="password" onkeypress="return searchKeyPress(event);" placeholder="Nhập mật khẩu" id="txtMatKhau" runat="server" name="psw" required>
+                    <label for="email" class="checkErr" id="CheckMatKhau" style="display: none"><b>Vui lòng nhập mật khẩu</b></label>
+                    <div style="margin-bottom: 10px"><a href="/website-vietnhatkids-ForgetPassword" style="font-size: 15px; color: #bd3232" runat="server" onclick="">Quên mật khẩu?</a></div>
+                    <div style="display: flex; text-align: center;">
+                        <a href="#" class="btn-login" id="btnGui" runat="server" onclick="return checkNull()" onserverclick="btn_Login">ĐĂNG NHẬP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%--  --%>
+        <%-- khung đăng xuất, chỉnh sửa tài khoản  --%>
+        <%--   <div runat="server" id="profile" class="user-menu" style="display: none; right: 1%; padding: 3px;">
+            <div class="user-info" style="padding: 2%;">
+                <asp:Repeater runat="server" ID="rpAnh">
+                    <ItemTemplate>
+                        <div class="profile-img">
+                            <img style="border-radius: 50%; height: 48px;"
+                                src="<%#Eval("avartar_path") %>" />
+                            <a href="#" runat="server" onclick="showEditprofile()"><i style="position: absolute; left: -100px; top: 19%; font-size: 1rem; z-index: 100; margin-left: 58%; color: #7d7f83" class="camera fa fa-camera" aria-hidden="true"></i></a>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <h3 class="name"><span>
+                    <asp:Label Text="" ID="lblHoTen" runat="server" /></span></h3>
+                <div class="ui btn normal"></div>
+
+            </div>
+            <div class="menu-nav">
+                <ul style="list-style-type: none;">
+                    <li runat="server" onclick="showEditprofile()"><span class="fa fa-cogs"></span>Chỉnh sửa hồ sơ</li>
+                    <li runat="server" onclick="showEditPassword()"><span class="fa fa-key"></span>Thay đổi mật khẩu </li>
+                    <li><a href="#" id="btnDangXuat" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnDangXuat_ServerClick" style="text-decoration: none"><span class="fa fa-power-off"></span>Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>--%>
+        <%-- poup cập nhật tài khoản --%>
+        <div class="contentpopup">
+            <div class="abcc" id="Editprofile" style="display: none; box-shadow: 2px 3px 8px 5px #80808029;">
+                <div class="form-popup" style="top: 68%; padding: 0; min-width: 400px; border-radius: 10px">
+                    <div action="/action_page.php" class="form-container" style="padding: 0">
+                        <div class="">
+                            <div class="navtab_header">
+                                <div class="truncate">
+                                    <span class="zl-modal__dialog__header__title-text v0 truncate " title="Cập nhật thông tin">Cập nhật thông tin</span><div style="margin-top: 2px; padding-left: 5px"></div>
+                                </div>
+                                <span class="close" onclick=" closeEditprofile()">&times;</span>
+                            </div>
+                            <%--  <asp:Repeater runat="server" ID="rpEdit">
+                                <ItemTemplate>--%>
+                            <div class="card card-container" style="border: none">
+                                <div class="container_img">
+                                    <header class="img_content" style="background: none; border-top-left-radius: 0; border-top-right-radius: 0;">
+                                        <div class="bio">
+                                            <img src="http://www.croop.cl/UI/twitter/images/up.jpg" alt="background" class="bg" style="border-radius: 0!important; height: 150px;">
+                                        </div>
+                                        <div class="avatarcontainer">
+                                            <img src="" alt="avatar" id="img_avatar" runat="server" class="avatar" style="height: 100px">
+                                            <a href="#"><i style="position: absolute; left: 14px; top: 69% !important; font-size: 1.85rem !important; z-index: 100; margin-left: 58%; color: #7d7f83;"
+                                                class="camera fa fa-camera" onclick="myChangeAvatar()" aria-hidden="true"></i></a>
+                                        </div>
+                                    </header>
+                                </div>
+                                <div class="contend">
+                                    <div class="flx relative margin-auto fit-content flx-al-c" style="display: flex; justify-content: center;">
+                                        <div class="truncate friend-profile__display-name" style="display: flex; width: 100%;">
+                                            <input id="txtName" runat="server" style="display: flex; border: none" onclick="showtxtName()"
+                                                class="format_ipput" type="text" disabled="disabled" />
+
+                                            <%--<i onclick="showtxtName()" id="penName" class="fa fa-pen"></i>--%>
+                                            <%--  <i class="fa fa-pen"></i>--%>
+                                        </div>
+                                        <%--<input id="txtNamecp" runat="server" type="text" hidden="hidden" />--%>
+                                        <%--<input id="txtNamecp" runat="server" border: none"
+                                            class="format_ipput" type="text" hidden="hidden" />--%>
+                                    </div>
+                                    <div style="padding-left: 43px;">
+                                        <p style="margin-bottom: 0" class="friend-profile__detail__header" data-translate-inner="STR_PERSONAL_PROFILE">Thông tin cá nhân</p>
+
+                                    </div>
+                                    <div style="padding-left: 20%">
+                                        <div class="profile_inf" style="margin-top: 10px">
+                                            <h2 class="profile_h2">Biệt danh</h2>
+                                            <input id="txtBietDanh" runat="server" type="text" />
+                                            <input id="txtBietDanhcp" runat="server" type="text" hidden="hidden" />
+                                        </div>
+                                        <div class="profile_inf">
+                                            <h2 class="profile_h2">Sở thích ở nhà</h2>
+                                            <input id="txtStNha" runat="server" type="text" />
+                                            <input id="txtStNhacp" runat="server" type="text" hidden="hidden" />
+                                        </div>
+                                        <div class="profile_inf">
+                                            <h2 class="profile_h2">Sở thích ở trường</h2>
+                                            <input id="txtStTruong" type="text" runat="server" />
+                                            <input id="txtStTruongcp" type="text" runat="server" hidden="hidden" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="zl-modal__footer__button-action flx  flx-e" style="display: flex; justify-content: flex-end; margin: 3%;">
+                                    <div class="flx">
+                                        <div class="z--btn z--btn--fill--tertiary -lg --rounded zl-modal__footer__button zl-modal__footer__button--cancel" title="" style="display: inline-block; border-radius: 5px;">
+                                            <a href="#" runat="server" id="btnHuyCCTT" onclick="delProfile()" class="truncate" data-translate-inner="STR_CANCEL" style="text-decoration: none;">Hủy</a>
+                                        </div>
+                                        <div class="z--btn z--btn--fill--primary --disabled -lg --rounded zl-modal__footer__button" title="" style="display: inline-block; border-radius: 5px; margin-left: 5px;">
+                                            <a href="#" runat="server" id="btnCapNhatTTCaNhan" style="text-decoration: none" onclick="DisplayLoadingIcon()" onserverclick="btnCapNhatTTCaNhan_ServerClick" class="truncate" data-translate-inner="STR_UPDATE">Cập nhật</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--</ItemTemplate>
+                            </asp:Repeater>--%>
+                        <asp:FileUpload ID="FileUpload1" CssClass="hidden-up d-none" runat="server" accept=".png, .jpg, .jpeg" onchange="showPreview1(this)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%-- </div>--%>
+        <%--poup thay đổi mật khẩu  --%>
+
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <div class="abcc" id="EditPassword" style="display: none">
+                    <div class="form-popup" style="padding-top: 0; top: 60%; border-radius: 5px;">
+                        <div action="/action_page.php" class="form-container">
+                            <div class="navtab_header" style="margin: 0">
+                                <div class="truncate">
+                                    <span class="zl-modal__dialog__header__title-text v0 truncate " title="Cập nhật thông tin">Đổi mật khẩu</span><div style="margin-top: 2px; padding-left: 5px"></div>
+                                </div>
+                                <span class="close" onclick="closeEditPassword()">&times;</span>
+                            </div>
+
+                            <div class="card card-container" style="border: none">
+                                <div>
+                                    <img id="profile-img" style="min-width: unset;" class="profile-img-card" src="../../admin_images/logo.png" />
+                                </div>
+                                <div class="form-signin">
+                                    <span id="reauth-email" class="reauth-email"></span>
+                                    <input runat="server" id="txtMKCu" type="Text" class="form-control" placeholder="Nhập mật khẩu cũ" />
+                                    <lable id="errorrMKCu" class="lberrorr" style="display: none">Vui lòng nhập mật khẩu cũ</lable>
+                                    <input runat="server" id="txtMKMoi" type="password" class="form-control" placeholder="Nhập mật khẩu mới" />
+                                    <lable id="errorrMKMoi" class="lberrorr" style="display: none">Vui lòng nhập mật khẩu mới</lable>
+                                    <input runat="server" id="txtMKXacNhan" type="password" class="form-control" placeholder="Xác nhận mật khẩu mới" />
+                                    <lable id="errorrMKXacNhan" class="lberrorr" style="display: none">Vui lòng xác nhận mật khẩu</lable>
+
+                                </div>
+                            </div>
+
+                            <div class="zl-modal__footer__button-action flx  flx-e" style="display: flex; justify-content: flex-end; margin: 3%;">
+                                <div class="flx">
+                                    <div class="z--btn z--btn--fill--tertiary -lg --rounded zl-modal__footer__button zl-modal__footer__button--cancel" title="" style="display: inline-block; border-radius: 5px;">
+                                        <a href="../../#" runat="server" id="btnHuy" onclick="return setEditPassword()" onserverclick="btnHuy_ServerClick" class="truncate" data-translate-inner="STR_CANCEL" style="text-decoration: none;">Hủy</a>
+                                    </div>
+                                    <div class="z--btn z--btn--fill--primary --disabled -lg --rounded zl-modal__footer__button" title="" style="display: inline-block; border-radius: 5px; margin-left: 5px;">
+                                        <a href="#" runat="server" id="btnCapNhat" style="text-decoration: none" onclick="return checkMatKhau()" onserverclick="btnCapNhat_ServerClick" class="truncate" data-translate-inner="STR_UPDATE">Cập nhật</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!--popup hộp hư góp ý-->
+        <div id="from-popup">
+            <button class="btn-close"><i class='bx bx-x'></i></button>
+            <h1>Hộp thư góp ý</h1>
+            <table>
+                <tr>
+                    <td>
+                        <h6>Họ tên</h6>
+                        <input type="text" name="name" value="" />
+                    </td>
+                    <td>
+                        <h6>E-mail</h6>
+                        <input type="text" name="name" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>Điện thoại</h6>
+                        <input type="text" name="name" value="" />
+                    </td>
+                    <td>
+                        <h6>Chủ đề</h6>
+                        <input type="text" name="name" value="" />
+                    </td>
+                </tr>
+            </table>
+            <h6 style="text-align: center;">Nội dung</h6>
+            <textarea></textarea>
+            <button class="submit">Gửi</button>
+        </div>
+
+        <footer>
+            <div class="main_footer">
+                <div class="co_footer_1">
+                    <h4 class="title">GIÁO DỤC VIỆT NHẬT</h4>
+                    <div class="list_ul">
+                        <div class="list_li">
+                            <div class="icon_not_hover">
+                                <i class="fas fa-school"></i>
+                                <div class="content_co_footer_1"><span><a href="#">Lài- Toản - Phượng  - CƠ SỞ 1</a></span></div>
+                            </div>
+                            <div class="icon_not_hover"><i class="far fa-hand-point-right"></i></div>
+                        </div>
+                        <div class="list_li">
+                            <div class="icon_not_hover">
+                                <i class="fas fa-school"></i>
+                                <div class="content_co_footer_1"><span><a href="#">Lài- Toản - Phượng  - CƠ SỞ 2</a></span></div>
+                            </div>
+
+                            <div class="icon"><i class="far fa-hand-point-right"></i></div>
+                        </div>
+                        <div class="list_li">
+                            <div class="icon_not_hover">
+                                <i class="fas fa-school"></i>
+                                <span class="content_co_footer_1"><a href="#">Lài- Toản - Phượng - CƠ SỞ 3</a></span>
+                            </div>
+                            <div class="icon"><i class="far fa-hand-point-right"></i></div>
+                        </div>
+                        <div class="list_li">
+                            <div class="icon_not_hover">
+                                <i class="fas fa-school"></i>
+                                <div class="content_co_footer_1"><span><a href="#">Lài- Toản - Phượng</a></span></div>
+                            </div>
+                            <div class="icon"><i class="far fa-hand-point-right"></i></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="co_footer_2">
+                    <div class="co_1">
+                        <h4 class="title" style="font-size: 15px!important;">Lài- Toản - Phượng</h4>
+                        <p class="text_footer">Công Nghệ Phần Mềm 20-0103</p>
+                        <p class="text_footer">Điện thoại: 02363 827 272</p>
+                        <a href="/" style="padding-top: 5px; padding-bottom: 5px; font-size: 15px; color: #B51A1A">Kết nối</a>
+                        <div class="social_list">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-2x fa-google-plus-official" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-2x fa-youtube" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="co_2">
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.062553186793!2d108.15694357489436!3d16.062243439625362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219246b64ae89%3A0xc9270347fa1b00cd!2zNDU5IFTDtG4gxJDhu6ljIFRo4bqvbmcsIEhvw6AgS2jDoW5oIE5hbSwgTGnDqm4gQ2hp4buDdSwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1671159998731!5m2!1svi!2s" width="350" height="175" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
     </form>
 </body>
+<%--<script src="/assets/js/base.js"></script>--%>
+<%--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>--%>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--%>
+<script src="../../js/jquery.magnific-popup.min.js"></script>
+
+<script>
+    //nút hủy ở form cập nhật tài khoản
+    function delProfile() {
+        var bietdanh = document.getElementById("<%=txtBietDanhcp.ClientID%>").value;
+        var stnha = document.getElementById("<%=txtStNhacp.ClientID%>").value;
+        var sttruong = document.getElementById("<%=txtStTruongcp.ClientID%>").value;
+        document.getElementById("<%=txtName.ClientID%>").value = name;
+        document.getElementById("<%=txtBietDanh.ClientID%>").value = bietdanh;
+        document.getElementById("<%=txtStNha.ClientID%>").value = stnha;
+        document.getElementById("<%=txtStTruong.ClientID%>").value = sttruong;
+        showprofile();
+        //closeEditprofile();
+
+
+    }
+    // js Đăng nhập
+    // không cho phép nhập kí tự khác ngoài số
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode
+        if (charCode > 47 && charCode < 58)
+            return true;
+        else {
+            return false;
+        }
+    }
+    function checkNull() {
+        var sdt = document.getElementById("<%=txtSDT.ClientID%>");
+        var mk = document.getElementById("<%=txtMatKhau.ClientID%>");
+        if (sdt.value.trim() == "") {
+            //document.getElementById("CheckSDT").style.display = "block";
+            swal("Vui lòng nhập số điện thoại đăng nhập!", '', 'warning').then(function () { sdt.focus(); });
+            return false;
+        }
+        if (mk.value.trim() == "") {
+            //document.getElementById("CheckMatKhau").style.display = "block";
+            swal("Vui lòng nhập mật khẩu đăng nhập!", '', 'warning').then(function () { mk.focus(); });
+            return false;
+        }
+        return true;
+    }
+    <%--function checkNull() {
+        var sdt = document.getelementbyid("<%=txtSDT.ClientID%>");
+        var matkhau = document.getelementbyid("<%=txtMatKhau.ClientID%>");
+        if (sdt.value.trim() == "") {
+            /*document.getelementbyid("checksdt").style.display = 'block';*/
+            swal("vui lòng nhập số điện thoại đăng nhập!", '', "warning").then(function () { sdt.focus(); })
+
+            return false;
+        }
+        if (matkhau.value.trim() == "") {
+            swal("vui lòng nhập mật khẩu đăng nhập!", '', "warning").then(function () { matkhau.focus(); })
+            return false;
+        }
+        return true;
+
+    }--%>
+</script>
+<script>
+
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 8
+                },
+                1000: {
+                    items: 10
+                }
+            }
+        })
+    });
+
+    let menu = document.querySelector('#liUser');
+    document.addEventListener('click', function ClickOut(event) {
+        if (!menu.contains(event.target)) {
+            document.getElementById("profile").style.display = "none";
+            //document.getElementById("liUser").click();
+        }
+    });
+    //document.addEventListener('click', function ClickOut(event) {
+    //    if (!menu.contains(event.target)) {
+    //        document.getElementById("listUl").style.display = "none";
+    //        //document.getElementById("liUser").click();
+    //    }
+    //});
+
+    document.addEventListener('scroll', function Scroll(event) {
+        document.getElementById("profile").style.display = "none";
+        // document.getElementById("liUser").click();
+
+    });
+</script>
+<script>
+
+    function myChangeAvatar() {
+        $("input[type=file]").click();
+    }
+    function showPreview1(input) {
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#img_avatar').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+        ////var x =
+        //document.getElementById("ContentPlaceHolder1_btnLuuAnhDaiDien").style.display = "inline-block";
+        //console.log(x)
+    }
+    function DisplayLoadingIcon() {
+        $("#img-loading-icon").show();
+    } function HiddenLoadingIcon() {
+        $("#img-loading-icon").hide();
+    }
+    function setEditPassword() {
+        document.getElementById("<%=txtMKCu.ClientID%>").value = "";
+        document.getElementById("<%=txtMKMoi.ClientID%>").value = "";
+        document.getElementById("<%=txtMKXacNhan.ClientID%>").value = "";
+    }
+</script>
+<script>
+    function checkMatKhau() {
+        var mk = document.getElementById("<%=txtMKCu.ClientID%>");
+        var mkMoi = document.getElementById("<%=txtMKMoi.ClientID%>");
+        var mkXacNhan = document.getElementById("<%=txtMKXacNhan.ClientID%>");
+        if (mk.value.trim() == "") {
+            document.getElementById("errorrMKCu").style.display = "inline-block";
+            document.getElementById("txtMKCu").style.border = "1px solid red";
+            return false;
+
+        } if (mkMoi.value.trim() == "") {
+            document.getElementById("errorrMKMoi").style.display = "inline-block";
+            document.getElementById("txtMKMoi").style.border = "1px solid red";
+            return false;
+
+        } if (mkXacNhan.value.trim() == "") {
+            document.getElementById("errorrMKXacNhan").style.display = "inline-block";
+            document.getElementById("txtMKXacNhan").style.border = "1px solid red";
+            return false;
+
+        }
+        DisplayLoadingIcon()
+        return true;
+    }
+
+    function popup_hopthu() {
+        document.getElementById("from-popup").style.display = 'block';
+    };
+    const swiper = new Swiper('.swiper', {
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+    function showprofile() {
+        document.getElementById("profile").style.display = "block";
+    }
+    function showEditprofile() {
+        document.getElementById("Editprofile").style.display = "block";
+        document.getElementById("profile").style.display = "none";
+    } function showtxtName() {
+        document.getElementById("txtName").style.border = "1px solid #3FB6A8";
+        document.getElementById("penName").style.display = "none";
+
+    }
+    function closeEditprofile() {
+        document.getElementById("Editprofile").style.display = "none";
+    }
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+    function showEditPassword() {
+        document.getElementById("EditPassword").style.display = "block";
+        document.getElementById("profile").style.display = "none";
+
+    }
+    function closeEditPassword() {
+        document.getElementById("EditPassword").style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == myForm) {
+            myForm.style.display = "none";
+        }
+    }
+</script>
+<script>
+    $(function () {
+
+        var isopen_usermenu = false;
+        $(" .user-menu-toggle").on("click", function () {
+            if (!isopen_usermenu) {
+
+                // Show menu
+                $(".user-menu").show();
+
+                //Change arrow
+                $(".simple-arrow").removeClass("simple-arrow").addClass("simple-arrow");
+
+                isopen_usermenu = true;
+            } else {
+
+                // Close menu
+                $(".user-menu").hide();
+
+                isopen_usermenu = false;
+            }
+        });
+    });
+
+</script>
 </html>

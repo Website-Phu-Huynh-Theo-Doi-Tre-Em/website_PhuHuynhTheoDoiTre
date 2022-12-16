@@ -25,7 +25,7 @@ public partial class web_module_website_VietNhatKids_web_QuenMatKhau : System.We
 
         var mail = txtEmail.Value.Trim();
         var checkMail = from hs in db.tbHocSinhs
-                        where (hs.hocsinh_eamilba == mail || hs.hocsinh_eamilme == mail) && hs.hidden == null
+                        where (hs.hocsinh_emaillba == mail || hs.hocsinh_emailme == mail) && hs.hocsinh_tinhtrang == null
                         select hs;
         if (checkMail.Count() == 1)
         {
@@ -38,7 +38,7 @@ public partial class web_module_website_VietNhatKids_web_QuenMatKhau : System.We
             tbHocSinh update = checkMail.First();
             update.hocsinh_pass = passmd5;
             db.SubmitChanges();
-            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Gửi Email thành công! Vui lòng xác nhận và đăng nhập','','success').then(function(){parent.location.href='/website-vietnhatkids-login';})", true);
+            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Gửi Email thành công! Vui lòng xác nhận và đăng nhập','','success').then(function(){parent.location.href='/website-dang-nhap';})", true);
         }
         else if (checkMail.Count() > 1)
         {

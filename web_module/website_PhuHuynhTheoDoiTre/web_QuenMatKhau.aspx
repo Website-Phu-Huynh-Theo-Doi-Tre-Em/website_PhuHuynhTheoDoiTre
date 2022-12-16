@@ -35,7 +35,7 @@
  */
         body, html {
             height: 100%;
-            background-image: url('/admin_images/Background.png');
+            background-image: url('/image_PHTDT/image_web/Background.png');
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -83,7 +83,7 @@
         .profile-img-card {
             /*width: 221px;
             height: 134px;*/
-            width: 70%;
+                width: 35%;
             max-width: 100%;
             margin: 0 auto 10px;
             display: block;
@@ -199,10 +199,11 @@
             height: 100px;
             margin: 0 auto 0px;
         }
-        a:active{
+
+        a:active {
             /*background:#8e191b !important;*/
-            background:#c62828 !important;
-            border-color:#8e191b !important;
+            background: #c62828 !important;
+            border-color: #8e191b !important;
         }
     </style>
 </head>
@@ -211,15 +212,15 @@
         <div class="container">
 
             <div id="step1" class="card card-container">
-                <img id="profile-img" class="profile-img-card" src="../../admin_images/logo.png" />
+                <img id="profile-img" class="profile-img-card" src="/image_PHTDT/image_web/logo_mamnon.png" />
                 <div class="form-signin">
                     <span id="reauth-email" class="reauth-email">Vui lòng kiểm tra Email để điền mã xác nhận!</span>
                     <input runat="server" type="Text" id="txtEmail" class="form-control" placeholder="Nhập Email" />
                     <a href="#" runat="server" id="btn_Gui" onclick="return checkMail()" onserverclick="btnGui_ServerClick" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Gửi</a>
-                    <a href="/website-trang-chu" style="background-color: rgb(131 127 127)" class="btn btn-lg btn-primary btn-block btn-signin" >Quay lại</a>
+                    <a href="/website-trang-chu" style="background-color: rgb(131 127 127)" class="btn btn-lg btn-primary btn-block btn-signin">Quay lại</a>
                 </div>
             </div>
-           <%-- <div id="step2" class="card card-container" style="display: none">
+            <%-- <div id="step2" class="card card-container" style="display: none">
                 <img id="profile-img2" class="profile-img-card" src="../../admin_images/logo.png" />
                 <div class="form-signin">
                     <span id="reauth-email2" class="reauth-email"></span>

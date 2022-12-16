@@ -1,19 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage_MamNon.master" AutoEventWireup="true" CodeFile="Web_ThongBao_Navtab.aspx.cs" Inherits="web_module_website_VietNhatKids_Web_ThongBao_Navtab" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage.master" AutoEventWireup="true" CodeFile="Web_ThongBao_Navtab.aspx.cs" Inherits="web_module_website_Web_ThongBao_Navtab" %>
 
 <%@ Register Src="~/web_usercontrol/Web_ThongTinCaNhan.ascx" TagPrefix="uc1" TagName="Web_ThongTinCaNhan" %>
-<%@ Register Src="~/web_usercontrol/Web_VietNhatKids.ascx" TagPrefix="uc1" TagName="Web_VietNhatKids" %>
+<%@ Register Src="~/web_usercontrol/Web_ThanhChucnang.ascx" TagPrefix="uc1" TagName="Web_ThanhChucnang" %>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="head" runat="Server">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="../../admin_js/sweetalert.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../admin_js/bootstrap.js"></script>
-    <script src="../../js/jquery-3.5.1.min.js"></script>
-    <script src="../../admin_js/js_base/jquery-1.9.1.js"></script>
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/jquery.min.js"></script>
+    <link href="../../css/css_PhuHuynhTheoDoiTre/usercontrol_ThanhChucNang.css" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -67,7 +62,6 @@
             .table td, .table th {
                 padding: 0.5rem;
                 vertical-align: top;
-                /* border-top: 1px solid #940808;*/
             }
 
         th {
@@ -268,6 +262,7 @@
             font-weight: 500;
             border-bottom: 1px solid #c7c7c7;
             height: 30px;
+            display: flex;
         }
 
         .titlee {
@@ -327,6 +322,11 @@
         .ThongBaoGanNhat {
             flex-direction: column;
         }
+
+        .row h2 {
+            width: 100%;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -334,10 +334,9 @@
         <div class="col-xl-3 col-md-12 float-left">
             <uc1:Web_ThongTinCaNhan runat="server" ID="Web_ThongTinCaNhan" />
         </div>
-        <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                <uc1:Web_VietNhatKids runat="server" ID="Web_VietNhatKids" />
+                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
             </div>
             <div class="col-12 row" style="padding: 0; margin: 0">
                 <div class="container_left col-12" style="padding: 0">
@@ -357,8 +356,8 @@
                                         <div class="row">
                                             <asp:Repeater ID="rpThongBaoChiTiet" runat="server">
                                                 <ItemTemplate>
-                                                    <h2 id="<%#Eval("thongbaotruong_id") %>" class="hidden"><%#Eval("thongbaotruong_title") %></h2>
-                                                    <%#Eval("thongbaotruong_content") %>
+                                                    <h2 id="<%#Eval("thongbao_id") %>" class="hidden"><%#Eval("thongbao_title") %></h2>
+                                                    <%#Eval("thongbao_content") %>
                                                 </ItemTemplate>
                                             </asp:Repeater>
                                         </div>
@@ -367,10 +366,10 @@
                                             <asp:Repeater ID="rpThongBao" runat="server">
                                                 <ItemTemplate>
                                                     <div class="notification">
-                                                        <a class="thongbao_con" onclick="funcXem(<%#Eval("thongbaotruong_id")%>) ">
+                                                        <a class="thongbao_con" onclick="funcXem(<%#Eval("thongbao_id")%>) ">
                                                             <span class="titlee">[<%=STT++ %>]</span>
-                                                            <span class="hi"><%#Eval("thongbaotruong_title") %></span>
-                                                            <span class="new_thongbao" style="<%#Eval("style")%>">New</span>
+                                                            <span class="hi"><%#Eval("thongbao_title") %></span>
+                                                            <%--<span class="new_thongbao" style="<%#Eval("style")%>">New</span>--%>
                                                         </a>
                                                     </div>
                                                 </ItemTemplate>
@@ -387,8 +386,8 @@
                                         <div class="row">
                                             <asp:Repeater ID="rpThongBaoChiTietLop" runat="server">
                                                 <ItemTemplate>
-                                                    <h2 style="width: 100%;" class="hidden"><%#Eval("thongbaoLop_title") %></h2>
-                                                    <div style="text-align: justify"><%#Eval("thongbaoLop_content") %></div>
+                                                    <h2 style="width: 100%;" class="hidden"><%#Eval("thongbao_title") %></h2>
+                                                    <div style="text-align: justify"><%#Eval("thongbao_content") %></div>
                                                 </ItemTemplate>
                                             </asp:Repeater>
                                         </div>
@@ -397,10 +396,10 @@
                                             <asp:Repeater ID="rpThongBaoLop" runat="server">
                                                 <ItemTemplate>
                                                     <div class="notification">
-                                                        <a class="thongbao_con" onclick="funXemTBLop(<%#Eval("thongbaoLop_id")%>)">
+                                                        <a class="thongbao_con" onclick="funXemTBLop(<%#Eval("thongbao_id")%>)">
                                                             <span class="titlee">[<%=STTT++ %>]</span>
-                                                            <span class="hi"><%#Eval("thongbaoLop_title") %></span>
-                                                            <span class="new_thongbao" style="<%#Eval("style")%>">New</span>
+                                                            <span class="hi"><%#Eval("thongbao_title") %></span>
+                                                            <%--<span class="new_thongbao" style="<%#Eval("style")%>">New</span>--%>
                                                         </a>
                                                     </div>
                                                 </ItemTemplate>
@@ -459,3 +458,7 @@
 
     </script>
 </asp:Content>
+
+
+
+

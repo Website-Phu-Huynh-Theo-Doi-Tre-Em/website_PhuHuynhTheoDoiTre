@@ -29,7 +29,7 @@ public partial class web_module_website_web_Login : System.Web.UI.Page
             taikhoan.Value = sdt;
             taikhoan.Expires= DateTime.Now.AddDays(365);
             Response.Cookies.Add(taikhoan);
-            Response.Redirect("/website-trang-chu");
+            Response.Redirect("/website-thong-bao");
         }
         else if (check_User.Count() > 1)
         {
@@ -45,6 +45,6 @@ public partial class web_module_website_web_Login : System.Web.UI.Page
 
     protected void Unnamed_ServerClick(object sender, EventArgs e)
     {
-        Response.Redirect("/website-ForgetPassword");
+        Response.Redirect("/website-quen-mat-khau");
     }
 }

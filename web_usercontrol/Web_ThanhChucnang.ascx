@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Web_VietNhatKids.ascx.cs" Inherits="web_usercontrol_WebUserControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Web_ThanhChucnang.ascx.cs" Inherits="web_usercontrol_WebUserControl" %>
 <%--<header>--%>
 <%-- <link href="../../css/owl.carousel.min.css" rel="stylesheet" />
     <link href="../../css/owl.theme.default.min.css" rel="stylesheet" />--%>
@@ -178,14 +178,14 @@
     <div class="block-menu row" style="padding: 0% 1% !important;">
         <div class="owl-carousel" id="div_App">
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-bao_0" class="block-btn" href="/website-vietnhatkids-thong-bao">
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-bao_0" class="block-btn" href="/website-thong-bao">
                     <img src="/image/icon/thong-bao.png" />
                     <span>THÔNG BÁO</span>
                     <span class="thong-bao" id="divThongBao" runat="server"><%=sothongbao %></span>
                 </a>
             </div>
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-tin-suc-khoe_1" class="block-btn" href="/website-vietnhatkids-thong-tin-suc-khoe">
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-tin-suc-khoe_1" class="block-btn" href="website-thong-tin-suc-khoe">
                     <img src="/image/icon/suc-khoe.png" />
                     <span>THÔNG TIN <br /> SỨC KHỎE</span>
                 </a>
@@ -206,7 +206,7 @@
 
             </div>
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()"  id="website-vietnhatkids-xin-nghi_4" class="block-btn" href="/website-vietnhatkids-xin-nghi">
+                <a onclick="funcActive(this.id),onLoad()"  id="website-vietnhatkids-xin-nghi_4" class="block-btn" href="/website-xin-nghi">
                     <img src="/image/icon/Dangky-Xin-nghi.png" />
                     <span>XIN NGHỈ</span>
                 </a>
