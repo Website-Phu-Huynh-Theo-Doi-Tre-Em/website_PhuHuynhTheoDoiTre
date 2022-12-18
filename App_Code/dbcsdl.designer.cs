@@ -80,15 +80,15 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void InserttbThongBao(tbThongBao instance);
   partial void UpdatetbThongBao(tbThongBao instance);
   partial void DeletetbThongBao(tbThongBao instance);
-    #endregion
-
-    public dbcsdlDataContext() :
-            base(global::System.Configuration.ConfigurationManager.ConnectionStrings["hethongquanlitreConnectionString"].ConnectionString, mappingSource)
-    {
-        OnCreated();
-    }
-
-    public dbcsdlDataContext(string connection) : 
+  #endregion
+	
+	public dbcsdlDataContext() : 
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["hethongquanlitreConnectionString"].ConnectionString, mappingSource)
+	{
+		OnCreated();
+	}
+	
+	public dbcsdlDataContext(string connection) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
@@ -1380,6 +1380,8 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 	
 	private string _ansang_trangthaiduyet;
 	
+	private System.Nullable<bool> _dangkyansang_tinhtrang;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1400,6 +1402,8 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
     partial void Onansang_ngayduyetChanged();
     partial void Onansang_trangthaiduyetChanging(string value);
     partial void Onansang_trangthaiduyetChanged();
+    partial void Ondangkyansang_tinhtrangChanging(System.Nullable<bool> value);
+    partial void Ondangkyansang_tinhtrangChanged();
     #endregion
 	
 	public tbDangKiAnhSang()
@@ -1563,6 +1567,26 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 				this._ansang_trangthaiduyet = value;
 				this.SendPropertyChanged("ansang_trangthaiduyet");
 				this.Onansang_trangthaiduyetChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dangkyansang_tinhtrang", DbType="Bit")]
+	public System.Nullable<bool> dangkyansang_tinhtrang
+	{
+		get
+		{
+			return this._dangkyansang_tinhtrang;
+		}
+		set
+		{
+			if ((this._dangkyansang_tinhtrang != value))
+			{
+				this.Ondangkyansang_tinhtrangChanging(value);
+				this.SendPropertyChanging();
+				this._dangkyansang_tinhtrang = value;
+				this.SendPropertyChanged("dangkyansang_tinhtrang");
+				this.Ondangkyansang_tinhtrangChanged();
 			}
 		}
 	}
