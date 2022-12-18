@@ -158,11 +158,7 @@
                                         <a href="#" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Thông Báo<i class="fa arrow"></i></a>
                                     </li>
                                     <li>
-                                        <a class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý ngoại khoá<i class="fa arrow"></i></a>
-                                        <ul>
-                                            <li>Thông Báo Trường
-                                            </li>
-                                        </ul>
+                                        <a href="/website_PhuHuynhTheoDoiTre/admin_page/module_ThemNgoaiKhoa.aspx" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý ngoại khoá<i class="fa arrow"></i></a>
                                     </li>
                                     <li>
                                         <a href="/website_PhuHuynhTheoDoiTre/admin_page/module_XacNhanHocSinhDangKyAnSang.aspx" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý ăn sáng<i class="fa arrow"></i></a>
