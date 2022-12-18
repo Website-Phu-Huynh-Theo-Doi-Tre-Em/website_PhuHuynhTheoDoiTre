@@ -33,8 +33,8 @@ public partial class web_ThongTinSucKhoe : System.Web.UI.Page
                           select n).FirstOrDefault();
             lblNam.Text = getNam.namhoc_nienkhoa;
             var getData = from hs in db.tbHocSinhs
-                          join sk in db.tbVietNhatKids_SucKhoes on hs.hocsinh_id equals sk.hocsinh_id
-                          join lt in db.tbImage_Liches on Convert.ToInt32(sk.suckhoe_thang) equals lt.image_lich
+                          join sk in db.tbThongTinSucKhoes on hs.hocsinh_id equals sk.hocsinh_id
+                          //join lt in db.tbImage_Liches on Convert.ToInt32(sk.suckhoe_thang) equals lt.image_lich
                           //join lt in db.tbImage_Liches on sk.suckhoe_thang equals lt.image_lich
                           join nh in db.tbHoctap_NamHocs on sk.namhoc_id equals nh.namhoc_id
                           where hs.hocsinh_taikhoan == _sdtHocSinh && nh.namhoc_id == getNam.namhoc_id

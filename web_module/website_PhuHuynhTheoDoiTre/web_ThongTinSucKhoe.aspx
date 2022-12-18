@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage_MamNon.master" AutoEventWireup="true" CodeFile="web_ThongTinSucKhoe.aspx.cs" Inherits="web_ThongTinSucKhoe" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage.master" AutoEventWireup="true" CodeFile="web_ThongTinSucKhoe.aspx.cs" Inherits="web_ThongTinSucKhoe" %>
 
-<%@ Register Src="~/web_usercontrol/Web_VietNhatKids.ascx" TagPrefix="uc1" TagName="Web_VietNhatKids" %>
 <%@ Register Src="~/web_usercontrol/Web_ThongTinCaNhan.ascx" TagPrefix="uc1" TagName="Web_ThongTinCaNhan" %>
+<%@ Register Src="~/web_usercontrol/Web_ThanhChucnang.ascx" TagPrefix="uc1" TagName="Web_ThanhChucnang" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -137,7 +137,7 @@
         <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                <uc1:Web_VietNhatKids runat="server" ID="Web_VietNhatKids" />
+                                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
             </div>
             <div class="col-12 row" style="padding: 0; margin: 0">
                 <div class="container_left col-4" style="padding-left: 0">

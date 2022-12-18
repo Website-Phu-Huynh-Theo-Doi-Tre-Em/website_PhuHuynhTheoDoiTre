@@ -387,6 +387,21 @@
             /* margin-top: 2%; */
             /* margin: 2% 0; */
         }
+
+        .block-btn {
+            padding: 5% !important;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-size: 7px;
+            font-weight: 800;
+            color: #6464a9;
+            box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+            background: #d5e8ef;
+            height: 6.2rem;
+            border-radius: 10px;
+        }
     </style>
     <%-- popup edit profile --%>
 
@@ -900,32 +915,7 @@
                 </div>
             </div>
         </div>
-        <%--  --%>
-        <%-- khung đăng xuất, chỉnh sửa tài khoản  --%>
-        <%--   <div runat="server" id="profile" class="user-menu" style="display: none; right: 1%; padding: 3px;">
-            <div class="user-info" style="padding: 2%;">
-                <asp:Repeater runat="server" ID="rpAnh">
-                    <ItemTemplate>
-                        <div class="profile-img">
-                            <img style="border-radius: 50%; height: 48px;"
-                                src="<%#Eval("avartar_path") %>" />
-                            <a href="#" runat="server" onclick="showEditprofile()"><i style="position: absolute; left: -100px; top: 19%; font-size: 1rem; z-index: 100; margin-left: 58%; color: #7d7f83" class="camera fa fa-camera" aria-hidden="true"></i></a>
-                        </div>
-                    </ItemTemplate>
-                </asp:Repeater>
-                <h3 class="name"><span>
-                    <asp:Label Text="" ID="lblHoTen" runat="server" /></span></h3>
-                <div class="ui btn normal"></div>
 
-            </div>
-            <div class="menu-nav">
-                <ul style="list-style-type: none;">
-                    <li runat="server" onclick="showEditprofile()"><span class="fa fa-cogs"></span>Chỉnh sửa hồ sơ</li>
-                    <li runat="server" onclick="showEditPassword()"><span class="fa fa-key"></span>Thay đổi mật khẩu </li>
-                    <li><a href="#" id="btnDangXuat" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnDangXuat_ServerClick" style="text-decoration: none"><span class="fa fa-power-off"></span>Đăng xuất</a></li>
-                </ul>
-            </div>
-        </div>--%>
         <%-- poup cập nhật tài khoản --%>
         <div class="contentpopup">
             <div class="abcc" id="Editprofile" style="display: none; box-shadow: 2px 3px 8px 5px #80808029;">
@@ -959,12 +949,9 @@
                                             <input id="txtName" runat="server" style="display: flex; border: none" onclick="showtxtName()"
                                                 class="format_ipput" type="text" disabled="disabled" />
 
-                                            <%--<i onclick="showtxtName()" id="penName" class="fa fa-pen"></i>--%>
-                                            <%--  <i class="fa fa-pen"></i>--%>
+
                                         </div>
-                                        <%--<input id="txtNamecp" runat="server" type="text" hidden="hidden" />--%>
-                                        <%--<input id="txtNamecp" runat="server" border: none"
-                                            class="format_ipput" type="text" hidden="hidden" />--%>
+
                                     </div>
                                     <div style="padding-left: 43px;">
                                         <p style="margin-bottom: 0" class="friend-profile__detail__header" data-translate-inner="STR_PERSONAL_PROFILE">Thông tin cá nhân</p>
@@ -1201,22 +1188,7 @@
         }
         return true;
     }
-    <%--function checkNull() {
-        var sdt = document.getelementbyid("<%=txtSDT.ClientID%>");
-        var matkhau = document.getelementbyid("<%=txtMatKhau.ClientID%>");
-        if (sdt.value.trim() == "") {
-            /*document.getelementbyid("checksdt").style.display = 'block';*/
-            swal("vui lòng nhập số điện thoại đăng nhập!", '', "warning").then(function () { sdt.focus(); })
 
-            return false;
-        }
-        if (matkhau.value.trim() == "") {
-            swal("vui lòng nhập mật khẩu đăng nhập!", '', "warning").then(function () { matkhau.focus(); })
-            return false;
-        }
-        return true;
-
-    }--%>
 </script>
 <script>
 
@@ -1228,10 +1200,10 @@
                     items: 1
                 },
                 600: {
-                    items: 8
+                    items: 5
                 },
                 1000: {
-                    items: 10
+                    items: 8
                 }
             }
         })

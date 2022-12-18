@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage_MamNon.master" AutoEventWireup="true" CodeFile="web_DanThuoc.aspx.cs" Inherits="web_module_module_website_website_VietNhatKis_web_DanThuoc" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage.master" AutoEventWireup="true" CodeFile="web_DanThuoc.aspx.cs" Inherits="web_module_module_website_website_VietNhatKis_web_DanThuoc" %>
 
 <%@ Register Src="~/web_usercontrol/Web_ThongTinCaNhan.ascx" TagPrefix="uc1" TagName="Web_ThongTinCaNhan" %>
-<%@ Register Src="~/web_usercontrol/Web_VietNhatKids.ascx" TagPrefix="uc1" TagName="Web_VietNhatKids" %>
+<%@ Register Src="~/web_usercontrol/Web_ThanhChucnang.ascx" TagPrefix="uc1" TagName="Web_ThanhChucnang" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
@@ -185,13 +185,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container-fluid row">
-        <div class="col-xl-3 col-md-12 float-left">
+       <div class="col-xl-3 col-md-12 float-left">
             <uc1:Web_ThongTinCaNhan runat="server" ID="Web_ThongTinCaNhan" />
         </div>
         <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                <uc1:Web_VietNhatKids runat="server" ID="Web_VietNhatKids" />
+                                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
+
             </div>
             <div class="col-12 row" style="padding: 0">
                 <div class="container_left col-5 colrp" style="padding-left: 0">
@@ -251,13 +252,13 @@
                                                 <td><%# Eval("danthuoc_disease") %></td>
                                                 <td><%#Eval("danthuoc_status")%></td>
                                                 <td>
-                                                    <button style="display: inline-block; background-color: unset !important; border: unset !important; padding: 0; font-weight: 700; color: #28a745 !important;"
+                                                    <a style="display: inline-block; background-color: unset !important; border: unset !important; padding: 0; font-weight: 700; color: #28a745 !important;"
                                                         class="btn btn-success" data-toggle="modal" data-target="#myModal_<%#Eval ("danthuoc_id") %>">
                                                         <%--Cập nhật--%>
                                                        
                                                         <i title="Chỉnh sửa"  class="fa fa-pen"></i> 
                                                         <i title="Đã chỉnh sửa" id="pen" class="fa fa-pen" style="display:none"></i>
-                                                    </button>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         </ItemTemplate>
@@ -349,7 +350,7 @@
             console.log(document.getElementById('txtNoiDungDanDo_' + id).value);
             document.getElementById('<%=txtNDCapNhat.ClientID%>').value = document.getElementById('txtNoiDungDanDo_' + id).value;
             document.getElementById('<%=btnCapNhat.ClientID%>').click();
-       
+
 
         }
         $(function () {
@@ -370,6 +371,12 @@
         });
     </script>
 </asp:Content>
+
+
+
+
+
+
 
 
 

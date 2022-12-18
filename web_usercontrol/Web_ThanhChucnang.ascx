@@ -23,7 +23,7 @@
         border-radius: 10px;
     }
 
-    .block-btn {
+    /*.block-btn {
         padding: 1% !important;
         display: flex;
         justify-content: center;
@@ -37,10 +37,10 @@
         height: 6rem;
         border-radius: 10px;
     }
-
-        .block-btn img {
-            padding: 1% 14% 0 14%;
-        }
+*/
+    .block-btn img {
+        padding: 1% 14% 0 14%;
+    }
 
     .block-menu {
         justify-content: space-between;
@@ -147,7 +147,8 @@
     .block-btn span {
         font-size: 10px;
     }
-    .Active{
+
+    .Active {
         background-color: aqua;
         box-shadow: 2px 4px 12px 2px #1c33688f;
         color: #940808;
@@ -163,14 +164,13 @@
     }
 
     $(document).ready(function () {
-        var hrefs = location.pathname.replace('/','');
+        var hrefs = location.pathname.replace('/', '');
         document.querySelector('a[href="/' + hrefs + '"]').classList.add("Active");
         var position = sessionStorage.getItem("listActive").split('_');
         $("#div_App").trigger("to.owl.carousel", [position[1], 10, true])
     });
     function onLoad() {
         $("#img-loading-icon").show();
-        setTimeout(function () { $("#img-loading-icon").hide() }, 2000);
     }
 
 </script>
@@ -185,34 +185,19 @@
                 </a>
             </div>
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-tin-suc-khoe_1" class="block-btn" href="website-thong-tin-suc-khoe">
-                    <img src="/image/icon/suc-khoe.png" />
-                    <span>THÔNG TIN <br /> SỨC KHỎE</span>
-                </a>
-            </div>
-             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-hoat-dong-hang-ngay_2" class="block-btn" href="/website-vietnhatkids-hoat-dong-hang-ngay" >
-                    <img src="/image/icon/hdhn1.png" />
-                    <span>HOẠT ĐỘNG <br />TRONG NGÀY</span>
-                </a>
-
-            </div>
-            <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-su-kien-hang-tuan_3" class="block-btn" href="/website-vietnhatkids-su-kien-hang-tuan">
-                    <img src="/image/icon/lich.png" />
-                    <span>SỰ KIỆN <br /> HÀNG TUẦN</span>
-                    <span class="new" id="divSuKien" runat="server">New</span>
-                </a>
-
-            </div>
-            <div class="item">
-                <a onclick="funcActive(this.id),onLoad()"  id="website-vietnhatkids-xin-nghi_4" class="block-btn" href="/website-xin-nghi">
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-xin-nghi_4" class="block-btn" href="/website-xin-nghi">
                     <img src="/image/icon/Dangky-Xin-nghi.png" />
                     <span>XIN NGHỈ</span>
                 </a>
             </div>
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-dan-thuoc_5" class="block-btn" href="/website-vietnhatkids-dan-thuoc" >
+                <a onclick="funcActive(this.id),onLoad()" class="block-btn" href="https://bambooschool.edu.vn/phan-mem-giup-be-hoc-chu-cai-tieng-viet/#ftoc-heading-1" id="HocTap_8" target="_blank">
+                    <img src="/image/icon/Dangky-Hoc-tap.png" />
+                    <span>HỌC TẬP</span>
+                </a>
+            </div>
+            <div class="item">
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-dan-thuoc_5" class="block-btn" href="/website-thong-dan-thuoc">
                     <img src="/image/icon/Dangky-Thuoc.png" />
                     <span>DẶN THUỐC
                         <br />
@@ -221,87 +206,54 @@
                 </a>
             </div>
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-ablum-anh_6" class="block-btn" href="/website-vietnhatkids-ablum-anh" >
-                    <img src="/image/icon/album.png" />
-                    <span>ALBUM ẢNH</span>
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-tin-suc-khoe_1" class="block-btn" href="#">
+                    <img src="/image/icon/suc-khoe.png" />
+                    <span>THÔNG TIN
+                        <br />
+                        SỨC KHỎE</span>
                 </a>
             </div>
+
+
+
+
+
+
+
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-dang-ky-dong-phuc-le-phuc_7" class="block-btn" href="/website-vietnhatkids-dang-ky-dong-phuc-le-phuc" >
-                    <img src="/image/icon/Dangky-Dong-phuc.png" />
-                    <span>ĐĂNG KÍ <br />
-                        ĐỒNG PHỤC
-                    </span>
-                </a>
-            </div>
-              <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" class="block-btn" href="/danh-muc-hoc-tap" id="HocTap_8">
-                    <img src="/image/icon/Dangky-Hoc-tap.png" />
-                    <span>HỌC TẬP</span>
-                </a>
-            </div>
-            <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-dang-ky-da-ngoai_9" class="block-btn" href="/website-vietnhatkids-dang-ky-da-ngoai" >
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-dang-ky-da-ngoai_9" class="block-btn" href="/website-vietnhatkids-dang-ky-da-ngoai">
                     <img src="/image/icon/Dangky-ngoai-khoa.png" />
-                    <span>ĐĂNG KÍ <br /> DÃ NGOẠI</span>
+                    <span>ĐĂNG KÍ
+                        <br />
+                        NGOẠI KHÓA</span>
                     <span class="new" id="divDaNgoai" runat="server">New</span>
                 </a>
             </div>
-          
-           
+
+
 
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-an-sang-uong-sua_10" class="block-btn" href="/website-vietnhatkids-an-sang-uong-sua" >
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-an-sang-uong-sua_10" class="block-btn" href="/website-vietnhatkids-an-sang-uong-sua">
                     <img src="/image/icon/Dangky-an-sang.png" />
                     <span>ĐK VÀ HỦY
-                        ĂN <br /> SÁNG, UỐNG SỮA
+                        ĂN
+                        <br />
+                        SÁNG
                     </span>
                 </a>
 
             </div>
-             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-hoc-phi_11" class="block-btn" href="/website-vietnhatkids-hoc-phi" >
-                    <img src="/image/icon/hoc-phi1.png" />
-                    <span>HỌC PHÍ</span>
-                </a>
 
-            </div>
-            
-           
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-do-dung-hoc-tap_12" class="block-btn" href="/website-vietnhatkids-do-dung-hoc-tap" >
-                    <img src="/image/icon/do-dung.png" />
-                    <span>ĐĂNG KÝ <br /> ĐỒ DÙNG</span>
-                </a>
-
-            </div>
-            <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-nang-khieu_13" class="block-btn" href="/website-vietnhatkids-nang-khieu" >
-                    <img src="/image/icon/earobic.png" />
-                    <span>ĐĂNG KÝ <br /> NĂNG KHIẾU</span>
-                </a>
-
-            </div>
-            <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="DanhGiaGiaoVien_14" class="block-btn" href="/website-vietnhatkids-danh-gia-giao-vien" >
+                <a onclick="funcActive(this.id),onLoad()" id="DanhGiaGiaoVien_14" class="block-btn" href="/website-vietnhatkids-danh-gia-giao-vien">
                     <img src="/image/icon/danh-gia-giao-vien.png" />
-                    <span>ĐÁNH GIÁ <br /> GIÁO VIÊN</span>
+                    <span>ĐÁNH GIÁ
+                        <br />
+                        GIÁO VIÊN</span>
                 </a>
 
             </div>
-            <%-- <div class="item">
-                <a onclick="funcActive(this.id)" class="block-btn" href="#" id="HocVe_15">
-                    <img src="/image/icon/hoc-ve.png" />
-                    <span>ĐĂNG KÝ HỌC VẼ</span>
-                </a>
 
-            </div>
-            <div class="item">
-                <a onclick="funcActive(this.id)" class="block-btn" href="#" id="TiengAnh_16">
-                    <img src="/image/icon/tieng-anh.png" />
-                    <span>ĐĂNG KÝ HỌC TIẾNG ANH</span>
-                </a>
-            </div>--%>
         </div>
     </div>
 </div>
