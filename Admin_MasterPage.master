@@ -110,79 +110,11 @@
                                     <span runat="server"><%=thongbaoNgoaiKhoa%></span>
                                 </i>
                             </a>
-
-                            <a class="notification col-md-3 col-sm-3 col-xs-4" href="/admin-danh-sach-dang-ky-dong-phuc" title="Đăng ký đồng phục">
-                                <i class="fa fa-user-plus" aria-hidden="true">
-                                    <%--<span runat="server"><%=thongbaoDKDongPhuc%></span>--%>
-                                </i>
-                            </a>
-                            <a class="notification col-md-3 col-sm-3 col-xs-4" href="/admin-gop-y-tu-phu-huynh" title="Thư góp ý từ phụ huynh">
-                                <i class="fa fa-envelope" aria-hidden="true">
-                                    <%--<span runat="server"><%=thongbaoThuGopY%></span>--%>
-                                </i>
-                            </a>
                         </div>
                         <div class="header-block header-block-nav">
                             <ul class="nav-profile">
                                 <li hidden="hidden">
                                     <a href="admin-noi-dung-hom-thu-gop-y-0" class="btn btn-primary"><span style="color: white; padding: 10px 0">Thư góp ý</span></a>
-                                </li>
-                                <li id="bl_congvannoibo" runat="server" class="notifications new">
-                                    <a href="#" data-toggle="dropdown"><i class="fa fa-bell"></i><sup>
-                                        <%--<span class="counter" runat="server" id="Span2"><%=count_congvannoibo %></span>--%>
-                                    </sup></a>
-                                    <div class="dropdown-menu notifications-dropdown-menu">
-                                        <ul class="notifications-container">
-                                            <li>
-                                                <a href="../../admin-duyet-cong-van-noi-bo-van-thu" class="notification-item">
-                                                    <div class="img-col">
-                                                        <div class="img" style="background-image: url('/admin_images/avatardefault.png')"></div>
-                                                    </div>
-                                                    <div class="body-col">
-                                                        <%--<p><span class="accent">Thầy</span> có <span><%=count_congvannoibo %></span> công văn nội bộ cần duyệt </p>--%>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li id="bl_congvanmoi" runat="server" class="notifications new">
-                                    <a href="#" data-toggle="dropdown"><i class="fa fa-bell"></i><sup>
-                                        <%--<span class="counter" runat="server" id="Span1"><%=count_congvanmoi %></span>--%>
-                                    </sup></a>
-                                    <div class="dropdown-menu notifications-dropdown-menu">
-                                        <ul class="notifications-container">
-                                            <li>
-                                                <a href="../../admin-quan-ly-cong-van" class="notification-item">
-                                                    <div class="img-col">
-                                                        <div class="img" style="background-image: url('/admin_images/avatar.jpg')"></div>
-                                                    </div>
-                                                    <div class="body-col">
-                                                        <%--<p><span class="accent">Thầy</span> có <span><%=count_congvanmoi %></span> công văn mới </p>--%>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li id="bl_dugio" runat="server" class="notifications new" hidden>
-                                    <a href="#" data-toggle="dropdown"><i class="fa fa-bell"></i><sup>
-                                        <%--<span class="counter" runat="server" id="txtNotification"><%=count %></span>--%>
-                                    </sup></a>
-                                    <div class="dropdown-menu notifications-dropdown-menu">
-                                        <ul class="notifications-container">
-                                            <li>
-                                                <a href="../../admin-xem-danh-sach-du-gio" class="notification-item">
-                                                    <div class="img-col">
-                                                        <div class="img" style="background-image: url('/admin_images/avatar.jpg')"></div>
-                                                    </div>
-                                                    <div class="body-col">
-                                                        <%--<p><span class="accent">Thầy</span> có <span><%=count %></span> đăng kí dự giờ mới </p>--%>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </li>
                                 <li class="profile dropdown">
                                     <a class="logdropdown nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -203,7 +135,7 @@
                         <div class="sidebar-container">
                             <div class="sidebar-header">
                                 <div class="brand">
-                                    <a href="../../admin-home"><i class="fa fa-home" aria-hidden="true" style="font-size: 25px; color: #52BCD3;"></i>Quản trị Việt Nhật</a>
+                                    <a href="/Admin_Default.aspx"><i class="fa fa-home" aria-hidden="true" style="font-size: 25px; color: #52BCD3;"></i>Quản trị ued</a>
                                 </div>
                             </div>
                             <nav class="menu">
@@ -223,39 +155,18 @@
                                         </ItemTemplate>
                                     </asp:Repeater>--%>
                                     <li>
-                                        <a class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Thông Báo<i class="fa arrow"></i></a>
-                                        <ul>
-                                            <li>Thông Báo Trường
-                                            </li>
-                                        </ul>
+                                        <a href="#" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Thông Báo<i class="fa arrow"></i></a>
                                     </li>
                                     <li>
-                                        <a class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý ngoại khoá<i class="fa arrow"></i></a>
-                                        <ul>
-                                            <li>Thông Báo Trường
-                                            </li>
-                                        </ul>
+                                        <a href="/website_PhuHuynhTheoDoiTre/admin_page/module_ThemNgoaiKhoa.aspx" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý ngoại khoá<i class="fa arrow"></i></a>
                                     </li>
                                     <li>
-                                        <a class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý ăn sáng<i class="fa arrow"></i></a>
-                                        <ul>
-                                            <li>Thông Báo Trường
-                                            </li>
-                                        </ul>
+                                        <a href="/website_PhuHuynhTheoDoiTre/admin_page/module_XacNhanHocSinhDangKyAnSang.aspx" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý ăn sáng<i class="fa arrow"></i></a>
+                                        
                                     </li>
                                     <li>
-                                        <a class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý dặn thuốc<i class="fa arrow"></i></a>
-                                        <ul>
-                                            <li>Thông Báo Trường
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Điểm danh<i class="fa arrow"></i></a>
-                                        <ul>
-                                            <li>Thông Báo Trường
-                                            </li>
-                                        </ul>
+                                        <a href="/website_PhuHuynhTheoDoiTre/admin_page/module_DanDoThuocTuPhuHuynh.aspx" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý dặn thuốc<i class="fa arrow"></i></a>
+                                        
                                     </li>
                                     <li>
                                         <a class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý sức khoẻ<i class="fa arrow"></i></a>
