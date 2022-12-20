@@ -31,10 +31,10 @@
         /*
  * General styles
  */
-        body, html { 
+        body, html {
             height: 100%;
-            background-image: url('/image_PHTDT/image_web/Background.png');
-            display: flex;
+            background-image: url('/image_/background-1.png');
+             display: flex;
             flex-direction: column;
             justify-content: center;
             background-size: cover;
@@ -143,8 +143,8 @@
         }
 
         .btn.btn-signin {
-            /*background-color: #4d90fe; */
-            background-color: rgb(104, 145, 162);
+            background-color: #4d90fe; 
+           /* background-color: rgb(104, 145, 162);*/
             /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
             padding: 0px;
             font-weight: 700;
@@ -164,7 +164,7 @@
             .btn.btn-signin:hover,
             .btn.btn-signin:active,
             .btn.btn-signin:focus {
-                background-color: rgb(12, 97, 33);
+                background-color: #4d90fe;
             }
 
         .forgot-password {
@@ -180,7 +180,7 @@
 
         .btn.btn-signin {
             /* background-color: #4d90fe; */
-            background-color: rgb(142 25 27);
+            background-color: #4d90fe;
         }
 
             .btn.btn-signin:hover, .btn.btn-signin:active, .btn.btn-signin:focus {
@@ -218,7 +218,8 @@
                 <h6 style="text-align: center; font-size: 21px;">Đồng hành cùng phụ huynh ươm mầm tương lai</h6>
             </div>
             <div class="card card-container">
-                <img id="profile-img" class="profile-img-card" src="/image_PHTDT/image_web/logo_mamnon.png" />
+                <img id="profile-img" class="profile-img-card" src="/image_/Logo.png" />
+            
                 <div class="form-signin">
                     <span id="reauth-email" class="reauth-email"></span>
                     <input runat="server" type="Text" id="txtSDT" class="form-control" placeholder="Nhập số điện thoại" />
