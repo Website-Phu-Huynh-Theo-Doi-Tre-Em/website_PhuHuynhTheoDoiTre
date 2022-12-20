@@ -44,6 +44,9 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void InserttbDangKiAnhSang(tbDangKiAnhSang instance);
   partial void UpdatetbDangKiAnhSang(tbDangKiAnhSang instance);
   partial void DeletetbDangKiAnhSang(tbDangKiAnhSang instance);
+  partial void InserttbDangKyNgoaiKhoa(tbDangKyNgoaiKhoa instance);
+  partial void UpdatetbDangKyNgoaiKhoa(tbDangKyNgoaiKhoa instance);
+  partial void DeletetbDangKyNgoaiKhoa(tbDangKyNgoaiKhoa instance);
   partial void InserttbGiaoVien(tbGiaoVien instance);
   partial void UpdatetbGiaoVien(tbGiaoVien instance);
   partial void DeletetbGiaoVien(tbGiaoVien instance);
@@ -149,6 +152,14 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tbDangKiAnhSang>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbDangKyNgoaiKhoa> tbDangKyNgoaiKhoas
+	{
+		get
+		{
+			return this.GetTable<tbDangKyNgoaiKhoa>();
 		}
 	}
 	
@@ -1587,6 +1598,260 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 				this._dangkyansang_tinhtrang = value;
 				this.SendPropertyChanged("dangkyansang_tinhtrang");
 				this.Ondangkyansang_tinhtrangChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbDangKyNgoaiKhoa")]
+public partial class tbDangKyNgoaiKhoa : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _dangkyngoaikhoa_id;
+	
+	private System.Nullable<int> _ngoaikhoa_id;
+	
+	private System.Nullable<System.DateTime> _dangkyngoaikhoa_datecreate;
+	
+	private System.Nullable<int> _hstl_id;
+	
+	private System.Nullable<int> _hocsinh_id;
+	
+	private System.Nullable<int> _lop_id;
+	
+	private System.Nullable<int> _namhoc_id;
+	
+	private string _dangkyngoaikhoa_tinhtrang;
+	
+	private System.Nullable<int> _username_id;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ondangkyngoaikhoa_idChanging(int value);
+    partial void Ondangkyngoaikhoa_idChanged();
+    partial void Onngoaikhoa_idChanging(System.Nullable<int> value);
+    partial void Onngoaikhoa_idChanged();
+    partial void Ondangkyngoaikhoa_datecreateChanging(System.Nullable<System.DateTime> value);
+    partial void Ondangkyngoaikhoa_datecreateChanged();
+    partial void Onhstl_idChanging(System.Nullable<int> value);
+    partial void Onhstl_idChanged();
+    partial void Onhocsinh_idChanging(System.Nullable<int> value);
+    partial void Onhocsinh_idChanged();
+    partial void Onlop_idChanging(System.Nullable<int> value);
+    partial void Onlop_idChanged();
+    partial void Onnamhoc_idChanging(System.Nullable<int> value);
+    partial void Onnamhoc_idChanged();
+    partial void Ondangkyngoaikhoa_tinhtrangChanging(string value);
+    partial void Ondangkyngoaikhoa_tinhtrangChanged();
+    partial void Onusername_idChanging(System.Nullable<int> value);
+    partial void Onusername_idChanged();
+    #endregion
+	
+	public tbDangKyNgoaiKhoa()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dangkyngoaikhoa_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int dangkyngoaikhoa_id
+	{
+		get
+		{
+			return this._dangkyngoaikhoa_id;
+		}
+		set
+		{
+			if ((this._dangkyngoaikhoa_id != value))
+			{
+				this.Ondangkyngoaikhoa_idChanging(value);
+				this.SendPropertyChanging();
+				this._dangkyngoaikhoa_id = value;
+				this.SendPropertyChanged("dangkyngoaikhoa_id");
+				this.Ondangkyngoaikhoa_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngoaikhoa_id", DbType="Int")]
+	public System.Nullable<int> ngoaikhoa_id
+	{
+		get
+		{
+			return this._ngoaikhoa_id;
+		}
+		set
+		{
+			if ((this._ngoaikhoa_id != value))
+			{
+				this.Onngoaikhoa_idChanging(value);
+				this.SendPropertyChanging();
+				this._ngoaikhoa_id = value;
+				this.SendPropertyChanged("ngoaikhoa_id");
+				this.Onngoaikhoa_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dangkyngoaikhoa_datecreate", DbType="DateTime")]
+	public System.Nullable<System.DateTime> dangkyngoaikhoa_datecreate
+	{
+		get
+		{
+			return this._dangkyngoaikhoa_datecreate;
+		}
+		set
+		{
+			if ((this._dangkyngoaikhoa_datecreate != value))
+			{
+				this.Ondangkyngoaikhoa_datecreateChanging(value);
+				this.SendPropertyChanging();
+				this._dangkyngoaikhoa_datecreate = value;
+				this.SendPropertyChanged("dangkyngoaikhoa_datecreate");
+				this.Ondangkyngoaikhoa_datecreateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hstl_id", DbType="Int")]
+	public System.Nullable<int> hstl_id
+	{
+		get
+		{
+			return this._hstl_id;
+		}
+		set
+		{
+			if ((this._hstl_id != value))
+			{
+				this.Onhstl_idChanging(value);
+				this.SendPropertyChanging();
+				this._hstl_id = value;
+				this.SendPropertyChanged("hstl_id");
+				this.Onhstl_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hocsinh_id", DbType="Int")]
+	public System.Nullable<int> hocsinh_id
+	{
+		get
+		{
+			return this._hocsinh_id;
+		}
+		set
+		{
+			if ((this._hocsinh_id != value))
+			{
+				this.Onhocsinh_idChanging(value);
+				this.SendPropertyChanging();
+				this._hocsinh_id = value;
+				this.SendPropertyChanged("hocsinh_id");
+				this.Onhocsinh_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lop_id", DbType="Int")]
+	public System.Nullable<int> lop_id
+	{
+		get
+		{
+			return this._lop_id;
+		}
+		set
+		{
+			if ((this._lop_id != value))
+			{
+				this.Onlop_idChanging(value);
+				this.SendPropertyChanging();
+				this._lop_id = value;
+				this.SendPropertyChanged("lop_id");
+				this.Onlop_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_namhoc_id", DbType="Int")]
+	public System.Nullable<int> namhoc_id
+	{
+		get
+		{
+			return this._namhoc_id;
+		}
+		set
+		{
+			if ((this._namhoc_id != value))
+			{
+				this.Onnamhoc_idChanging(value);
+				this.SendPropertyChanging();
+				this._namhoc_id = value;
+				this.SendPropertyChanged("namhoc_id");
+				this.Onnamhoc_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dangkyngoaikhoa_tinhtrang", DbType="NVarChar(MAX)")]
+	public string dangkyngoaikhoa_tinhtrang
+	{
+		get
+		{
+			return this._dangkyngoaikhoa_tinhtrang;
+		}
+		set
+		{
+			if ((this._dangkyngoaikhoa_tinhtrang != value))
+			{
+				this.Ondangkyngoaikhoa_tinhtrangChanging(value);
+				this.SendPropertyChanging();
+				this._dangkyngoaikhoa_tinhtrang = value;
+				this.SendPropertyChanged("dangkyngoaikhoa_tinhtrang");
+				this.Ondangkyngoaikhoa_tinhtrangChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username_id", DbType="Int")]
+	public System.Nullable<int> username_id
+	{
+		get
+		{
+			return this._username_id;
+		}
+		set
+		{
+			if ((this._username_id != value))
+			{
+				this.Onusername_idChanging(value);
+				this.SendPropertyChanging();
+				this._username_id = value;
+				this.SendPropertyChanged("username_id");
+				this.Onusername_idChanged();
 			}
 		}
 	}
@@ -3178,6 +3443,8 @@ public partial class tbNgoaiKhoa : INotifyPropertyChanging, INotifyPropertyChang
 	
 	private System.Nullable<System.DateTime> _ngoaikhoa_capnhat;
 	
+	private string _ngoaikhoa_trangthai;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3196,6 +3463,8 @@ public partial class tbNgoaiKhoa : INotifyPropertyChanging, INotifyPropertyChang
     partial void Onkhoi_idChanged();
     partial void Onngoaikhoa_capnhatChanging(System.Nullable<System.DateTime> value);
     partial void Onngoaikhoa_capnhatChanged();
+    partial void Onngoaikhoa_trangthaiChanging(string value);
+    partial void Onngoaikhoa_trangthaiChanged();
     #endregion
 	
 	public tbNgoaiKhoa()
@@ -3339,6 +3608,26 @@ public partial class tbNgoaiKhoa : INotifyPropertyChanging, INotifyPropertyChang
 				this._ngoaikhoa_capnhat = value;
 				this.SendPropertyChanged("ngoaikhoa_capnhat");
 				this.Onngoaikhoa_capnhatChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngoaikhoa_trangthai", DbType="NVarChar(MAX)")]
+	public string ngoaikhoa_trangthai
+	{
+		get
+		{
+			return this._ngoaikhoa_trangthai;
+		}
+		set
+		{
+			if ((this._ngoaikhoa_trangthai != value))
+			{
+				this.Onngoaikhoa_trangthaiChanging(value);
+				this.SendPropertyChanging();
+				this._ngoaikhoa_trangthai = value;
+				this.SendPropertyChanged("ngoaikhoa_trangthai");
+				this.Onngoaikhoa_trangthaiChanged();
 			}
 		}
 	}
