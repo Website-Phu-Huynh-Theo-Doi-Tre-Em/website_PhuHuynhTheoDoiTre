@@ -63,7 +63,6 @@
             background: white;
             height: 32rem;
             border-radius: 10px;
-            /*box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);*/
         }
 
         .container-right-title {
