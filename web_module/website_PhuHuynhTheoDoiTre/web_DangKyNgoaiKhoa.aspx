@@ -281,7 +281,6 @@
          <div class="col-xl-3 col-md-12 float-left">
             <uc1:Web_ThongTinCaNhan runat="server" ID="Web_ThongTinCaNhan" />
         </div>
-        <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
                                 <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
