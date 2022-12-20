@@ -779,7 +779,8 @@
         <asp:ScriptManager runat="server" />
         <header>
             <div class="clogo">
-                <img src="image_PHTDT/image_web/logo_mamnon.png" />
+                <img src="image_/Logo.png" />
+                
             </div>
         </header>
         <nav class="nav-main">
@@ -787,9 +788,9 @@
             <label for="bc1" class="btn">
                 <i class='bx bx-menu-alt-left'></i>
             </label>
-            <!-- <label class="logo"><img src="/assets/img/logo.png"  alt="" id="logo_sub"></label> -->
+             <%--<label class="logo"><img src="image_/Logo.png"  alt="" id="logo_sub"></label>--%>
             <div class="clogo_sub">
-                <img src="/assets/img/logo.png" alt="" id="logo_sub">
+                <img src="image_/Logo.png" alt="" id="logo_sub">
             </div>
             <ul id="listUl">
                 <li><a href="/website-trang-chu">Trang chủ</a></li>

@@ -63,30 +63,27 @@ public partial class Website_MasterPage : System.Web.UI.MasterPage
         cls_security md5 = new cls_security();
         var sdt = txtSDT.Value.Trim();
         var mk = md5.HashCode(txtMatKhau.Value.Trim());
-        var checkUser = from u in db.tbHocSinhs
-                        where u.hocsinh_taikhoan == sdt && u.hocsinh_tinhtrang == null && u.hocsinh_pass == mk
-                        select u;
-        if (checkUser.Count() == 1)
+
+        var check_User = from u in db.tbHocSinhs
+                         where u.hocsinh_pass == mk && u.hocsinh_taikhoan == sdt && u.hocsinh_tinhtrang == null
+                         select u;
+        if (check_User.Count() == 1)
         {
             HttpCookie taikhoan = new HttpCookie("web_hocsinh");
             taikhoan.Value = sdt;
             taikhoan.Expires = DateTime.Now.AddDays(365);
             Response.Cookies.Add(taikhoan);
-
             Response.Redirect("/website-trang-chu");
-
         }
-        else if (checkUser.Count() > 1)
+        else if (check_User.Count() > 1)
         {
-            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Tài khoản bị trùng!','','warning').then(function(){openForm()})", true);
-
+            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Tài khoản bị trùng!','','warning')", true);
 
 
         }
         else
         {
-            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Mật khẩu hoặc số điện thoại không đúng!','','warning').then(function(){openForm()})", true);
-
+            ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Mật khẩu hoặc số điện thoại không đúng!','','warning')", true);
         }
     }
 
@@ -101,17 +98,16 @@ public partial class Website_MasterPage : System.Web.UI.MasterPage
 
     protected void btnCapNhat_ServerClick(object sender, EventArgs e)
     {
-        if (md5.HashCode(txtMKCu.Value) == pass)
+        if( txtMKCu.Value == pass)
         {
             if (txtMKMoi.Value == txtMKXacNhan.Value)
             {
                 tbHocSinh update = (from hs in db.tbHocSinhs
                                     where hs.hocsinh_id == hocsinh_id && hs.hocsinh_tinhtrang == null
                                     select hs).FirstOrDefault();
-                var mkmd5 = md5.HashCode(txtMKMoi.Value);
+                var mkmd5 =txtMKMoi.Value;
                 update.hocsinh_pass = mkmd5;
                 db.SubmitChanges();
-                //ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thành công!','','warning')", true);
                 ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thành công !!','','success').then(function(){HiddenLoadingIcon();parent.location.href='/website-vietnhatkids-login'})", true);
 
 

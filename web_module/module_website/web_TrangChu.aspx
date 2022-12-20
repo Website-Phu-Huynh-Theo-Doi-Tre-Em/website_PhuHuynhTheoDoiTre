@@ -11,13 +11,13 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="/assets/img/slider/slide.jpg" alt="">
+                <img src="../../image_/billboard-template-with-world-book-day-conceptwatercolor-stylexa_83728-8776.jpg" />
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/slider/slide1.jpg" alt="">
+                <img src="../../image_/Free%20vector%20back%20to%20school%20with%20happiness.jpg" />
             </div>
             <div class="swiper-slide">
-                <img src="/assets/img/slider/slide2.jpg" alt="">
+                <img src="../../image_/grade-one-diploma-certificate-template_1308-60666.jpg" />
             </div>
         </div>
         <div class="swiper-button-prev"></div>
@@ -28,19 +28,19 @@
         <div class="content-1">
             <div class="row">
                 <div class="ct-img-1 col-half">
-                    <img src="/assets/img/h1.jpg" alt="">
+                    <img src="../../image_/Free%20vector%20back%20to%20school%20with%20happiness.jpg" />
                 </div>
                 <div class="ct-text-1 col-half">
                     <h3 class="text-good">Giáo dục cân bằng trái tim và trí tuệ
                     </h3>
-                    <h2 class="text-red text-title">Từ tâm huyết Cơ sở giáo dục Việt Nhật được ra đời
+                    <h2 class="text-red text-title">Tâm huyết Cơ sở giáo dục 
                     </h2>
                     <p class="content">
-                        Với phương châm “Educate Heart & Mind” – Giáo dục trái tim và Trí tuệ, Hooray Bilingual Kindergarten
-                    hy vọng mang đến cho trẻ em Việt Nam một môi trường học tập lý tưởng và là ngôi nhà thứ hai tràn
-                    ngập niềm vui trong những năm tháng đầu đời của trẻ. Hooray được ra đời từ tâm huyết của những người
-                    làm giáo dục, mong muốn cho trẻ một môi trường tốt nhất để phát triển thể chất và trí tuệ, giúp trẻ
-                    hình thành từ sớm các kỹ năng cần thiết để trở thành công dân toàn cầu thế kỷ 21.
+                        Trẻ sẽ được phát triển hoàn hảo về các mặt để trở nên ham học, 
+                        biết cách học và biết cư xử. Các em chẳng những được trang bị vốn 
+                        hiểu biết và kỹ năng sống để bước vào lớp MỘT, bậc tiểu học ở các 
+                        trường quốc gia lẫn quốc tế một cách thoải mái, tự tin, mà còn tiếp tục 
+                        vững vàng phát triển ở các bậc học tiếp theo và trọn đời.
                     </p>
                     <a href="" class="text-white">Xem thêm</a>
                 </div>
@@ -51,7 +51,7 @@
     </div>
     <!-- chương trình học -->
     <div class="container-1 background-wave" style="text-align: center;" id="chuongtrinhhoc">
-        <h4 class="text-good">Việt nhật tin rằng giáo dục là “vì cuộc sống”
+        <h4 class="text-good"> Giáo dục là “vì cuộc sống”
         </h4>
         <br>
         <h1 class="text-red text-title">Chương trình học
@@ -61,21 +61,21 @@
         <div class="content-1 row">
             <div class="box-cth col-third" style="background-color: #f4cd80;">
                 <div>
-                    <img src="/assets/img/giao-duc-mam-non-6.jpg" alt="">
+                    <img src="../../image_/grade-one-diploma-certificate-template_1308-60666.jpg" />
                 </div>
                 <h4>Học năng khiếu
                 </h4>
             </div>
             <div class="box-cth col-third" style="background-color: #80e7f4;">
                 <div>
-                    <img src="/assets/img/giao-duc-mam-non-6.jpg" alt="">
+                    <img src="../../image_/billboard-template-with-world-book-day-conceptwatercolor-stylexa_83728-8776.jpg" />
                 </div>
                 <h4>Học năng khiếu
                 </h4>
             </div>
             <div class="box-cth col-third" style="background-color: #f480c0;">
                 <div>
-                    <img src="/assets/img/giao-duc-mam-non-6.jpg" alt="">
+                    <img src="../../image_/billboard-template-with-world-book-day-conceptwatercolor-stylexa_83728-8776.jpg" />
                 </div>
                 <h4>Học năng khiếu
                 </h4>
@@ -91,8 +91,7 @@
             </h1>
             <br>
             <p>
-                Các game trự tuyến dành cho các bạn học sinh mầm non từ 2 đén 10 tuổi được áp dụng duy nhất tại Việt Nhật
-                mầm non
+                Các game trự tuyến dành cho các bạn học sinh mầm non từ 2 đén 10 tuổi được áp dụng 
             </p>
             <br>
             <div class="content-sub">
@@ -100,16 +99,16 @@
                     <img src="/assets/img/loi-the/csvc.jpg" alt="">
                 </div>
                 <div class="cts-text">
-                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NĂNG CAO
+                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NÂNG CAO
                     </h1>
-                    <p>luôn mang trong mình nhiều ựu tự hào của hệ thống giáo dục Việt Nhật</p>
+                    <p>luôn mang trong mình nhiều sự tự hào của hệ thống giáo dục </p>
                 </div>
             </div>
             <div class="content-sub">
                 <div class="cts-text">
-                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NĂNG CAO
+                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NÂNG CAO
                     </h1>
-                    <p>luôn mang trong mình nhiều ựu tự hào của hệ thống giáo dục Việt Nhật</p>
+                    <p>luôn mang trong mình nhiều ựu tự hào của hệ thống giáo dục </p>
                 </div>
                 <div class="cts-img">
                     <img src="/assets/img/loi-the/csvc.jpg" alt="">
@@ -120,16 +119,16 @@
                     <img src="/assets/img/loi-the/csvc.jpg" alt="">
                 </div>
                 <div class="cts-text">
-                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NĂNG CAO
+                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NÂNG CAO
                     </h1>
-                    <p>luôn mang trong mình nhiều ựu tự hào của hệ thống giáo dục Việt Nhật</p>
+                    <p>luôn mang trong mình nhiều ựu tự hào của hệ thống giáo dục </p>
                 </div>
             </div>
             <div class="content-sub">
                 <div class="cts-text">
-                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NĂNG CAO
+                    <h1 class="text-red">HƠN <span class="text-good">100</span> CHỦ ĐỀ GAME TỪ ĐƠN GIẢN ĐẾN NÂNG CAO
                     </h1>
-                    <p>luôn mang trong mình nhiều ựu tự hào của hệ thống giáo dục Việt Nhật</p>
+                    <p>luôn mang trong mình nhiều sự tự hào của hệ thống giáo dục Việt Nhật</p>
                 </div>
                 <div class="cts-img">
                     <img src="/assets/img/loi-the/csvc.jpg" alt="">
@@ -151,7 +150,7 @@
                         <p class="thongtin">
                             <i class='bx bx-calendar'></i>28/05 &ensp;
                             <i class='bx bxs-folder'></i>Giới thiệu &ensp;
-                            <i class='bx bxs-user'></i>Bởi  VJIS
+                            <i class='bx bxs-user'></i>Bởi  giáo dục
                         </p>
                         <h3>Bí quyết giúp bé ngoan 1</h3>
                         <p class="content">
@@ -170,7 +169,7 @@
                         <p class="thongtin">
                             <i class='bx bx-calendar'></i>28/05 &ensp;
                             <i class='bx bxs-folder'></i>Giới thiệu &ensp;
-                            <i class='bx bxs-user'></i>Bởi  VJIS
+                            <i class='bx bxs-user'></i>Bởi  giáo dục
                         </p>
                         <h3>Bí quyết giúp bé ngoan 1</h3>
                         <p class="content">
@@ -189,7 +188,7 @@
                         <p class="thongtin">
                             <i class='bx bx-calendar'></i>28/05 &ensp;
                             <i class='bx bxs-folder'></i>Giới thiệu &ensp;
-                            <i class='bx bxs-user'></i>Bởi  VJIS
+                            <i class='bx bxs-user'></i>Bởi  giáo dục
                         </p>
                         <h3>Bí quyết giúp bé ngoan 1</h3>
                         <p class="content">
@@ -208,7 +207,7 @@
                         <p class="thongtin">
                             <i class='bx bx-calendar'></i>28/05 &ensp;
                             <i class='bx bxs-folder'></i>Giới thiệu &ensp;
-                            <i class='bx bxs-user'></i>Bởi  VJIS
+                            <i class='bx bxs-user'></i>Bởi  giáo dục
                         </p>
                         <h3>Bí quyết giúp bé ngoan 1</h3>
                         <p class="content">
@@ -224,7 +223,7 @@
     </div>
 
     <!--Đội ngũ giáo viên-->
-    <div class="container-1" style="text-align: center;">
+<%--    <div class="container-1" style="text-align: center;">
         <h1 class="text-good text-title">Đội ngũ giáo viên
         </h1>
         <div class="content-2">
@@ -258,7 +257,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
 
     <%-- Time line album--%>
@@ -275,7 +274,7 @@
                     </div>
                     <div class="date-content">
                         <div class="date-image">
-                            <img src="../../assets/img/be-giang.jpg" />
+                            <img src="../../image_/th.jpeg" />
                         </div>
                         <div class="date-text">Bế giảng năm học 2021-2022</div>
                     </div>
@@ -361,8 +360,8 @@
         <a href="#" style="margin-top: 27rem;">Xem thêm</a>
     </div>
     <!--Cảm nhận-->
-    <div class="container-1" style="text-align: center;">
-        <h1 class="text-blue text-title">Cảm nhận về VJIS
+    <%--<div class="container-1" style="text-align: center;">
+        <h1 class="text-blue text-title">Cảm nhận về hệ thống giáo dục
         </h1>
         <div class="content-2">
             <div class="slider-camnhan">
@@ -409,18 +408,18 @@
 
             </div>
         </div>
-    </div>
+    </div>--%>
     <!--Đăng ký học-->
-    <div class="container-1" style="text-align:center">
+    <%--<div class="container-1" style="text-align:center">
         <div class="content-dkh">
-            <h1 class="text-red text-title">Bạn muốn trải nghiệm phương pháp học độc đáo của VJIS? </h1>
+            <h1 class="text-red text-title">Bạn muốn trải nghiệm phương pháp học độc đáo của hệ thống giáo dục? </h1>
             <div>
                 <input type="text" placeholder="Họ tên" name="name" value="" />
                 <input type="text" placeholder="Số điện thoại" name="name" value="" />
             </div>
             <button>Gửi đi <i class='bx bx-mail-send'></i></button>
         </div>
-    </div>
+    </div>--%>
     <!--Đăng ký học-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
