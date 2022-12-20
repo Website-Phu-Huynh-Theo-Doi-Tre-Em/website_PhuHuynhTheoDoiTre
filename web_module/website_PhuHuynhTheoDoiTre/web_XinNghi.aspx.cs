@@ -32,15 +32,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
                              orderby nh.namhoc_id descending
                              select nh).First();
             _idNamHoc = getNamHoc.namhoc_id;
-            //if (!IsPostBack) { 
-            //ddlNam.DataSource = getNamHoc;
-            //ddlNam.DataTextField = "_namHoc_nienkhoa";
-            //ddlNam.DataValueField = "_namhoc_id";
-            //ddlNam.DataBind();
-            //_idNamHoc = _idNamHoc;
-            //lblNam.Text = (ddlNam.SelectedItem).ToString();
-            ////xuat lịch sử xn
-            //}
+            
             var getListXinNghi = from hs in db.tbHocSinhs
                                  join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id //thong qua hstl để join phxn
                                  join phxn in db.tbPhuHuynhXinNghis on hstl.hstl_id equals phxn.hstl_id
@@ -84,7 +76,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
         }
         else
         {
-            Response.Redirect("/website-trang-chu");
+            Response.Redirect("/website-dang-nhap");
         }
     }
 
@@ -170,7 +162,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_XinNghi :
         else
 
         {
-            Response.Redirect("/website-trang-chu");
+            Response.Redirect("/website-dang-nhap");
         }
     }
     private bool SendMail(string email, string message)

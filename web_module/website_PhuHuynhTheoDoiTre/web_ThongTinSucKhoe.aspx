@@ -137,7 +137,7 @@
         <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
+                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
             </div>
             <div class="col-12 row" style="padding: 0; margin: 0">
                 <div class="container_left col-4" style="padding-left: 0">
