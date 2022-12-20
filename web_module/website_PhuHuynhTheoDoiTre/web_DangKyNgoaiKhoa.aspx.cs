@@ -36,13 +36,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                               dn.ngoaikhoa_noidung,
                               dn.ngoaikhoa_mota,
                               dn.ngoaikhoa_trangthai
-                              //style = (from ls in db.tbVietNhatKids_NgoaiKhoa_LichSus
-                              //         where ls.ngoaikhoa_id == dn.ngoaikhoa_id
-                              //         && ls.hstl_id == hstl.hstl_id
-                              //         select ls).Count() > 0 ? "display:none" : " ",
-                              //hs.hocsinh_id,
-                              //hstl.hstl_id,
-                              //l.lop_id,
+                              
                           };
             txtngoaiKhoa_tinhtrang.Value = getlist.FirstOrDefault().ngoaikhoa_trangthai;
             

@@ -1,9 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Admin_MasterPage.master" AutoEventWireup="true" CodeFile="module_ThongBaoLop.aspx.cs" Inherits="admin_page_module_function_module_WebSite_module_ThongBaoLop" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin_MasterPage.master" AutoEventWireup="true" CodeFile="module_ThongBao.aspx.cs" Inherits="website_PhuHuynhTheoDoiTre_admin_page_module_ThongBao" %>
 
 <%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v17.1" %>
 <%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.ASPxSpellChecker.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxSpellChecker" TagPrefix="dx" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="headlink" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="hihead" runat="Server">
@@ -162,12 +161,12 @@
             </div>
         </div>
         <div class="form-group table-responsive">
-            <dx:ASPxGridView ID="grvList" runat="server" ClientInstanceName="grvList" KeyFieldName="thongbaoLop_id" Width="100%">
+            <dx:ASPxGridView ID="grvList" runat="server" ClientInstanceName="grvList" KeyFieldName="thongbao_id" Width="100%">
                 <Columns>
                     <dx:GridViewCommandColumn ShowSelectCheckbox="True" SelectAllCheckboxMode="Page" VisibleIndex="0" Width="5%">
                     </dx:GridViewCommandColumn>
-                    <dx:GridViewDataColumn Caption="Tiêu Đề" FieldName="thongbaoLop_title" HeaderStyle-HorizontalAlign="Center" Width="30%"></dx:GridViewDataColumn>
-                    <dx:GridViewDataColumn Caption="Ngày đăng" FieldName="thongbaoLop_datecreate" HeaderStyle-HorizontalAlign="Center" Width="15%" Settings-AllowEllipsisInText="True"></dx:GridViewDataColumn>
+                    <dx:GridViewDataColumn Caption="Tiêu Đề" FieldName="thongbao_title" HeaderStyle-HorizontalAlign="Center" Width="30%"></dx:GridViewDataColumn>
+                    <%--<dx:GridViewDataColumn Caption="Ngày đăng" FieldName="thongbao_datecreat" HeaderStyle-HorizontalAlign="Center" Width="15%" Settings-AllowEllipsisInText="True"></dx:GridViewDataColumn>--%>
                     <dx:GridViewDataColumn Caption="Người nhập" FieldName="username_fullname" HeaderStyle-HorizontalAlign="Center" Width="10%" Settings-AllowEllipsisInText="True"></dx:GridViewDataColumn>
                     <dx:GridViewDataColumn Caption="Trạng thái" FieldName="trangthai" HeaderStyle-HorizontalAlign="Center" Width="10%" Settings-AllowEllipsisInText="True"></dx:GridViewDataColumn>
                 </Columns>
@@ -318,4 +317,6 @@
 </asp:Content>
 <asp:Content ID="Content8" ContentPlaceHolderID="hifootersite" runat="Server">
 </asp:Content>
+
+
 

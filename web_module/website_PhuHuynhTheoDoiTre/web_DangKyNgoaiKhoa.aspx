@@ -12,13 +12,7 @@
     <style>
         body {
             background-color: #e7e7e8;
-            /*display: flex;
-            align-items: center;
-            float: right;*/
-            /*justify-content: space-between;*/
-            /*flex-direction: row;
-            align-content: center;
-            flex-wrap: nowrap;*/
+           
         }
 
 
@@ -287,7 +281,6 @@
          <div class="col-xl-3 col-md-12 float-left">
             <uc1:Web_ThongTinCaNhan runat="server" ID="Web_ThongTinCaNhan" />
         </div>
-        <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
                                 <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
@@ -334,10 +327,7 @@
                                         <h3 class="left-title"><%#Eval("ngoaikhoa_ten")%></h3>
                                     </div>
                                     <p class="left-sec" style="font-size: 18px"><%#Eval("ngoaikhoa_noidung")%></p>
-                                   <%-- <div class="btn-left" style="padding: 0 1%;">
-                                        <a id="btnLuu" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
-                                        <a id="btnHuy" href="javascript:void(0)" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Hủy đăng ký</a>
-                                    </div>--%>
+                                   
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
