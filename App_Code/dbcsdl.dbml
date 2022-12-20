@@ -65,6 +65,20 @@
       <Column Name="ansang_tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ansang_ngayduyet" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ansang_trangthaiduyet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dangkyansang_tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbDangKyNgoaiKhoa" Member="tbDangKyNgoaiKhoas">
+    <Type Name="tbDangKyNgoaiKhoa">
+      <Column Name="dangkyngoaikhoa_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ngoaikhoa_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dangkyngoaikhoa_datecreate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hstl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hocsinh_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lop_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="namhoc_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dangkyngoaikhoa_tinhtrang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbGiaoVien" Member="tbGiaoViens">
@@ -162,6 +176,7 @@
       <Column Name="ngoaikhoa_ngaytao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="khoi_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ngoaikhoa_capnhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngoaikhoa_trangthai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbPhuHuynhXinNghi" Member="tbPhuHuynhXinNghis">
