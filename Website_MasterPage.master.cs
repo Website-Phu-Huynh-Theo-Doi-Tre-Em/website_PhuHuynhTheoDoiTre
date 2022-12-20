@@ -108,7 +108,6 @@ public partial class Website_MasterPage : System.Web.UI.MasterPage
                 var mkmd5 =txtMKMoi.Value;
                 update.hocsinh_pass = mkmd5;
                 db.SubmitChanges();
-                //ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thành công!','','warning')", true);
                 ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Cập nhật thành công !!','','success').then(function(){HiddenLoadingIcon();parent.location.href='/website-vietnhatkids-login'})", true);
 
 
