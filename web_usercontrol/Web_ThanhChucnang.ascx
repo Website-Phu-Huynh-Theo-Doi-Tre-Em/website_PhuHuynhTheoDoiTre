@@ -172,7 +172,10 @@
     function onLoad() {
         $("#img-loading-icon").show();
     }
-
+    function onLoad1() {
+        $("#img-loading-icon").show();
+        setTimeout(function () { $("#img-loading-icon").hide() }, 2000);
+    }
 </script>
 <div class="col-12" style="padding: 0%; display: block">
     <div class="block-menu row" style="padding: 0% 1% !important;">
@@ -191,7 +194,7 @@
                 </a>
             </div>
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" class="block-btn" href="https://bambooschool.edu.vn/phan-mem-giup-be-hoc-chu-cai-tieng-viet/#ftoc-heading-1" id="HocTap_8" target="_blank">
+                <a onclick="funcActive(this.id),onLoad1()" class="block-btn" href="https://bambooschool.edu.vn/phan-mem-giup-be-hoc-chu-cai-tieng-viet/#ftoc-heading-1" id="HocTap_8" target="_blank">
                     <img src="/image/icon/Dangky-Hoc-tap.png" />
                     <span>HỌC TẬP</span>
                 </a>
@@ -221,7 +224,7 @@
 
 
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-dang-ky-da-ngoai_9" class="block-btn" href="/website-vietnhatkids-dang-ky-da-ngoai">
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-dang-ky-da-ngoai_9" class="block-btn" href="website-dang-ki-ngoai-khoa">
                     <img src="/image/icon/Dangky-ngoai-khoa.png" />
                     <span>ĐĂNG KÍ
                         <br />

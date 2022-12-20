@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage_MamNon.master" AutoEventWireup="true" CodeFile="web_DangKyNgoaiKhoa.aspx.cs" Inherits="web_module_module_website_website_VietNhatKis_web_DangKyNgoaiKhoa" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Website_MasterPage.master" AutoEventWireup="true" CodeFile="web_DangKyNgoaiKhoa.aspx.cs" Inherits="web_module_module_website_website_VietNhatKis_web_DangKyNgoaiKhoa" %>
 
 <%@ Register Src="~/web_usercontrol/Web_ThongTinCaNhan.ascx" TagPrefix="uc1" TagName="Web_ThongTinCaNhan" %>
-<%@ Register Src="~/web_usercontrol/Web_VietNhatKids.ascx" TagPrefix="uc1" TagName="Web_VietNhatKids" %>
+<%@ Register Src="~/web_usercontrol/Web_ThanhChucnang.ascx" TagPrefix="uc1" TagName="Web_ThanhChucnang" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -23,10 +23,10 @@
 
 
         .container-left {
+                /*background-color: white;*/
             height: 32rem;
             display: flex;
             flex-direction: column;
-            background-image: url(/images/DangKyNgoaiKhoa/dangkyngoaikhoa-1.png);
             background-size: cover;
             background-repeat: no-repeat;
             border-radius: 10px;
@@ -79,7 +79,7 @@
 
         .container-right {
             height: 32rem;
-            /*background-image: url(/images/DangKyNgoaiKhoa/dangkyngoaikhoa-1.png);*/
+            background-image: url(/images/DangKyNgoaiKhoa/dangkyngoaikhoa-1.png);
             background-color: white;
             background-size: cover;
             background-repeat: no-repeat;
@@ -257,7 +257,6 @@
                 }).then(function (value) {
                     if (value == true) {
                         document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value = id;
-                        var xoa = document.getElementById('<%=btnKhongDangKy.ClientID%>');
                         xoa.click();
                     }
                 });
@@ -267,18 +266,32 @@
             document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value = dangoai_id;
             document.getElementById("<%=btnXem.ClientID%>").click();
         }
+        function checkbutton() {
+            alert(document.getElementById("<%# txtngoaiKhoa_tinhtrang.ClientID%>").value);
+            if (document.getElementById("<%# txtngoaiKhoa_tinhtrang.ClientID%>").value == 'dang ki') {
+                document.getElementById("btnLuu").style.display = 'none';
+                document.getElementById("btnHuy").style.display = 'block'
+
+            }
+            else {
+                document.getElementById("btnLuu").style.display = 'block';
+                document.getElementById("btnHuy").style.display = 'none';
+            }
+
+        }
     </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container-fluid row">
-        <div class="col-xl-3 col-md-12 float-left">
+         <div class="col-xl-3 col-md-12 float-left">
             <uc1:Web_ThongTinCaNhan runat="server" ID="Web_ThongTinCaNhan" />
         </div>
         <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                <uc1:Web_VietNhatKids runat="server" ID="Web_VietNhatKids" />
+                                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
+
             </div>
             <div class="col-12 row" style="padding: 0">
                 <div class="col-5" style="padding: 0;">
@@ -286,15 +299,16 @@
                         <asp:Repeater runat="server" ID="rpDaNgoai">
                             <ItemTemplate>
                                 <div class="left-section" id="div_<%#Eval("ngoaikhoa_id") %>" style="">
-                                    <div class="half-circle-ribbon" style="<%#Eval("style")%>">Mới</div>
+                                    <%--<div class="half-circle-ribbon" style="<%#Eval("style")%>">Mới</div>--%>
                                     <div>
-                                        <h6 class="left-title"><%#Eval("ngoaikhoa_name")%></h6>
+                                        <h6 class="left-title"><%#Eval("ngoaikhoa_ten")%></h6>
                                     </div>
-                                    <p class="left-sec" style="font-size: 14px"><%#Eval("ngoaikhoa_description")%></p>
+                                    <p class="left-sec" style="font-size: 14px"><%#Eval("ngoaikhoa_mota")%></p>
                                     <div class="btn-left" style="padding: 0 1%;">
-                                        <%--      <a style="" id="btnLuu" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
-                                        <a style="" id="btnHuy" href="javascript:void(0)" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Không đăng ký</a>
-                                        --%>
+                                       <div class="btn-left" style="padding: 0 1%;">
+                                        <a id="btnLuu" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
+                                        <a id="btnHuy" href="javascript:void(0)" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Hủy đăng ký</a>
+                                    </div>
                                         <a onclick="funcgetID(<%#Eval("ngoaikhoa_id") %>)" class="btn_detail">Xem chi tiết</a>
                                     </div>
                                 </div>
@@ -302,11 +316,12 @@
                         </asp:Repeater>
                         <div style="display:none">
                             <input type="text" id="txtngoaiKhoa_id" runat="server" placeholder="click" style="" />
+                            <input type="text" id="txtngoaiKhoa_tinhtrang" runat="server" placeholder="click" style="" />
                             <input type="text" id="txtngoaikhoa_id_moinhat" placeholder="moi_nhat" runat="server" />
                             <input type="text" id="txtHocSinh" runat="server" style="" />
                             <a id="btnXem" runat="server" onserverclick="btnXem_ServerClick"></a>
                             <a id="btnSave" runat="server" onserverclick="btDangKy_ServerClick"></a>
-                            <a id="btnKhongDangKy" runat="server" onserverclick="btnKhongDangKy_ServerClick"></a>
+                            <%--<a id="btnKhongDangKy" runat="server" onserverclick="btnKhongDangKy_ServerClick"></a>--%>
                         </div>
                     </div>
                 </div>
@@ -316,14 +331,13 @@
                             <ItemTemplate>
                                 <div class="left-section">
                                     <div>
-                                        <h3 class="left-title"><%#Eval("ngoaikhoa_name")%></h3>
+                                        <h3 class="left-title"><%#Eval("ngoaikhoa_ten")%></h3>
                                     </div>
-                                    <p class="left-sec" style="font-size: 18px"><%#Eval("ngoaikhoa_content")%></p>
-                                    <div class="btn-left" style="padding: 0 1%;">
+                                    <p class="left-sec" style="font-size: 18px"><%#Eval("ngoaikhoa_noidung")%></p>
+                                   <%-- <div class="btn-left" style="padding: 0 1%;">
                                         <a id="btnLuu" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
                                         <a id="btnHuy" href="javascript:void(0)" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Hủy đăng ký</a>
-                                        <a id="btnTuVan" href="javascript:void(0)" class="btn-tuvan" runat="server" onserverclick="btnTuVan_ServerClick">Tư vấn thêm</a>
-                                    </div>
+                                    </div>--%>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
