@@ -44,7 +44,7 @@ public partial class web_module_website_VietNhatKids_Web_DangKyAnSang : System.W
         var checkHocSinh = (from hs in db.tbHocSinhs
                             join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id
                             join l in db.tbLops on hstl.lop_id equals l.lop_id
-                            where hs.hocsinh_id == _Id_HocSinh && hstl.hstl_tinhtrang == false
+                            where hs.hocsinh_id == _Id_HocSinh && hstl.hstl_tinhtrang == null
                              && hstl.namhoc_id == checkNamHoc.namhoc_id
                             orderby hstl.hstl_id descending
                             select new
@@ -62,32 +62,33 @@ public partial class web_module_website_VietNhatKids_Web_DangKyAnSang : System.W
                           an.ansang_id,
                           an.ansang_ngayduyet,
                           an.ansang_thangdangky,
-                          ansang_tinhtrang = an.ansang_tinhtrang == true ? "checked" : "",
-                          uongsua_tinhtrang = an.uongsua_tinhtrang == true ? "checked" : "",
-                          trangthai = an.ansang_trangthaiduyet == "da duyet" ? " <i title=\"Đã xác nhận\" style=\" color: forestgreen;\" class='fas fa-check-circle'></i>" : "<i title=\"Chờ xác nhận\" style=\"color:#ffc107\" class='fas fa-hourglass'></i>",
+                          trangthai = an.dangkyansang_tinhtrang == true ? " <i title=\"Đã xác nhận\" style=\" color: forestgreen;\" class='fas fa-check-circle'></i>" : "<i title=\"Chờ xác nhận\" style=\"color:#ffc107\" class='fas fa-hourglass'></i>",
                       };
-        //if (getData.Count() > 0)
-        //{
-        //    rpDanhSach.DataSource = getData;
-        //    rpDanhSach.DataBind();
-        //    rpChiTiet.DataSource = getData;
-        //    rpChiTiet.DataBind();
-        //    txtKhongDuLieu.Visible = false;
-           
-        //}
-        //else
-        //{
-        //    rpDanhSach.DataSource = null;
-        //    rpDanhSach.DataBind();
-        //    rpChiTiet.DataSource = null;
-        //    rpChiTiet.DataBind();
-        //    txtKhongDuLieu.Visible = true;
-        //}
+        if (getData.Count() > 0)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "btnShow()", true);
+        }
+        if (getData.Count() > 0)
+        {
+            rpDanhSach.DataSource = getData;
+            rpDanhSach.DataBind();
+            rpChiTiet.DataSource = getData;
+            rpChiTiet.DataBind();
+            txtKhongDuLieu.Visible = false;
+
+        }
+        else
+        {
+            rpDanhSach.DataSource = null;
+            rpDanhSach.DataBind();
+            rpChiTiet.DataSource = null;
+            rpChiTiet.DataBind();
+            txtKhongDuLieu.Visible = true;
+        }
 
     }
     protected void btnDangKy_ServerClick(object sender, EventArgs e)
     {
-        String tinhtrang = txtTinhTrang.Value;
         db.Connection.Open();
         var checknamhoc = (from n in db.tbHoctap_NamHocs orderby n.namhoc_id descending select n).First();
         var checkhocsinh = (from hs in db.tbHocSinhs
@@ -112,28 +113,15 @@ public partial class web_module_website_VietNhatKids_Web_DangKyAnSang : System.W
         string listEmail = string.Join(",", getEmail.Select(x => x.username_email).ToArray());
         tbDangKiAnhSang insert = new tbDangKiAnhSang();
         //insert.ansang_datecreate = DateTime.Now;
-        if (tinhtrang == "an")
-        {
-            insert.ansang_tinhtrang = true;
-        }
-        else if (tinhtrang == "uong")
-        {
-            insert.uongsua_tinhtrang = true;
-        }
-        else
-        {
-            insert.ansang_tinhtrang = true;
-            insert.uongsua_tinhtrang = true;
-        }
         insert.hstl_id = checkhocsinh.hstl_id;
-        insert.ansang_trangthaiduyet = "chua duyet";
-        insert.ansang_thangdangky = (DateTime.Now.Month + 1) + "/" + DateTime.Now.Year;
-
+        insert.dangkyansang_tinhtrang = false;
+        insert.ansang_thangdangky = ((DateTime.Now.Month + 1)%12) + "/" + DateTime.Now.Year;
+       
         db.tbDangKiAnhSangs.InsertOnSubmit(insert);
         db.SubmitChanges();
-        ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Gửi thành công! Vui lòng chờ GVCN xác nhận!','','success').then(function(){parent.location.href='/website-vietnhatkids-an-sang-uong-sua';})", true);
-        btnDangKy.Visible = false;
-        btnHuyDangKy.Visible = true;
+        ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Đăng kí hàng thành công!','','success').then(function(){window.location.reload();parent.location.href='/website-dang-ki-an-sang';})", true);
+        //ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Đăng kí thành công! Vui lòng chờ GVCN xác nhận!','','success').function(){parent.location.href='/website-dang-ki-an-sang';window.location.reload();})", true);
+
     }
     protected void btnHuyDangKy_ServerClick(object sender, EventArgs e)
     {
@@ -159,19 +147,18 @@ public partial class web_module_website_VietNhatKids_Web_DangKyAnSang : System.W
                        where gvtl.lop_id == checkhocsinh.lop_id && gvtl.namhoc_id == checknamhoc.namhoc_id
                        select u;
         string listEmail = string.Join(",", getEmail.Select(x => x.username_email).ToArray());
-        //tbDangKiAnhSang insert = new tbVietNhatKids_DanhSachHocSinh_HuyAnSang();
-        //insert.hstl_id = checkhocsinh.hstl_id;
-        //insert.coso_id = checkhocsinh.coso_id;
-        //insert.huyansang_thangdangky = (DateTime.Now.Month + 1) + "/" + DateTime.Now.Year;
-        //insert.huyansang_trangthaiduyet = false;
-        //db.tbVietNhatKids_DanhSachHocSinh_HuyAnSangs.InsertOnSubmit(insert);
-        //db.SubmitChanges();
-        //alert.alert_Success(Page, "Gửi thành công! Vui lòng chờ GVCN xác nhận", "");
+        tbDangKiAnhSang del = (from a in db.tbDangKiAnhSangs
+                                 where a.hstl_id == checkhocsinh.hstl_id && a.ansang_thangdangky.Substring(0, a.ansang_thangdangky.IndexOf("/")) == ((DateTime.Now.Month + 1)%12).ToString()
+                                 select a).FirstOrDefault();
+        db.tbDangKiAnhSangs.DeleteOnSubmit(del);
+
+        db.SubmitChanges();
+        ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "swal('Hủy thành công! Vui lòng chờ GVCN xác nhận!','','success').function(){window.location.reload();parent.location.href='/website-dang-ki-an-sang';})", true);
         btnHuyDangKy.Visible = false;
         btnDangKy.Visible = true;
         string message = "Bạn có đăng ký hủy ăn sáng mới từ phụ huynh bé " + checkhocsinh.hocsinh_name + ". Xem chi tiết <a href='http://quantrimamnon.vietnhatschool.edu.vn/admin-danh-sach-huy-dang-ky-an-sang'>tại đây.</a>";
-        //SendMail("ducpn@vjis.edu.vn, quyetlv@vjis.edu.vn", message);
-        //SendMail(listEmail + ",ducpn@vjis.edu.vn, quyetlv@vjis.edu.vn", message);
+        SendMail("dangbichlai21@gmail.com", message);
+
 
 
     }

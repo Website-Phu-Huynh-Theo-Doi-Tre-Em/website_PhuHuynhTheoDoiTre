@@ -289,18 +289,15 @@
             document.getElementById('<%=txtTinhTrang.ClientID%>').value = tinhtrang;
 
         }
-        function myDangKy() {
-            var tinhTrang = document.getElementById('<%=txtTinhTrang.ClientID%>');
-            if (tinhTrang.value.trim() == "") {
-
-                swal('Vui lòng chọn loại đăng ký', '', 'warning');
-                return false;
-            }
-            DisplayLoadingIcon();
-            return true;
-        }
+        
         function DisplayLoadingIcon() {
             $("#img-loading-icon").show();
+        }
+        
+        function btnShow() {
+            document.getElementById("<%=btnHuyDangKy.ClientID%>").style.display = 'block';
+            document.getElementById("<%=btnDangKy.ClientID%>").style.display = 'none';
+
         }
     </script>
 </asp:Content>
@@ -312,7 +309,7 @@
         <%-- <div class="col-xl-9 col-md-12 float-right" style="padding: 0">--%>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
+                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
 
             </div>
             <div class="col-12 row" style="padding: 0">
@@ -334,12 +331,10 @@
                                     Phụ huynh hủy đăng kí ăn sáng/uống sữa là đăng ký vào cuối tháng. Học phí ăn sáng vẫn được tính đến hết tháng hiện tại và sẽ không tính học phí ăn sáng vào tháng tiếp theo.
                                 </p>
                             </div>
-                            <div class="container-left-img">
+                            <%--<div class="container-left-img">
                                 <div class="left-img">
                                     <input type="radio" id="ansang" value="an" onclick="myCheck(this.value)" name="choose" style="top: 9%; left: 18%;" />
-                                    <%--<p style="font-size: 14px; font-weight: 600; top: -5%; position: relative;">
-                                        Ăn sáng
-                                    </p>--%>
+                                   
                                     <label for="ansang">
                                         <img style="padding: 15% 15% 0 15%;" src="/images/an.png" />
                                         <p style="font-size: 14px; font-weight: 600; top: -5%; position: relative;">
@@ -350,9 +345,7 @@
                                 </div>
                                 <div class="left-img-1" style="width: 30%; height: 91%; background-color: white; box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);">
                                     <input type="radio" id="uongsua" value="uong" onclick="myCheck(this.value)" name="choose" style="left: 49%; top: 9%;" />
-                                    <%--  <p style="font-size: 14px; font-weight: 600; top: -4%; position: relative;">
-                                        Uống sữa
-                                    </p>--%>
+                                   
                                     <label style="font-size: 14px; font-weight: 600; top: -4%; position: relative;" for="uongsua">
                                         <img style="padding: 15% 15% 0 15%;" src="/images/uong.png" />
                                         <p style="font-size: 14px; font-weight: 600; top: -4%; position: relative;">
@@ -362,9 +355,7 @@
                                 </div>
                                 <div class="left-img-3" style="width: 32%; height: 91%; background-color: white; box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);">
                                     <input type="radio" id="cahai" value="anuong" onclick="myCheck(this.value)" name="choose" style="left: 79%; top: 9%;" />
-                                    <%-- <p style="font-size: 14px; font-weight: 600; top: -7%; position: relative;">
-                                        Cả hai
-                                    </p>--%>
+                                   
                                     <label for="cahai">
                                         <img style="padding: 15% 15% 0 15%;" src="/images/an-uong.png" />
                                         <p style="font-size: 14px; font-weight: 600; top: -7%; position: relative;">
@@ -372,12 +363,14 @@
                                         </p>
                                     </label>
                                 </div>
+                            </div>--%>
+                            <div >
+                                <a href="javascript:void(0)" class="btn btn-danger" id="btnDangKy" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%; ">Đăng ký
+                                </a>
+                                <a href="javascript:void(0)" class="btn btn-danger" id="btnHuyDangKy" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnHuyDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%;display: none">Hủy đăng ký
+                                </a>
                             </div>
-                            <a href="javascript:void(0)" class="btn btn-danger" id="btnDangKy" runat="server" onclick="return myDangKy()" onserverclick="btnDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%;">Đăng ký
 
-                            </a>
-                            <a href="javascript:void(0)" class="btn btn-danger" id="btnHuyDangKy" runat="server" onserverclick="btnHuyDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%;">Hủy đăng ký
-                            </a>
                             <div style="display: none;">
                                 <input type="text" runat="server" id="txtTinhTrang" display="none" />
                             </div>
@@ -394,7 +387,7 @@
                             <table class="table">
                                 <tr>
                                     <th scope="col" class="nd">STT</th>
-                                    <th scope="col">Ngày đăng kí</th>
+                                    <%--<th scope="col">Ngày đăng kí</th>--%>
                                     <th scope="col">Nội dung</th>
                                     <th scope="col">Tháng bắt đầu</th>
                                     <th scope="col">Trạng thái</th>
@@ -404,7 +397,7 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td scope="row"><%#Container.ItemIndex+1 %></td>
-                                            <td><%#Eval("ansang_datecreate","{0:dd/MM/yyyy}") %></td>
+                                            <%--<td><%#Eval("ansang_thangdangky","{0:dd/MM/yyyy}") %></td>--%>
                                             <td>Đăng kí ăn sáng, uống sữa</td>
                                             <td><%#Eval("ansang_thangdangky") %></td>
                                             <td><%#Eval("trangthai") %></td>
@@ -432,19 +425,7 @@
                                                 <div class="modal-body">
                                                     <span style="color: green; font-weight: 600">Tháng áp dụng: <%#Eval("ansang_thangdangky") %></span>
                                                     <div class="chon" style="display: flex; flex-direction: row; align-items: center;">
-                                                        <div class="lb-radio" style="text-align: center">
-                                                            <input type="checkbox" style="width: 25px; height: 25px;" value="AnSang" <%#Eval("ansang_tinhtrang") %> onclick="return false;">
-                                                            <img style="padding: 15% 15% 0 15%; width: 90%; min-width: auto;"
-                                                                src="/images/an.png" />
-                                                            <label for="AnSang">Ăn sáng</label>
-                                                        </div>
-                                                        <div class="lb-radio" style="text-align: center">
-                                                            <input type="checkbox" style="width: 25px; height: 25px" value="UongSua" <%#Eval("uongsua_tinhtrang") %> onclick="return false;">
-                                                            <img style="padding: 15% 15% 0 15%; width: 90%; min-width: auto;"
-                                                                src="/images/uong.png" />
-                                                            <label for="UongSua">Uống sữa</label>
-                                                        </div>
-                                                        -
+                                                       
                                                     </div>
                                                 </div>
                                             </div>

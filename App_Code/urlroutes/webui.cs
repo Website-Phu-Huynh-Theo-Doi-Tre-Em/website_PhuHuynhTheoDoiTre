@@ -17,7 +17,6 @@ public class webui
     public List<string> UrlRoutes()
     {
         List<string> list = new List<string>();
-
         //Trang chủ- website
         list.Add("websitetrangchu|website-trang-chu|~/web_module/module_website/web_trangchu.aspx");
         list.Add("websitedangnhap|website-dang-nhap|~/web_module/website_PhuHuynhTheoDoiTre/web_Login.aspx");

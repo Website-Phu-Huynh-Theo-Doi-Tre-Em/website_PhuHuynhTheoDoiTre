@@ -5,7 +5,7 @@
 
 <html>
 <head runat="server">
-    <title>Trường Mầm non Việt Nhật</title>
+    <title>Website Phụ Huynh Theo Dõi Trẻ</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="css/magnific-popup.css" rel="stylesheet" />
@@ -799,7 +799,7 @@
                         <li><a href="/mam-non-doi-ngu-giao-vien">Đội ngũ giáo viên</a></li>
                         <li><a href="/mam-non-co-cau-to-chuc">Cơ cấu tổ chức</a></li>
                         <li><a href="/mam-non-doi-tac-chien-luoc">Đối tác chiến lược</a></li>
-                        <li><a href="/mam-non-thanh-tuu-viet-nhat">Thành tựu Việt Nhật</a></li>
+                        <li><a href="/mam-non-thanh-tuu-viet-nhat">Thành tựu </a></li>
                         <li><a href="/mam-non-co-so-vat-chat">Cơ sở vật chất</a></li>
                         <li><a href="/mam-non-gioi-thieu-chung">Giới thiệu chung</a></li>
                         <li><a href="/mam-non-tam-nhin-su-menh">Tầm nhìn & sứ mệnh</a></li>

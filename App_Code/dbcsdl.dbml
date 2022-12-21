@@ -59,12 +59,9 @@
     <Type Name="tbDangKiAnhSang">
       <Column Name="ansang_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="hstl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="uongsua_tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ansang_thangdangky" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ansang_tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ansang_ngayduyet" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ansang_trangthaiduyet" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="dangkyansang_tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>

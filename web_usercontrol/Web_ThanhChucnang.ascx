@@ -236,7 +236,7 @@
 
 
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-an-sang-uong-sua_10" class="block-btn" href="/website-vietnhatkids-an-sang-uong-sua">
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-an-sang-uong-sua_10" class="block-btn" href="/website-dang-ki-an-sang">
                     <img src="/image/icon/Dangky-an-sang.png" />
                     <span>ĐK VÀ HỦY
                         ĂN

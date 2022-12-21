@@ -1379,17 +1379,11 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 	
 	private System.Nullable<int> _hstl_id;
 	
-	private System.Nullable<bool> _uongsua_tinhtrang;
-	
 	private System.Nullable<int> _username_id;
 	
 	private string _ansang_thangdangky;
 	
-	private System.Nullable<bool> _ansang_tinhtrang;
-	
 	private System.Nullable<System.DateTime> _ansang_ngayduyet;
-	
-	private string _ansang_trangthaiduyet;
 	
 	private System.Nullable<bool> _dangkyansang_tinhtrang;
 	
@@ -1401,18 +1395,12 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
     partial void Onansang_idChanged();
     partial void Onhstl_idChanging(System.Nullable<int> value);
     partial void Onhstl_idChanged();
-    partial void Onuongsua_tinhtrangChanging(System.Nullable<bool> value);
-    partial void Onuongsua_tinhtrangChanged();
     partial void Onusername_idChanging(System.Nullable<int> value);
     partial void Onusername_idChanged();
     partial void Onansang_thangdangkyChanging(string value);
     partial void Onansang_thangdangkyChanged();
-    partial void Onansang_tinhtrangChanging(System.Nullable<bool> value);
-    partial void Onansang_tinhtrangChanged();
     partial void Onansang_ngayduyetChanging(System.Nullable<System.DateTime> value);
     partial void Onansang_ngayduyetChanged();
-    partial void Onansang_trangthaiduyetChanging(string value);
-    partial void Onansang_trangthaiduyetChanged();
     partial void Ondangkyansang_tinhtrangChanging(System.Nullable<bool> value);
     partial void Ondangkyansang_tinhtrangChanged();
     #endregion
@@ -1462,26 +1450,6 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uongsua_tinhtrang", DbType="Bit")]
-	public System.Nullable<bool> uongsua_tinhtrang
-	{
-		get
-		{
-			return this._uongsua_tinhtrang;
-		}
-		set
-		{
-			if ((this._uongsua_tinhtrang != value))
-			{
-				this.Onuongsua_tinhtrangChanging(value);
-				this.SendPropertyChanging();
-				this._uongsua_tinhtrang = value;
-				this.SendPropertyChanged("uongsua_tinhtrang");
-				this.Onuongsua_tinhtrangChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username_id", DbType="Int")]
 	public System.Nullable<int> username_id
 	{
@@ -1522,26 +1490,6 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ansang_tinhtrang", DbType="Bit")]
-	public System.Nullable<bool> ansang_tinhtrang
-	{
-		get
-		{
-			return this._ansang_tinhtrang;
-		}
-		set
-		{
-			if ((this._ansang_tinhtrang != value))
-			{
-				this.Onansang_tinhtrangChanging(value);
-				this.SendPropertyChanging();
-				this._ansang_tinhtrang = value;
-				this.SendPropertyChanged("ansang_tinhtrang");
-				this.Onansang_tinhtrangChanged();
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ansang_ngayduyet", DbType="DateTime")]
 	public System.Nullable<System.DateTime> ansang_ngayduyet
 	{
@@ -1558,26 +1506,6 @@ public partial class tbDangKiAnhSang : INotifyPropertyChanging, INotifyPropertyC
 				this._ansang_ngayduyet = value;
 				this.SendPropertyChanged("ansang_ngayduyet");
 				this.Onansang_ngayduyetChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ansang_trangthaiduyet", DbType="NVarChar(MAX)")]
-	public string ansang_trangthaiduyet
-	{
-		get
-		{
-			return this._ansang_trangthaiduyet;
-		}
-		set
-		{
-			if ((this._ansang_trangthaiduyet != value))
-			{
-				this.Onansang_trangthaiduyetChanging(value);
-				this.SendPropertyChanging();
-				this._ansang_trangthaiduyet = value;
-				this.SendPropertyChanged("ansang_trangthaiduyet");
-				this.Onansang_trangthaiduyetChanged();
 			}
 		}
 	}

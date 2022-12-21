@@ -38,21 +38,35 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                               dn.ngoaikhoa_trangthai
 
                           };
-
-            //insert.ngoaikhoa_lichsu_ngayxem = DateTime.Now;
             if (!IsPostBack)
             {
                 rpDaNgoai.DataSource = getlist;
                 rpDaNgoai.DataBind();
                 rpDaNgoaiChiTiet.DataSource = getlist.Take(1);
                 rpDaNgoaiChiTiet.DataBind();
-                var check = (from nk in db.tbDangKyNgoaiKhoas
-                             where nk.ngoaikhoa_id == getlist.FirstOrDefault().ngoaikhoa_id
-                             select nk).FirstOrDefault().dangkyngoaikhoa_tinhtrang;
-                txtngoaiKhoa_tinhtrang.Value = check;
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "checkbutton()", true);
-                // txtngoaiKhoa_id.Value = getlist.Take(1).FirstOrDefault().ngoaikhoa_id+"";
-                // insert.ngoaikhoa_id = getlist.Take(1).FirstOrDefault().ngoaikhoa_id;
+                //ẩn hiện button
+                //var check = (from nk in db.tbDangKyNgoaiKhoas
+                //             where nk.ngoaikhoa_id == getlist.FirstOrDefault().ngoaikhoa_id
+                //             select nk).FirstOrDefault();
+                //txtngoaiKhoa_tinhtrang.Value = check.dangkyngoaikhoa_tinhtrang;
+                //String id = (from nk in db.tbNgoaiKhoas where nk.ngoaikhoa_id == check.ngoaikhoa_id select nk.ngoaikhoa_id).SingleOrDefault().ToString();
+                //String checki = "checkbutton(" + id + ")";
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", checki, true);
+                //var getData = from nk in db.tbDangKyNgoaiKhoa
+                //              select nk;
+                //// kiểm tra getData.tinhtrang == 1 thì hiện button
+                //// chạy vòng lặp foreach kiểm tra nếu  dangkingoaikhoa_tinhtrang =='dang ki' thì hiện button
+                //// nếu không thì ẩn button
+                //foreach (var item in getData)
+                //{
+                //    if (item.dangkyngoaikhoa_tinhtrang == "dang ki")
+                //    {
+                //        String id = (from nk in db.tbNgoaiKhoas where nk.ngoaikhoa_id == item.ngoaikhoa_id select nk.ngoaikhoa_id).SingleOrDefault().ToString();
+                //        String checki = "checkbutton(" + id + ")";
+                //        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", checki, true);
+                //    }
+                //}
+
             }
             if (txtngoaiKhoa_id.Value != "")
             {
@@ -102,7 +116,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                        select a);
         String listMail = String.Join(",", getMail.Select(x => x.username_email).ToArray());
 
-        if (db.tbDangKyNgoaiKhoas.Any(x => x.hstl_id == getHocSinh.hstl_id
+        if (db.tbDangKyNgoaiKhoa.Any(x => x.hstl_id == getHocSinh.hstl_id
                                                   && x.namhoc_id == checkNamHoc.namhoc_id
                                                   && x.ngoaikhoa_id == Convert.ToInt32(txtngoaiKhoa_id.Value)
                                                   && x.dangkyngoaikhoa_tinhtrang == "dang ki"))
@@ -118,11 +132,15 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
             insert.namhoc_id = checkNamHoc.namhoc_id;
             insert.ngoaikhoa_id = Convert.ToInt32(txtngoaiKhoa_id.Value);
             insert.dangkyngoaikhoa_tinhtrang = "dang ki";
-            db.tbDangKyNgoaiKhoas.InsertOnSubmit(insert);
+            db.tbDangKyNgoaiKhoa.InsertOnSubmit(insert);
             db.SubmitChanges();
+            int id = Convert.ToInt32(txtngoaiKhoa_id.Value);
+           Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "checkbutton(" + id +")", true);
+
             alert.alert_Success(Page, "Đăng ký thành công! Vui lòng chờ xác nhận của nhà trường", "");
             String message = "Bạn có thông tin đăng ký ngoại khóa mới từ phụ huynh bé" + checkUserId.hocsinh_name + ".  Xem chi tiết <a href='http://quantrimamnon.vietnhatschool.edu.vn/admin-danh-sach-dang-ky-chuong-trinh-ngoai-khoa'>tại đây.</a>";
             SendMail(listMail + "dangbichlai21@gmail.com", message);
+
         }
     }
 
@@ -169,6 +187,18 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
 
     protected void btnXem_ServerClick(object sender, EventArgs e)
     {
+
+    }
+
+    protected void xoa_ServerClick(object sender, EventArgs e)
+    {
+        tbDangKyNgoaiKhoa delete = (from nk in db.tbDangKyNgoaiKhoa
+                                    where nk.ngoaikhoa_id == Convert.ToInt32(txtngoaiKhoa_id.Value)
+                                    select nk).FirstOrDefault();
+        db.tbDangKyNgoaiKhoa.DeleteOnSubmit(delete);
+        db.SubmitChanges();
+        alert.alert_Success(Page, "Hủy đăng ký thành công! Vui lòng chờ xác nhận của nhà trường", "");
+
 
     }
 }

@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="../../admin_js/sweetalert.min.js"></script>
     <link href="../../../admin_css/css_index/Loading.css" rel="stylesheet" />
@@ -241,18 +241,17 @@
             text-transform: uppercase;
             /* text-overflow: clip; */
         }
+
+        .btn-canceldangki {
+            display: none;
+            width: 35%;
+        }
     </style>
 
     <script>
         $(document).ready(function () {
-          //  if (document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value != "") {
             var id = document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value;
             document.getElementById("div_" + id).style.backgroundColor = "#bcdae5";
-          //  } else {
-          //      var id = document.getElementById("<%=txtngoaikhoa_id_moinhat.ClientID%>").value;
-            //     document.getElementById("div_" + id).style.backgroundColor = "#ffa1a1";
-            //  }
-
         });
 
         function confirmDel(id) {
@@ -273,7 +272,7 @@
         }
         function confirmHuyDangKi(id) {
             var hocsinh = document.getElementById("<%=txtHocSinh.ClientID%>").value;
-            swal("Ba mẹ bé " + hocsinh + " có thực sự không muốn đăng ký?",
+            swal("Ba mẹ bé " + hocsinh + " có thực sự  muốn hủy đăng ký?",
                 "",
                 "warning",
                 {
@@ -282,7 +281,9 @@
                 }).then(function (value) {
                     if (value == true) {
                         document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value = id;
-                        xoa.click();
+                        var xoa = document.getElementById('<%=btnXoa.ClientID%>');
+
+                  xoa.click();
                     }
                 });
         }
@@ -291,18 +292,13 @@
             document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value = dangoai_id;
             document.getElementById("<%=btnXem.ClientID%>").click();
         }
-        function checkbutton() {
-            alert(document.getElementById("<%# txtngoaiKhoa_tinhtrang.ClientID%>").value);
-            if (document.getElementById("<%# txtngoaiKhoa_tinhtrang.ClientID%>").value == 'dang ki') {
-                document.getElementById("btnLuu").style.display = 'none';
-                document.getElementById("btnHuy").style.display = 'block'
+        function checkbutton(id) {
+            alert("dfghjk");
+            if (document.getElementById("<%=txtngoaiKhoa_tinhtrang.ClientID%>").value == "dang ki") {
 
+                document.getElementById("btnLuu_" + id).style.display = 'none';
+                document.getElementById("btnHuy_" + id).style.display = 'block';
             }
-            else {
-                document.getElementById("btnLuu").style.display = 'block';
-                document.getElementById("btnHuy").style.display = 'none';
-            }
-
         }
     </script>
 
@@ -330,8 +326,8 @@
                                     <p class="left-sec" style="font-size: 14px"><%#Eval("ngoaikhoa_mota")%></p>
                                     <div class="btn-left" style="padding: 0 1%;">
                                         <div class="btn-left" style="padding: 0 1%;">
-                                            <a id="btnLuu" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
-                                            <a id="btnHuy" href="javascript:void(0)" style="display: none" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Hủy đăng ký</a>
+                                            <a id="btnLuu_<%#Eval("ngoaikhoa_id")%>" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
+                                            <a id="btnHuy_<%#Eval("ngoaikhoa_id")%>" href="javascript:void(0)" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Hủy đăng ký</a>
 
                                             <a onclick="funcgetID(<%#Eval("ngoaikhoa_id") %>)" class="btn_detail">Xem chi tiết</a>
                                         </div>
@@ -346,6 +342,7 @@
                             <input type="text" id="txtHocSinh" runat="server" style="" />
                             <a id="btnXem" runat="server" onserverclick="btnXem_ServerClick"></a>
                             <a id="btnSave" runat="server" onserverclick="btDangKy_ServerClick"></a>
+                            <a id="btnXoa" runat="server" onserverclick="xoa_ServerClick"></a>
                             <%--<a id="btnKhongDangKy" runat="server" onserverclick="btnKhongDangKy_ServerClick"></a>--%>
                         </div>
                     </div>
