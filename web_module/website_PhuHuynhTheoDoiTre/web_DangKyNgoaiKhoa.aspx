@@ -12,13 +12,7 @@
     <style>
         body {
             background-color: #e7e7e8;
-            /*display: flex;
-            align-items: center;
-            float: right;*/
-            /*justify-content: space-between;*/
-            /*flex-direction: row;
-            align-content: center;
-            flex-wrap: nowrap;*/
+           
         }
 
 
