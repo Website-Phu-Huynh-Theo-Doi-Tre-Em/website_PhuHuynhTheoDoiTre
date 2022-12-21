@@ -36,10 +36,9 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                               dn.ngoaikhoa_noidung,
                               dn.ngoaikhoa_mota,
                               dn.ngoaikhoa_trangthai
-                              
+
                           };
-            txtngoaiKhoa_tinhtrang.Value = getlist.FirstOrDefault().ngoaikhoa_trangthai;
-            
+
             //insert.ngoaikhoa_lichsu_ngayxem = DateTime.Now;
             if (!IsPostBack)
             {
@@ -47,6 +46,11 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                 rpDaNgoai.DataBind();
                 rpDaNgoaiChiTiet.DataSource = getlist.Take(1);
                 rpDaNgoaiChiTiet.DataBind();
+                var check = (from nk in db.tbDangKyNgoaiKhoas
+                             where nk.ngoaikhoa_id == getlist.FirstOrDefault().ngoaikhoa_id
+                             select nk).FirstOrDefault().dangkyngoaikhoa_tinhtrang;
+                txtngoaiKhoa_tinhtrang.Value = check;
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "checkbutton()", true);
                 // txtngoaiKhoa_id.Value = getlist.Take(1).FirstOrDefault().ngoaikhoa_id+"";
                 // insert.ngoaikhoa_id = getlist.Take(1).FirstOrDefault().ngoaikhoa_id;
             }
@@ -60,7 +64,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                 rpDaNgoaiChiTiet.DataBind();
                 //insert.ngoaikhoa_id = id;
             }
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "checkbutton()", true);
+
 
 
         }
@@ -76,8 +80,8 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
         var checkUserId = (from hs in db.tbHocSinhs
                            where hs.hocsinh_taikhoan == Request.Cookies["web_hocsinh"].Value
                            select hs).First();
-       
-                          
+
+
         var getHocSinh = (from hs in db.tbHocSinhs
                           join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id
                           join l in db.tbLops on hstl.lop_id equals l.lop_id
@@ -118,10 +122,10 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
             db.SubmitChanges();
             alert.alert_Success(Page, "Đăng ký thành công! Vui lòng chờ xác nhận của nhà trường", "");
             String message = "Bạn có thông tin đăng ký ngoại khóa mới từ phụ huynh bé" + checkUserId.hocsinh_name + ".  Xem chi tiết <a href='http://quantrimamnon.vietnhatschool.edu.vn/admin-danh-sach-dang-ky-chuong-trinh-ngoai-khoa'>tại đây.</a>";
-             SendMail(listMail + "dangbichlai21@gmail.com", message);
+            SendMail(listMail + "dangbichlai21@gmail.com", message);
         }
     }
-   
+
     private bool SendMail(string email, string message)
     {
         if (email != "")

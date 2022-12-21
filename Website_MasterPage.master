@@ -835,8 +835,8 @@
                     <a class="register__link" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeq26VkY_2cvj_u9vlbSekIvuA-zU5WW4UFDqHcLUQSA55QDA/viewform">Đăng ký tuyển sinh</a>
                 </li>
                 <%--<li onclick="popup_hopthu()"><a href="#">Hộp thư góp ý</a></li>--%>
-                <li><a href="#" id="liSoLienLacDienTu" runat="server" onserverclick="liSoLienLacDienTu_ServerClick">Sổ liên lạc điện tử</a></li>
-                <li><a href="/mam-non-thuc-don">Thực đơn</a></li>
+                <li><a href="#" id="liSoLienLacDienTu" runat="server" onserverclick="liSoLienLacDienTu_ServerClick">Theo dõi trẻ</a></li>
+                <%--<li><a href="/mam-non-thuc-don">Thực đơn</a></li>--%>
                 <li onclick="openForm()" id="liDangNhap" runat="server"><a href="#">Đăng nhập</a>
 
                 </li>

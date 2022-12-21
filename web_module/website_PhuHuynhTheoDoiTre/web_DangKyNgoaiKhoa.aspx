@@ -12,43 +12,28 @@
     <style>
         body {
             background-color: #e7e7e8;
-           
         }
 
 
-        .container-left {
-                /*background-color: white;*/
-            height: 32rem;
-            display: flex;
-            flex-direction: column;
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: 10px;
+
+
+        .container-left .left-section {
+            background-color: white;
+            top: 94px;
+            position: relative;
+            border-radius: 8px;
+            margin: 0 4%;
+            height: 29.1%;
+            width: 91%;
             box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-            margin: 0 3%;
-            overflow: auto;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
+            padding: 3%;
+            margin: 1% 0;
         }
 
-            .container-left .left-section {
-                background-color: white;
-                top: 94px;
-                position: relative;
-                border-radius: 8px;
-                margin: 0 4%;
-                height: 29.1%;
-                width: 91%;
-                box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-                padding: 3%;
-                margin: 1% 0;
-            }
-
-            .container-left h2 {
-                font-size: 15px;
-                font-weight: 600;
-            }
+        .container-left h2 {
+            font-size: 15px;
+            font-weight: 600;
+        }
 
         .section .container-left p {
             font-size: 12px;
@@ -84,6 +69,8 @@
             overflow: auto;
         }
 
+
+
             .container-right h2 {
                 font-size: 19px;
                 color: #c3a734;
@@ -114,6 +101,21 @@
             color: #FFFFFF;
             font-size: 15px;
             font-weight: 500;
+        }
+
+        .container-left {
+            height: 32rem;
+            display: flex;
+            flex-direction: column;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+            margin: 0 3%;
+            overflow: auto;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
         }
 
         .btn-left .block {
@@ -186,16 +188,16 @@
             height: 32rem;
             display: flex;
             flex-direction: column;
-            background-image: url(/images/DangKyNgoaiKhoa/dangkyngoaikhoa-1.png);
             background-size: cover;
             background-repeat: no-repeat;
             border-radius: 10px;
             box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
             margin: 0 3%;
-            /* overflow: auto; */
-            /* flex-wrap: nowrap; */
+            overflow: auto;
+            flex-wrap: nowrap;
             justify-content: flex-start;
             align-items: center;
+            background-image: url(https://images.unsplash.com/photo-1558089551-95d707e6c13c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80);
         }
 
         .left-title {
@@ -210,19 +212,48 @@
             margin: 0;
             padding: 0 !important
         }
+
+        .container-left a {
+            font-size: 18px;
+            padding: 2%;
+        }
+
+        .container-left .left-section {
+            display: flex;
+            background-color: white;
+            top: 94px;
+            position: relative;
+            border-radius: 8px;
+            margin: 0 4%;
+            height: 29.1%;
+            width: 91%;
+            box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+            padding: 3%;
+            margin: 1% 0;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .left-title {
+            color: #cc3333;
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            /* text-overflow: clip; */
+        }
     </style>
 
     <script>
         $(document).ready(function () {
           //  if (document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value != "") {
-          var id = document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value;
-          document.getElementById("div_" + id).style.backgroundColor = "#bcdae5";
+            var id = document.getElementById("<%=txtngoaiKhoa_id.ClientID%>").value;
+            document.getElementById("div_" + id).style.backgroundColor = "#bcdae5";
           //  } else {
           //      var id = document.getElementById("<%=txtngoaikhoa_id_moinhat.ClientID%>").value;
-          //     document.getElementById("div_" + id).style.backgroundColor = "#ffa1a1";
-          //  }
+            //     document.getElementById("div_" + id).style.backgroundColor = "#ffa1a1";
+            //  }
 
-      });
+        });
 
         function confirmDel(id) {
             var hocsinh = document.getElementById("<%=txtHocSinh.ClientID%>").value;
@@ -278,12 +309,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container-fluid row">
-         <div class="col-xl-3 col-md-12 float-left">
+        <div class="col-xl-3 col-md-12 float-left">
             <uc1:Web_ThongTinCaNhan runat="server" ID="Web_ThongTinCaNhan" />
         </div>
         <div class="col-xl-9 col-md-12">
             <div class="col-xl-12 col-md-12 userrp" style="padding: 0">
-                                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
+                <uc1:Web_ThanhChucnang runat="server" ID="Web_ThanhChucnang" />
 
             </div>
             <div class="col-12 row" style="padding: 0">
@@ -298,16 +329,17 @@
                                     </div>
                                     <p class="left-sec" style="font-size: 14px"><%#Eval("ngoaikhoa_mota")%></p>
                                     <div class="btn-left" style="padding: 0 1%;">
-                                       <div class="btn-left" style="padding: 0 1%;">
-                                        <a id="btnLuu" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
-                                        <a id="btnHuy" href="javascript:void(0)" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Hủy đăng ký</a>
-                                    </div>
-                                        <a onclick="funcgetID(<%#Eval("ngoaikhoa_id") %>)" class="btn_detail">Xem chi tiết</a>
+                                        <div class="btn-left" style="padding: 0 1%;">
+                                            <a id="btnLuu" href="javascript:void(0)" class="btn-dangki" onclick="confirmDel(<%#Eval("ngoaikhoa_id") %>)">Đăng ký</a>
+                                            <a id="btnHuy" href="javascript:void(0)" style="display: none" class="btn-canceldangki" onclick="confirmHuyDangKi(<%#Eval("ngoaikhoa_id") %>)">Hủy đăng ký</a>
+
+                                            <a onclick="funcgetID(<%#Eval("ngoaikhoa_id") %>)" class="btn_detail">Xem chi tiết</a>
+                                        </div>
                                     </div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-                        <div style="display:none">
+                        <div style="display: none">
                             <input type="text" id="txtngoaiKhoa_id" runat="server" placeholder="click" style="" />
                             <input type="text" id="txtngoaiKhoa_tinhtrang" runat="server" placeholder="click" style="" />
                             <input type="text" id="txtngoaikhoa_id_moinhat" placeholder="moi_nhat" runat="server" />
@@ -327,7 +359,7 @@
                                         <h3 class="left-title"><%#Eval("ngoaikhoa_ten")%></h3>
                                     </div>
                                     <p class="left-sec" style="font-size: 18px"><%#Eval("ngoaikhoa_noidung")%></p>
-                                   
+
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>

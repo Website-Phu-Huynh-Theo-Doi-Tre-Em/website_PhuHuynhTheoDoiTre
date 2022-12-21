@@ -170,7 +170,7 @@ public partial class Website_MasterPage : System.Web.UI.MasterPage
         {
             // ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "Alert", "sessionStorage.clear();sessionStorage.setItem('ID', 'ThongBao_0');parent.location.href='/website-vietnhatkids-thong-bao';", true);
             //   ScriptManager.RegisterClientScriptBlock(Page, this.GetType(), "chuyentrang", "funcActive0()", true);
-            Response.Redirect("/website-vietnhatkids-thong-bao");
+            Response.Redirect("/website-thong-bao");
         }
     }
 }
