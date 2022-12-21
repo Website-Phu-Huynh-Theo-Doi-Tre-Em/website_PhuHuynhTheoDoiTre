@@ -283,17 +283,28 @@
         .fas.fa-exclamation-circle {
             color: red;
         }
+
+        .block-bieudo {
+            background-color: #ffffff;
+            width: 100%;
+            height: 32rem;
+            border-radius: 10px;
+            padding: 0 4%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
     </style>
     <script>
         function myCheck(tinhtrang) {
             document.getElementById('<%=txtTinhTrang.ClientID%>').value = tinhtrang;
 
         }
-        
+
         function DisplayLoadingIcon() {
             $("#img-loading-icon").show();
         }
-        
+
         function btnShow() {
             document.getElementById("<%=btnHuyDangKy.ClientID%>").style.display = 'block';
             document.getElementById("<%=btnDangKy.ClientID%>").style.display = 'none';
@@ -318,6 +329,10 @@
                     <div class="block-bieudo" style="box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);">
 
                         <div id="block_Content">
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <img style="max-width: 50% !important; min-width: 50%;"
+                                    src="../../image_/Logo.png" />
+                            </div>
                             <div>
                                 <h4 style="padding-bottom: 20px; color: #C90000;">ĐĂNG KÍ ĂN SÁNG, UỐNG SỮA</h4>
                             </div>
@@ -364,10 +379,10 @@
                                     </label>
                                 </div>
                             </div>--%>
-                            <div >
-                                <a href="javascript:void(0)" class="btn btn-danger" id="btnDangKy" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%; ">Đăng ký
+                            <div>
+                                <a href="javascript:void(0)" class="btn btn-danger" id="btnDangKy" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%;">Đăng ký
                                 </a>
-                                <a href="javascript:void(0)" class="btn btn-danger" id="btnHuyDangKy" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnHuyDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%;display: none">Hủy đăng ký
+                                <a href="javascript:void(0)" class="btn btn-danger" id="btnHuyDangKy" runat="server" onclick="DisplayLoadingIcon()" onserverclick="btnHuyDangKy_ServerClick" style="display: flex; align-items: center; justify-content: center; margin: 2%; display: none">Hủy đăng ký
                                 </a>
                             </div>
 
@@ -425,7 +440,6 @@
                                                 <div class="modal-body">
                                                     <span style="color: green; font-weight: 600">Tháng áp dụng: <%#Eval("ansang_thangdangky") %></span>
                                                     <div class="chon" style="display: flex; flex-direction: row; align-items: center;">
-                                                       
                                                     </div>
                                                 </div>
                                             </div>
