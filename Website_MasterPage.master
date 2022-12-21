@@ -874,13 +874,9 @@
                         </div>
                     </div>
                 </li>
-                <%-- <li id="liUser" onclick="showprofile()" style="display: none" class="simple-arrow user-menu-toggle" runat="server">
-                    <p style="margin-bottom: 0;" class="btn-dangnhap" href="#">
-                        <i class="fa fa-user" style="margin-right: 10px;"></i>
-                        <asp:Label runat="server" ID="lblAcount"></asp:Label>
-                    </p>
+               
 
-                </li>--%>
+                
                 <%--  --%>
 
                 <%--  --%>
