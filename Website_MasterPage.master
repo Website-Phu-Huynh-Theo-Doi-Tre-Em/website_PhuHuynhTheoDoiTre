@@ -811,13 +811,13 @@
                         </asp:Repeater>--%>
                     </ul>
                 </li>
-                <li><a href="/mam-non-bac-dao-tao">Bậc đào tạo mầm non</a>
+                <li><a href="/website-chuc-nang-dang-duoc-cap-nhat">Bậc đào tạo mầm non</a>
                 </li>
                 <li><a href="#">Tuyển sinh</a>
                     <ul class="ul_sub">
-                        <li><a href="/mam-non-tuyen-sinh-mam-non">Tuyển sinh mầm non</a></li>
-                        <li><a href="/mam-non-quy-trinh-tuyen-sinh-mam-non">Qui trình tuyển sinh</a></li>
-                        <li><a href="/mam-non-hoc-phi-chinh-sach-uu-dai">Học phí chính sách ưu đãi</a></li>
+                        <li><a href="/website-chuc-nang-dang-duoc-cap-nhat">Tuyển sinh mầm non</a></li>
+                        <li><a href="/website-chuc-nang-dang-duoc-cap-nhat">Qui trình tuyển sinh</a></li>
+                        <li><a href="/website-chuc-nang-dang-duoc-cap-nhat">Học phí chính sách ưu đãi</a></li>
                         <%--<li><a href="#">Câu hỏi thường gặp</a></li>--%>
                     </ul>
                 </li>

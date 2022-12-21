@@ -28,6 +28,7 @@ public class webui
         list.Add("websitedanthuoc|website-thong-dan-thuoc|~/web_module/website_PhuHuynhTheoDoiTre/web_DanThuoc.aspx");
         list.Add("websitedangkiansang|website-dang-ki-an-sang|~/web_module/website_PhuHuynhTheoDoiTre/Web_DangKyAnSang.aspx");
         list.Add("websitedangkingoaikhoa|website-dang-ki-ngoai-khoa|~/web_module/website_PhuHuynhTheoDoiTre/web_DangKyNgoaiKhoa.aspx");
+        list.Add("websitechucnangdangcapnhat|website-chuc-nang-dang-duoc-cap-nhat|~/web_module/website_PhuHuynhTheoDoiTre/Page_ComingSoonaspx.aspx");
         return list;
     }
 }
