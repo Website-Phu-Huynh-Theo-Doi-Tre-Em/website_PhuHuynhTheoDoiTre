@@ -209,7 +209,7 @@
                 </a>
             </div>
             <div class="item">
-                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-tin-suc-khoe_1" class="block-btn" href="#">
+                <a onclick="funcActive(this.id),onLoad()" id="website-vietnhatkids-thong-tin-suc-khoe_1" class="block-btn" href="/website-thong-tin-suc-khoe">
                     <img src="/image/icon/suc-khoe.png" />
                     <span>THÔNG TIN
                         <br />

@@ -179,7 +179,7 @@
                                         <ItemTemplate>
                                             <tr>
                                                 <td scope="row"><%= STT++ %></td>
-                                                <td><%#Eval("image_link") %></td>
+                                                <td><%#Eval("thang_name") %></td>
                                                 <td><%#Eval("suckhoe_chieucao") %></td>
                                                 <td><%#Eval("suckhoe_cannang") %></td>
                                                 <td><%#Eval("suckhoe_ghichu") %></td>

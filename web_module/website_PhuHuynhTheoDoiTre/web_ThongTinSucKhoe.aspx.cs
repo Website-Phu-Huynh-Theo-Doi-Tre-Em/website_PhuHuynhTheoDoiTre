@@ -34,8 +34,7 @@ public partial class web_ThongTinSucKhoe : System.Web.UI.Page
             lblNam.Text = getNam.namhoc_nienkhoa;
             var getData = from hs in db.tbHocSinhs
                           join sk in db.tbThongTinSucKhoes on hs.hocsinh_id equals sk.hocsinh_id
-                          //join lt in db.tbImage_Liches on Convert.ToInt32(sk.suckhoe_thang) equals lt.image_lich
-                          //join lt in db.tbImage_Liches on sk.suckhoe_thang equals lt.image_lich
+                          join lt in db.tbThangs on Convert.ToInt32( sk.suckhoe_thang) equals lt.thang_id
                           join nh in db.tbHoctap_NamHocs on sk.namhoc_id equals nh.namhoc_id
                           where hs.hocsinh_taikhoan == _sdtHocSinh && nh.namhoc_id == getNam.namhoc_id
                           orderby sk.suckhoe_id ascending
@@ -44,10 +43,11 @@ public partial class web_ThongTinSucKhoe : System.Web.UI.Page
                               sk.suckhoe_chieucao,
                               sk.suckhoe_cannang,
                               sk.suckhoe_ghichu,
+                              lt.thang_name
                           };
             rpSucKhoe.DataSource = getData;
             rpSucKhoe.DataBind();
-            //txtThang.Value = String.Join(",", getData.Select(y => y.image_link));
+            txtThang.Value = String.Join(",", getData.Select(y => y.thang_name));
             txtCanNang.Value = String.Join(",", getData.Select(y => y.suckhoe_cannang));
             txtChieuCao.Value = String.Join(",", getData.Select(y => y.suckhoe_chieucao));
         }

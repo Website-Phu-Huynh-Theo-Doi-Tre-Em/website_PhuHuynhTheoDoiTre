@@ -156,6 +156,12 @@
       <Association Name="tbLoaiThongBao_tbThongBao" Member="tbThongBaos" ThisKey="loaithongbao_ID" OtherKey="loaithongbao_ID" Type="tbThongBao" />
     </Type>
   </Table>
+	<Table Name="dbo.tbThang" Member="tbThangs">
+    <Type Name="tbThang">
+      <Column Name="thang_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thang_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tbLop" Member="tbLops">
     <Type Name="tbLop">
       <Column Name="lop_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

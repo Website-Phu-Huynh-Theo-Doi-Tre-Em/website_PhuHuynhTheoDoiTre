@@ -19,6 +19,26 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
     {
         if (Request.Cookies["web_hocsinh"] != null)
         {
+            var checkNamHoc = (from nh in db.tbHoctap_NamHocs orderby nh.namhoc_id descending select nh).First();
+            var checkUserId = (from hs in db.tbHocSinhs
+                               where hs.hocsinh_taikhoan == Request.Cookies["web_hocsinh"].Value
+                               select hs).First();
+
+
+            var getHocSinh = (from hs in db.tbHocSinhs
+                              join hstl in db.tbHocSinhTrongLops on hs.hocsinh_id equals hstl.hocsinh_id
+                              join l in db.tbLops on hstl.lop_id equals l.lop_id
+                              where hstl.hocsinh_id == checkUserId.hocsinh_id &&
+                              hstl.namhoc_id == checkNamHoc.namhoc_id
+                              orderby hstl.hocsinh_id descending
+                              select new
+                              {
+                                  hstl.hstl_id,
+                                  hs.hocsinh_name,
+                                  hs.hocsinh_id,
+                                  l.lop_id,
+                                  hstl.namhoc_id,
+                              }).FirstOrDefault();
             namhoc_id = (from nm in db.tbHoctap_NamHocs
                          orderby nm.namhoc_id descending
                          select nm.namhoc_id).First();
@@ -44,28 +64,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                 rpDaNgoai.DataBind();
                 rpDaNgoaiChiTiet.DataSource = getlist.Take(1);
                 rpDaNgoaiChiTiet.DataBind();
-                //ẩn hiện button
-                //var check = (from nk in db.tbDangKyNgoaiKhoas
-                //             where nk.ngoaikhoa_id == getlist.FirstOrDefault().ngoaikhoa_id
-                //             select nk).FirstOrDefault();
-                //txtngoaiKhoa_tinhtrang.Value = check.dangkyngoaikhoa_tinhtrang;
-                //String id = (from nk in db.tbNgoaiKhoas where nk.ngoaikhoa_id == check.ngoaikhoa_id select nk.ngoaikhoa_id).SingleOrDefault().ToString();
-                //String checki = "checkbutton(" + id + ")";
-                //Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", checki, true);
-                //var getData = from nk in db.tbDangKyNgoaiKhoa
-                //              select nk;
-                //// kiểm tra getData.tinhtrang == 1 thì hiện button
-                //// chạy vòng lặp foreach kiểm tra nếu  dangkingoaikhoa_tinhtrang =='dang ki' thì hiện button
-                //// nếu không thì ẩn button
-                //foreach (var item in getData)
-                //{
-                //    if (item.dangkyngoaikhoa_tinhtrang == "dang ki")
-                //    {
-                //        String id = (from nk in db.tbNgoaiKhoas where nk.ngoaikhoa_id == item.ngoaikhoa_id select nk.ngoaikhoa_id).SingleOrDefault().ToString();
-                //        String checki = "checkbutton(" + id + ")";
-                //        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", checki, true);
-                //    }
-                //}
+               
 
             }
             if (txtngoaiKhoa_id.Value != "")
@@ -78,7 +77,11 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                 rpDaNgoaiChiTiet.DataBind();
                 //insert.ngoaikhoa_id = id;
             }
-
+            if (db.tbDangKyNgoaiKhoas.Any(x => x.hstl_id == getHocSinh.hstl_id
+                                                   && x.namhoc_id == checkNamHoc.namhoc_id
+                                                   && x.ngoaikhoa_id == Convert.ToInt32(txtngoaiKhoa_id.Value)
+                                                   && x.dangkyngoaikhoa_tinhtrang == "dang ki"))
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", " checkbutton("+ getlist.FirstOrDefault().ngoaikhoa_id + ") ", true);
 
 
         }
@@ -116,7 +119,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
                        select a);
         String listMail = String.Join(",", getMail.Select(x => x.username_email).ToArray());
 
-        if (db.tbDangKyNgoaiKhoa.Any(x => x.hstl_id == getHocSinh.hstl_id
+        if (db.tbDangKyNgoaiKhoas.Any(x => x.hstl_id == getHocSinh.hstl_id
                                                   && x.namhoc_id == checkNamHoc.namhoc_id
                                                   && x.ngoaikhoa_id == Convert.ToInt32(txtngoaiKhoa_id.Value)
                                                   && x.dangkyngoaikhoa_tinhtrang == "dang ki"))
@@ -132,7 +135,7 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
             insert.namhoc_id = checkNamHoc.namhoc_id;
             insert.ngoaikhoa_id = Convert.ToInt32(txtngoaiKhoa_id.Value);
             insert.dangkyngoaikhoa_tinhtrang = "dang ki";
-            db.tbDangKyNgoaiKhoa.InsertOnSubmit(insert);
+            db.tbDangKyNgoaiKhoas.InsertOnSubmit(insert);
             db.SubmitChanges();
             int id = Convert.ToInt32(txtngoaiKhoa_id.Value);
            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "checkbutton(" + id +")", true);
@@ -192,10 +195,10 @@ public partial class web_module_module_website_website_VietNhatKis_web_DangKyNgo
 
     protected void xoa_ServerClick(object sender, EventArgs e)
     {
-        tbDangKyNgoaiKhoa delete = (from nk in db.tbDangKyNgoaiKhoa
+        tbDangKyNgoaiKhoa delete = (from nk in db.tbDangKyNgoaiKhoas
                                     where nk.ngoaikhoa_id == Convert.ToInt32(txtngoaiKhoa_id.Value)
                                     select nk).FirstOrDefault();
-        db.tbDangKyNgoaiKhoa.DeleteOnSubmit(delete);
+        db.tbDangKyNgoaiKhoas.DeleteOnSubmit(delete);
         db.SubmitChanges();
         alert.alert_Success(Page, "Hủy đăng ký thành công! Vui lòng chờ xác nhận của nhà trường", "");
 

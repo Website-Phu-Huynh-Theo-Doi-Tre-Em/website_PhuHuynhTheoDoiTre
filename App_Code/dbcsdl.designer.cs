@@ -71,6 +71,9 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void InserttbLoaiThongBao(tbLoaiThongBao instance);
   partial void UpdatetbLoaiThongBao(tbLoaiThongBao instance);
   partial void DeletetbLoaiThongBao(tbLoaiThongBao instance);
+  partial void InserttbThang(tbThang instance);
+  partial void UpdatetbThang(tbThang instance);
+  partial void DeletetbThang(tbThang instance);
   partial void InserttbLop(tbLop instance);
   partial void UpdatetbLop(tbLop instance);
   partial void DeletetbLop(tbLop instance);
@@ -224,6 +227,14 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tbLoaiThongBao>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tbThang> tbThangs
+	{
+		get
+		{
+			return this.GetTable<tbThang>();
 		}
 	}
 	
@@ -3214,6 +3225,92 @@ public partial class tbLoaiThongBao : INotifyPropertyChanging, INotifyPropertyCh
 	{
 		this.SendPropertyChanging();
 		entity.tbLoaiThongBao = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbThang")]
+public partial class tbThang : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _thang_id;
+	
+	private string _thang_name;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onthang_idChanging(int value);
+    partial void Onthang_idChanged();
+    partial void Onthang_nameChanging(string value);
+    partial void Onthang_nameChanged();
+    #endregion
+	
+	public tbThang()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thang_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int thang_id
+	{
+		get
+		{
+			return this._thang_id;
+		}
+		set
+		{
+			if ((this._thang_id != value))
+			{
+				this.Onthang_idChanging(value);
+				this.SendPropertyChanging();
+				this._thang_id = value;
+				this.SendPropertyChanged("thang_id");
+				this.Onthang_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thang_name", DbType="NVarChar(MAX)")]
+	public string thang_name
+	{
+		get
+		{
+			return this._thang_name;
+		}
+		set
+		{
+			if ((this._thang_name != value))
+			{
+				this.Onthang_nameChanging(value);
+				this.SendPropertyChanging();
+				this._thang_name = value;
+				this.SendPropertyChanged("thang_name");
+				this.Onthang_nameChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
 	}
 }
 
