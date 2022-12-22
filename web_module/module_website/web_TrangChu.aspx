@@ -42,6 +42,7 @@
                         trường quốc gia lẫn quốc tế một cách thoải mái, tự tin, mà còn tiếp tục 
                         vững vàng phát triển ở các bậc học tiếp theo và trọn đời.
                     </p>
+                    <p> Tao pull reques nay se xoa sau</p>
                     <a href="" class="text-white">Xem thêm</a>
                 </div>
             </div>
