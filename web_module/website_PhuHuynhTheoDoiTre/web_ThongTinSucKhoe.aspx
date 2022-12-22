@@ -113,19 +113,9 @@
             padding: 5px;
             border: 1px solid white;
         }
-        /*@media (min-width: 500px) and (max-width:1050px) {
-            .row{
-                    margin: 0% 0% 1% 0 !important;
-
-            }
-            .userrp{
-                margin:1% 0;
-            }
-            .colrp{
-                padding-left:0 !important;
-            }
+        
             
-        }*/
+       
     </style>
 
 </asp:Content>
